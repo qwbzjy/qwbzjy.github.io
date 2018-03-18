@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[每日总结 0318]]></title>
+    <title><![CDATA[搬瓦工多用户设置碰到的问题]]></title>
+    <url>%2F2018%2F03%2F18%2F%E6%90%AC%E7%93%A6%E5%B7%A5%E5%A4%9A%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[前段时间，花了我$20(换算成人民币是120大洋)在搬瓦工上买了一个vps，在配置多用户的时候，按照官网上的教程设置完成后，只有433的端口能够上网，其余的端口都上不了，折腾了一天，终于搞好了。其实之前就碰到了这个问题，只是当时没有记录下问题的解决方法，现在碰到了，又忘记了当时是怎么解决的，真的是想抽自己一个大耳光，恨自己为什么不记下来，如果当时自己记录了问题的解决方案，现在也不用这么浪费时间，而且搞得自己心情特别生气，生自己的气。所以在以后的工作和生活中，凡是碰到问题，而且自己花时间解决了，一定要记录下自己的解决过程和解决方法，毕竟好记性不如乱笔头。废话不多说，上解决方案。 1. 首先是在搬瓦工官网上买一个vps服务器，说白了就是买一个独立的私人服务器，有自己的固定ip地址，至于vps能做什么，以后有时间了再总结一下。然后搭建ss(shadowsocks)账号，可以一个人用，也可以多人使用。搭建ss单个账号，直接看这个链接：搬瓦工搭建ss单用户教程 2. 如果你想搭建多个人共用一个vps，那么直接看这个链接: 搬瓦工搭建ss多用户教程 3. 说一下我碰到的问题，刚开始的时候自己用的单用户账号，后来自己想弄个多用户的试试，碰到了，修改shadowsocks.json文件后，多个用户无法使用的情况，最后经过一番折腾，主要原因是没有重新启动服务器，启动服务器的操作直接看下图。 4. 在putty界面登陆远程服务器后输入下图中的命令：]]></content>
+      <tags>
+        <tag>业余提升</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MarkDown使用笔记]]></title>
     <url>%2F2018%2F03%2F18%2F%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93-0318%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[this is h1this is h2this is h3this is h4this is h5this is h6 1 2 3 4 中国 韩国 日本 泰国 王国维的人生三种境界 百度搜索 123public static void main(String[] args)&#123; system.out.println(&quot;hello,world!&quot;);&#125; name age learnshare 12 mike 32 中国 德国 美国首行缩进（shift+空格切换到全角，然后打两个空格就行了。）]]></content>
+      <categories>
+        <category>自我提升</category>
+      </categories>
+      <tags>
+        <tag>工具使用</tag>
+      </tags>
   </entry>
 </search>
