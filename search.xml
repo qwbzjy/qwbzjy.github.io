@@ -24,15 +24,4 @@
         <tag>业余提升</tag>
       </tags>
   </entry>
-  <entry>
-    <title><![CDATA[MarkDown使用笔记]]></title>
-    <url>%2F2018%2F03%2F18%2F%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93-0318%2F</url>
-    <content type="text"><![CDATA[this is h1this is h2this is h3this is h4this is h5this is h6 1 2 3 4 中国 韩国 日本 泰国 王国维的人生三种境界 百度搜索 123public static void main(String[] args)&#123; system.out.println(&quot;hello,world!&quot;);&#125; name age learnshare 12 mike 32 中国 德国 美国首行缩进（shift+空格切换到全角，然后打两个空格就行了。）]]></content>
-      <categories>
-        <category>自我提升</category>
-      </categories>
-      <tags>
-        <tag>工具使用</tag>
-      </tags>
-  </entry>
 </search>
