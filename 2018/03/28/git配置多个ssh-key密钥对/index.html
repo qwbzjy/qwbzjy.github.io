@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="git系列," />
 
 
 
@@ -83,16 +83,18 @@
 
 
 
-<meta name="description" content="忘记背后，努力面前，向着标杆直跑。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="勇敢的心">
-<meta property="og:url" content="http://ajwensome.com/archives/2018/index.html">
+<meta name="description" content="前几天，准备将公司的项目导入到我的笔记本上，克隆的时候，提示无法访问远程仓库，谷歌发现是没有添加ssh-key协议。于是照着网上的教程倒腾一番，最后成功将公司的项目导入IDEA中，等到网上我提交博客到github上时，git bash又提示无法访问远程仓库，对于一个刚开始接触git的小白来说，有点迷糊，然后上谷歌搜索了一下，总算是搞明白了，但是光当时搞明白了不行啊，得总结在博客上，好记性不如乱">
+<meta name="keywords" content="git系列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git配置多个ssh-key密钥对">
+<meta property="og:url" content="http://ajwensome.com/2018/03/28/git配置多个ssh-key密钥对/index.html">
 <meta property="og:site_name" content="勇敢的心">
-<meta property="og:description" content="忘记背后，努力面前，向着标杆直跑。">
+<meta property="og:description" content="前几天，准备将公司的项目导入到我的笔记本上，克隆的时候，提示无法访问远程仓库，谷歌发现是没有添加ssh-key协议。于是照着网上的教程倒腾一番，最后成功将公司的项目导入IDEA中，等到网上我提交博客到github上时，git bash又提示无法访问远程仓库，对于一个刚开始接触git的小白来说，有点迷糊，然后上谷歌搜索了一下，总算是搞明白了，但是光当时搞明白了不行啊，得总结在博客上，好记性不如乱">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-29T00:55:46.733Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="勇敢的心">
-<meta name="twitter:description" content="忘记背后，努力面前，向着标杆直跑。">
+<meta name="twitter:title" content="git配置多个ssh-key密钥对">
+<meta name="twitter:description" content="前几天，准备将公司的项目导入到我的笔记本上，克隆的时候，提示无法访问远程仓库，谷歌发现是没有添加ssh-key协议。于是照着网上的教程倒腾一番，最后成功将公司的项目导入IDEA中，等到网上我提交博客到github上时，git bash又提示无法访问远程仓库，对于一个刚开始接触git的小白来说，有点迷糊，然后上谷歌搜索了一下，总算是搞明白了，但是光当时搞明白了不行啊，得总结在博客上，好记性不如乱">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://ajwensome.com/archives/2018/"/>
+  <link rel="canonical" href="http://ajwensome.com/2018/03/28/git配置多个ssh-key密钥对/"/>
 
 
 
 
 
-  <title>归档 | 勇敢的心</title>
+  <title>git配置多个ssh-key密钥对 | 勇敢的心</title>
   
 
 
@@ -157,7 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -295,222 +297,272 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ajwensome.com/2018/03/28/git配置多个ssh-key密钥对/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ajwensome">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇敢的心">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">git配置多个ssh-key密钥对</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T23:09:30+08:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 5 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术积累/" itemprop="url" rel="index">
+                    <span itemprop="name">技术积累</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2018/03/28/git配置多个ssh-key密钥对/" class="leancloud_visitors" data-flag-title="git配置多个ssh-key密钥对">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/28/git配置多个ssh-key密钥对/" itemprop="url">
-              
-                <span itemprop="name">git配置多个ssh-key密钥对</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-28T23:09:30+08:00"
-              content="2018-03-28" >
-          03-28
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/21/0321今日反思/" itemprop="url">
-              
-                <span itemprop="name">0321今日反思</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-21T23:40:38+08:00"
-              content="2018-03-21" >
-          03-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/20/0320今日反思/" itemprop="url">
-              
-                <span itemprop="name">0320今日反思</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-20T23:22:53+08:00"
-              content="2018-03-20" >
-          03-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/19/0319今日反思/" itemprop="url">
-              
-                <span itemprop="name">每日总结-0319</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-19T22:28:34+08:00"
-              content="2018-03-19" >
-          03-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
+        <p>　　前几天，准备将公司的项目导入到我的笔记本上，克隆的时候，提示无法访问远程仓库，谷歌发现是没有添加ssh-key协议。于是照着网上的教程倒腾一番，最后成功将公司的项目导入IDEA中，等到网上我提交博客到github上时，git bash又提示无法访问远程仓库，对于一个刚开始接触git的小白来说，有点迷糊，然后上谷歌搜索了一下，总算是搞明白了，但是光当时搞明白了不行啊，得总结在博客上，好记性不如乱笔头。<br></p>
+<h2 id="1-先简单说一下git-github-gitlab的区别"><a href="#1-先简单说一下git-github-gitlab的区别" class="headerlink" title="1.先简单说一下git, github, gitlab的区别"></a>1.先简单说一下git, github, gitlab的区别<br></h2><p>　　git是一个是一个分布式版本控制软件，最初由林纳斯·托瓦兹（Linus Torvalds）创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。<br><br>　　git与CVS、Subversion一类的集中式版本控制工具不同，它采用了分布式版本库的作法，不需要服务器端软件，就可以运作版本控制，使得源代码的发布和交流极其方便，主要用于多人项目开发，对整个项目进行管理，记录团队每个成员每一次提交，修改，还原代码等操作，便于项目成员间的协作。<br><br>　　github是全球最大的项目托管平台，如果你想找到最流行的，最有趣的项目，上github吧，保证不会让你失望。github是基于git的项目托管平台，具体他有什么功能，去注册一个github账号，进去看看就知道了。<br><br>　　而gitlab也是一个基于git的项目托管平台，只不过gitlab多用于企业的项目开发，github多用于个人项目的托管，具体有什么区别，我改天再写一篇博客详聊。<br></p>
+<h2 id="2-简要说说ssh-key"><a href="#2-简要说说ssh-key" class="headerlink" title="2.简要说说ssh-key"></a>2.简要说说ssh-key<br></h2><p>　　ssh-key是一种协议，相比于http协议，它是一种通过公钥与私钥组合的协议，比如你想要将你笔记本上的代码提交到github平台，如果你使用ssh协议，那么你必须在你的笔记本上生成一对钥匙，就是公钥与私钥，将公钥添加到github上，然后才能提交你的代码到github上，也就是你电脑上的私钥与github上的公钥配对，才能识别你的提交机器是合法的。<br></p>
+<h2 id="3-配置多个ssh-key"><a href="#3-配置多个ssh-key" class="headerlink" title="3.配置多个ssh-key"></a>3.配置多个ssh-key<br></h2><p>　　配置github和gitlab的ssh-key，前几天想把公司的项目克隆到我的笔记本上，但是添加完ssh-key后发现自己项目的代码无法提交到github上，然后上网搜索发现是gitlab的ssh-key把github的ssh-key覆盖了，然后上网搜了一番，把这个问题搞定了。<br></p>
+<h3 id="1-生成你自己开发用的github密钥对"><a href="#1-生成你自己开发用的github密钥对" class="headerlink" title="1. 生成你自己开发用的github密钥对"></a>1. 生成你自己开发用的github密钥对</h3><p>　　首先生成一个github的密钥对，从菜单栏打开git bash，输入:<br></p>
+<pre>ssh-key -t rsa -C "youmail@163.com"  //这里的邮箱是你注册github时的邮箱
+</pre>
+　　此时不能一路回车，可以手动修改密钥文件的名称:<br>
+　　Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Gary/.ssh/id_rsa): /c/Users/asus/.ssh/id_rsa_github<br>
+　　然后再一直回车，如果不修改密钥文件的名称，那么系统会默认生成名为id_rsa.pub的文件。生成完成后，可以看到c:/Users/asus/.ssh文件夹下多了两个文件i:<br>
+　　id_rsa_github和id_rsa_github.pub<br>
+　　然后用记事本打开后一个文件，全部复制，上你的github上添加ssh-key，到此，你个人的github平台的ssh-key添加完成。<br>
+### 2. 生成公司开发用的gitlab密钥对
+　　重复1的步骤，注意邮箱地址不要一样，可以使用你的qq邮箱或者公司的企业邮箱等，然后修改密钥文件的名称为id_rsa_gitlab,同样的上你公司的gitlab平台上添加ssh-key，到此两个平台的ssh-key添加完毕。<br>
+### 3. 使用密钥管理器ssh-agent，管理你的多个git账户，主要是避免每次提交时输入用户名和密码。<br>
+　　打开你的git bash(win10系统)，输入命令：<pre>ssh-agent -s</pre><br>
+　　继续添加私钥到密钥管理器ssh-agent：<br>
 
-        
-        
-        
+### 4. 在C:/Users/asus/.ssh文件夹下创建config文件，添加以下内容：<br>
+　　<pre>#gitlab
+    Host gitlab.com  //Host和HostName两个处填写你公司的gitlab域名,例如rep.taihe.com
+    HostName gitlab.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa_gitlab
 
-        
-        
+    #github
+    Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa_github
+</pre><br>
 
-        
+### 5. 测试添加的ssh-key是否成功<br>
+　　<pre>ssh -T git@github.com
+         ssh -T git@rep.taihe.com
+</pre>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/18/搬瓦工多用户设置碰到的问题/" itemprop="url">
-              
-                <span itemprop="name">搬瓦工多用户设置碰到的问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-18T19:17:11+08:00"
-              content="2018-03-18" >
-          03-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+<h3 id="6-如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。"><a href="#6-如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。" class="headerlink" title="6. 如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。"></a>6. 如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。</h3>
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享,您的支持将鼓励我继续创作!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="ajwensome 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="ajwensome 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git系列/" rel="tag"># git系列</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/21/0321今日反思/" rel="next" title="0321今日反思">
+                <i class="fa fa-chevron-left"></i> 0321今日反思
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -518,6 +570,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -538,8 +594,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -619,6 +684,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-先简单说一下git-github-gitlab的区别"><span class="nav-number">1.</span> <span class="nav-text">1.先简单说一下git, github, gitlab的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-简要说说ssh-key"><span class="nav-number">2.</span> <span class="nav-text">2.简要说说ssh-key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-配置多个ssh-key"><span class="nav-number">3.</span> <span class="nav-text">3.配置多个ssh-key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-生成你自己开发用的github密钥对"><span class="nav-number">3.1.</span> <span class="nav-text">1. 生成你自己开发用的github密钥对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。"><span class="nav-number">3.2.</span> <span class="nav-text">6. 如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -759,6 +840,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
