@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="勇敢的心">
 <meta property="og:description" content="前几天，准备将公司的项目导入到我的笔记本上，克隆的时候，提示无法访问远程仓库，谷歌发现是没有添加ssh-key协议。于是照着网上的教程倒腾一番，最后成功将公司的项目导入IDEA中，等到网上我提交博客到github上时，git bash又提示无法访问远程仓库，对于一个刚开始接触git的小白来说，有点迷糊，然后上谷歌搜索了一下，总算是搞明白了，但是光当时搞明白了不行啊，得总结在博客上，好记性不如乱">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-29T00:59:35.015Z">
+<meta property="og:updated_time" content="2018-03-30T01:25:54.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git配置多个ssh-key密钥对">
 <meta name="twitter:description" content="前几天，准备将公司的项目导入到我的笔记本上，克隆的时候，提示无法访问远程仓库，谷歌发现是没有添加ssh-key协议。于是照着网上的教程倒腾一番，最后成功将公司的项目导入IDEA中，等到网上我提交博客到github上时，git bash又提示无法访问远程仓库，对于一个刚开始接触git的小白来说，有点迷糊，然后上谷歌搜索了一下，总算是搞明白了，但是光当时搞明白了不行啊，得总结在博客上，好记性不如乱">
@@ -412,47 +412,37 @@
 
       
         <p>　　前几天，准备将公司的项目导入到我的笔记本上，克隆的时候，提示无法访问远程仓库，谷歌发现是没有添加ssh-key协议。于是照着网上的教程倒腾一番，最后成功将公司的项目导入IDEA中，等到网上我提交博客到github上时，git bash又提示无法访问远程仓库，对于一个刚开始接触git的小白来说，有点迷糊，然后上谷歌搜索了一下，总算是搞明白了，但是光当时搞明白了不行啊，得总结在博客上，好记性不如乱笔头。<br></p>
-<h2 id="1-先简单说一下git-github-gitlab的区别"><a href="#1-先简单说一下git-github-gitlab的区别" class="headerlink" title="1.先简单说一下git, github, gitlab的区别"></a>1.先简单说一下git, github, gitlab的区别<br></h2><p>　　git是一个是一个分布式版本控制软件，最初由林纳斯·托瓦兹（Linus Torvalds）创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。<br><br>　　git与CVS、Subversion一类的集中式版本控制工具不同，它采用了分布式版本库的作法，不需要服务器端软件，就可以运作版本控制，使得源代码的发布和交流极其方便，主要用于多人项目开发，对整个项目进行管理，记录团队每个成员每一次提交，修改，还原代码等操作，便于项目成员间的协作。<br><br>　　github是全球最大的项目托管平台，如果你想找到最流行的，最有趣的项目，上github吧，保证不会让你失望。github是基于git的项目托管平台，具体他有什么功能，去注册一个github账号，进去看看就知道了。<br><br>　　而gitlab也是一个基于git的项目托管平台，只不过gitlab多用于企业的项目开发，github多用于个人项目的托管，具体有什么区别，我改天再写一篇博客详聊。<br></p>
-<h2 id="2-简要说说ssh-key"><a href="#2-简要说说ssh-key" class="headerlink" title="2.简要说说ssh-key"></a>2.简要说说ssh-key<br></h2><p>　　ssh-key是一种协议，相比于http协议，它是一种通过公钥与私钥组合的协议，比如你想要将你笔记本上的代码提交到github平台，如果你使用ssh协议，那么你必须在你的笔记本上生成一对钥匙，就是公钥与私钥，将公钥添加到github上，然后才能提交你的代码到github上，也就是你电脑上的私钥与github上的公钥配对，才能识别你的提交机器是合法的。<br></p>
-<h2 id="3-配置多个ssh-key"><a href="#3-配置多个ssh-key" class="headerlink" title="3.配置多个ssh-key"></a>3.配置多个ssh-key<br></h2><p>　　配置github和gitlab的ssh-key，前几天想把公司的项目克隆到我的笔记本上，但是添加完ssh-key后发现自己项目的代码无法提交到github上，然后上网搜索发现是gitlab的ssh-key把github的ssh-key覆盖了，然后上网搜了一番，把这个问题搞定了。<br></p>
+<h2 id="先简单说一下git-github-gitlab的区别"><a href="#先简单说一下git-github-gitlab的区别" class="headerlink" title="先简单说一下git, github, gitlab的区别"></a>先简单说一下git, github, gitlab的区别<br></h2><p>　　git是一个是一个分布式版本控制软件，最初由林纳斯·托瓦兹（Linus Torvalds）创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。<br><br>　　git与CVS、Subversion一类的集中式版本控制工具不同，它采用了分布式版本库的作法，不需要服务器端软件，就可以运作版本控制，使得源代码的发布和交流极其方便，主要用于多人项目开发，对整个项目进行管理，记录团队每个成员每一次提交，修改，还原代码等操作，便于项目成员间的协作。<br><br>　　github是全球最大的项目托管平台，如果你想找到最流行的，最有趣的项目，上github吧，保证不会让你失望。github是基于git的项目托管平台，具体他有什么功能，去注册一个github账号，进去看看就知道了。<br><br>　　而gitlab也是一个基于git的项目托管平台，只不过gitlab多用于企业的项目开发，github多用于个人项目的托管，具体有什么区别，我改天再写一篇博客详聊。<br></p>
+<h2 id="简要说说ssh-key"><a href="#简要说说ssh-key" class="headerlink" title="简要说说ssh-key"></a>简要说说ssh-key<br></h2><p>　　ssh-key是一种协议，相比于http协议，它是一种通过公钥与私钥组合的协议，比如你想要将你笔记本上的代码提交到github平台，如果你使用ssh协议，那么你必须在你的笔记本上生成一对钥匙，就是公钥与私钥，将公钥添加到github上，然后才能提交你的代码到github上，也就是你电脑上的私钥与github上的公钥配对，才能识别你的提交机器是合法的。<br></p>
+<h2 id="配置多个ssh-key"><a href="#配置多个ssh-key" class="headerlink" title="配置多个ssh-key"></a>配置多个ssh-key<br></h2><p>　　配置github和gitlab的ssh-key，前几天想把公司的项目克隆到我的笔记本上，但是添加完ssh-key后发现自己项目的代码无法提交到github上，然后上网搜索发现是gitlab的ssh-key把github的ssh-key覆盖了，然后上网搜了一番，把这个问题搞定了。<br></p>
 <hr>
-<h3 id="1-生成你自己开发用的github密钥对"><a href="#1-生成你自己开发用的github密钥对" class="headerlink" title="1. 生成你自己开发用的github密钥对"></a>1. 生成你自己开发用的github密钥对</h3><p>　　首先生成一个github的密钥对，从菜单栏打开git bash，输入:<br></p>
-<pre>ssh-key -t rsa -C "youmail@163.com"  //这里的邮箱是你注册github时的邮箱
-</pre>
-　　此时不能一路回车，可以手动修改密钥文件的名称:<br>
-　　Generating public/private rsa key pair.
-Enter file in which to save the key (/c/Users/Gary/.ssh/id_rsa): /c/Users/asus/.ssh/id_rsa_github<br>
-　　然后再一直回车，如果不修改密钥文件的名称，那么系统会默认生成名为id_rsa.pub的文件。生成完成后，可以看到c:/Users/asus/.ssh文件夹下多了两个文件i:<br>
-　　id_rsa_github和id_rsa_github.pub<br>
-　　然后用记事本打开后一个文件，全部复制，上你的github上添加ssh-key，到此，你个人的github平台的ssh-key添加完成。<br>
+<ol>
+<li><p><strong>生成你自己开发用的github密钥对</strong><br><br>　　首先生成一个github的密钥对，从菜单栏打开git bash，输入:<br><pre>ssh-key -t rsa -C “<a href="mailto:youmail@163.com" target="_blank" rel="noopener">youmail@163.com</a>“  //这里的邮箱是你注册github时的邮箱<br></pre><br>　　此时不能一路回车，可以手动修改密钥文件的名称:<br><br>　　Generating public/private rsa key pair.<br>Enter file in which to save the key (/c/Users/Gary/.ssh/id_rsa): /c/Users/asus/.ssh/id_rsa_github<br><br>　　然后再一直回车，如果不修改密钥文件的名称，那么系统会默认生成名为id_rsa.pub的文件。生成完成后，可以看到c:/Users/asus/.ssh文件夹下多了两个文件:<br><br>　　id_rsa_github和id_rsa_github.pub<br><br>　　然后用记事本打开后一个文件，全部复制，上你的github上添加ssh-key，到此，你个人的github平台的ssh-key添加完成。</p>
+</li>
+<li><p><strong>生成公司开发用的gitlab密钥对</strong><br><br>　　重复1的步骤，注意邮箱地址不要一样，可以使用你的qq邮箱或者公司的企业邮箱等，然后修改密钥文件的名称为id_rsa_gitlab,同样的上你公司的gitlab平台上添加ssh-key，到此两个平台的ssh-key添加完毕。</p>
+</li>
+<li><p><strong>使用密钥管理器ssh-agent，管理你的多个git账户，主要是避免每次提交时输入用户名和密码</strong><br><br>打开你的git bash(win10系统)，输入命令：<br><pre>ssh-agent -s</pre><br>　　继续添加私钥到密钥管理器ssh-agent：<br></p>
+</li>
+<li><p><strong>在C:/Users/asus/.ssh文件夹下创建config文件，添加以下内容：</strong></p>
+<pre>#gitlab
+Host gitlab.com  //Host和HostName两个处填写你公司的gitlab域名,例如rep.taihe.com
+HostName gitlab.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_gitlab
+#github
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_github</pre>
+</li>
+<li><p><strong>测试添加的ssh-key是否成功</strong><br></p>
+<pre>ssh -T git@github.com
+ssh -T git@rep.taihe.com</pre>
+</li>
+<li><p><strong>如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。</strong></p>
+</li>
+</ol>
 
-### 2. 生成公司开发用的gitlab密钥对
-　　重复1的步骤，注意邮箱地址不要一样，可以使用你的qq邮箱或者公司的企业邮箱等，然后修改密钥文件的名称为id_rsa_gitlab,同样的上你公司的gitlab平台上添加ssh-key，到此两个平台的ssh-key添加完毕。<br>
-
-### 3. 使用密钥管理器ssh-agent，管理你的多个git账户，主要是避免每次提交时输入用户名和密码。<br>
-　　打开你的git bash(win10系统)，输入命令：<pre>ssh-agent -s</pre><br>
-　　继续添加私钥到密钥管理器ssh-agent：<br>
-
-### 4. 在C:/Users/asus/.ssh文件夹下创建config文件，添加以下内容：<br>
-　　<pre>#gitlab
-    Host gitlab.com  //Host和HostName两个处填写你公司的gitlab域名,例如rep.taihe.com
-    HostName gitlab.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_rsa_gitlab
-
-    #github
-    Host github.com
-    HostName github.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_rsa_github
-</pre><br>
-
-### 5. 测试添加的ssh-key是否成功<br>
-　　<pre>ssh -T git@github.com
-         ssh -T git@rep.taihe.com
-</pre>
-
-<h3 id="6-如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。"><a href="#6-如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。" class="headerlink" title="6. 如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。"></a>6. 如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。</h3>
       
     </div>
     
@@ -697,7 +687,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-先简单说一下git-github-gitlab的区别"><span class="nav-number">1.</span> <span class="nav-text">1.先简单说一下git, github, gitlab的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-简要说说ssh-key"><span class="nav-number">2.</span> <span class="nav-text">2.简要说说ssh-key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-配置多个ssh-key"><span class="nav-number">3.</span> <span class="nav-text">3.配置多个ssh-key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-生成你自己开发用的github密钥对"><span class="nav-number">3.1.</span> <span class="nav-text">1. 生成你自己开发用的github密钥对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。"><span class="nav-number">3.2.</span> <span class="nav-text">6. 如果在途中碰到问题，建立重新全部从头开始，因为有些问题，真的是解决起来，费时费神，推倒重来可以节约很多时间。然后中途碰到一些小问题，可以随时谷歌，记住是谷歌。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#先简单说一下git-github-gitlab的区别"><span class="nav-number">1.</span> <span class="nav-text">先简单说一下git, github, gitlab的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简要说说ssh-key"><span class="nav-number">2.</span> <span class="nav-text">简要说说ssh-key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置多个ssh-key"><span class="nav-number">3.</span> <span class="nav-text">配置多个ssh-key</span></a></li></ol></div>
             
 
           </div>
