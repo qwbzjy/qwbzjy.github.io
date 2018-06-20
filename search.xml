@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[git常用命令-2]]></title>
     <url>%2F2018%2F06%2F20%2Fgit%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-2%2F</url>
     <content type="text"><![CDATA[​ 对于git命令的学习，我也是遇到就谷歌，然后找两个demo体验一下这个命令的作用，感觉这种学习方式效果还不错。刚开始接触git的时候，感觉git命令纷繁复杂，好多都记不住，平常做项目的过程中也就只用到了是add、commit、merge、pull、push等命令，对于其他命令，长时间不用也就忘记了。下面给大家推荐一个链接，里面有很多基础的demo练习，对于很多刚开始学习git的小伙伴来说，非常合适。 强烈推荐:手把手教你使用git提交到git git pull与git fetch、git clone的区别git clone是把整个git项目拷贝下来，包括里面的日志信息，git项目里的分支，你也可以直接切换、使用里面的分支等等git pull相当于git fetch和git merge。其意思是先从远程下载git项目里的文件，然后将文件与本地的分支进行merge。 对于实际项目开发中master分支与dev分支的理解通常，在服务器的远程仓库对应有两个分支：master和dev。master用于和Jenkins关联，用作生产版本的代码；dev用来和本地开发人员关联，每个人在本地仓库中提交代码后，都push到远程的dev分支上。 怎么合并远程的两个分支(把原有的dev版本合并到master版本中)12345678910111213141516171、把源码clone到本地库中git clone https://github.com/qwbzjy/qwbzjy.github.io2、在本地新建一个与远程的dev版本相同的dev分支git checkout -b dev origin/dev3、返回到master版本git checkout master4、把本地的dev合并到mastergit merge dev5、把本地的master同步到远程git push origin master6、如果不需要远程的dev版本，可以把它删除，但是通常来说，远程dev是不必删除的git branch -r -d origin/dev 贴一张git的思维导图，每当觉得对git的知识点不熟悉的时候，可以拿出来看看 推荐几个git学习的链接图解 Git 命令行 在阿里，我们如何管理代码分支 推荐一篇不错的国外成功的分支管理方案]]></content>
       <categories>
