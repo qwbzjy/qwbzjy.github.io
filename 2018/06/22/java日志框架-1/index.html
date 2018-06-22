@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Maven系列," />
+  <meta name="keywords" content="java日志框架," />
 
 
 
@@ -83,18 +83,20 @@
 
 
 
-<meta name="description" content="Apache Maven，是一个软件（特别是java软件)项目管理及自动构建工具，由Apache软件基金会所提供。基于项目对象模型（缩写：POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。 Maven也可被用于构建和管理各种项目，例如C#，Ruby，Scala和其他语言编写的项目。Maven曾是Jakarta项目的子项目，现为由Apache软件基金会主持的独立Ap">
-<meta name="keywords" content="Maven系列">
+<meta name="description" content="常见的java日志框架log4j 、logback、j.u.l(java.util.logging)  常见的java日志门面SLF4J、commons-logging 其中log4j、logback、SLF4J出自同一个作者(Ceki)，j.u.l是java原生库,但在java1.4中才被引用。 commons-logging出自Apache，用于桥接j.u.l和log4j。 Log4j：较早的">
+<meta name="keywords" content="java日志框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maven基础知识-1">
-<meta property="og:url" content="http://ajwensome.com/2018/06/21/Maven基础知识-1/index.html">
+<meta property="og:title" content="java日志框架-1">
+<meta property="og:url" content="http://ajwensome.com/2018/06/22/java日志框架-1/index.html">
 <meta property="og:site_name" content="勇敢的心">
-<meta property="og:description" content="Apache Maven，是一个软件（特别是java软件)项目管理及自动构建工具，由Apache软件基金会所提供。基于项目对象模型（缩写：POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。 Maven也可被用于构建和管理各种项目，例如C#，Ruby，Scala和其他语言编写的项目。Maven曾是Jakarta项目的子项目，现为由Apache软件基金会主持的独立Ap">
+<meta property="og:description" content="常见的java日志框架log4j 、logback、j.u.l(java.util.logging)  常见的java日志门面SLF4J、commons-logging 其中log4j、logback、SLF4J出自同一个作者(Ceki)，j.u.l是java原生库,但在java1.4中才被引用。 commons-logging出自Apache，用于桥接j.u.l和log4j。 Log4j：较早的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-21T02:26:45.969Z">
+<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/34b7de6f2937b2c98083b68f15e986b3cf2437b0/%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6%E6%97%B6%E9%97%B4%E5%9B%BE.jpg">
+<meta property="og:updated_time" content="2018-06-22T08:47:20.783Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Maven基础知识-1">
-<meta name="twitter:description" content="Apache Maven，是一个软件（特别是java软件)项目管理及自动构建工具，由Apache软件基金会所提供。基于项目对象模型（缩写：POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。 Maven也可被用于构建和管理各种项目，例如C#，Ruby，Scala和其他语言编写的项目。Maven曾是Jakarta项目的子项目，现为由Apache软件基金会主持的独立Ap">
+<meta name="twitter:title" content="java日志框架-1">
+<meta name="twitter:description" content="常见的java日志框架log4j 、logback、j.u.l(java.util.logging)  常见的java日志门面SLF4J、commons-logging 其中log4j、logback、SLF4J出自同一个作者(Ceki)，j.u.l是java原生库,但在java1.4中才被引用。 commons-logging出自Apache，用于桥接j.u.l和log4j。 Log4j：较早的">
+<meta name="twitter:image" content="https://github.com/qwbzjy/IMG/raw/34b7de6f2937b2c98083b68f15e986b3cf2437b0/%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6%E6%97%B6%E9%97%B4%E5%9B%BE.jpg">
 
 
 
@@ -124,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://ajwensome.com/2018/06/21/Maven基础知识-1/"/>
+  <link rel="canonical" href="http://ajwensome.com/2018/06/22/java日志框架-1/"/>
 
 
 
 
 
-  <title>Maven基础知识-1 | 勇敢的心</title>
+  <title>java日志框架-1 | 勇敢的心</title>
   
 
 
@@ -313,7 +315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ajwensome.com/2018/06/21/Maven基础知识-1/">
+    <link itemprop="mainEntityOfPage" href="http://ajwensome.com/2018/06/22/java日志框架-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ajwensome">
@@ -330,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Maven基础知识-1</h1>
+          <h1 class="post-title" itemprop="name headline">java日志框架-1</h1>
         
 
         <div class="post-meta">
@@ -342,8 +344,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-21T09:15:06+08:00">
-                2018-06-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-22T15:20:24+08:00">
+                2018-06-22
               </time>
             
 
@@ -383,9 +385,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/21/Maven基础知识-1/#comments" itemprop="discussionUrl">
+                <a href="/2018/06/22/java日志框架-1/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/06/21/Maven基础知识-1/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/06/22/java日志框架-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -393,7 +395,7 @@
 
           
           
-             <span id="/2018/06/21/Maven基础知识-1/" class="leancloud_visitors" data-flag-title="Maven基础知识-1">
+             <span id="/2018/06/22/java日志框架-1/" class="leancloud_visitors" data-flag-title="java日志框架-1">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -418,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,758
+                  2,241
                 </span>
               
 
@@ -434,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  10
                 </span>
               
             </div>
@@ -455,78 +457,41 @@
       
 
       
-        <p><strong>Apache Maven</strong>，是一个软件（特别是java软件)项目管理及自动构建工具，由Apache软件基金会所提供。基于项目对象模型（缩写：POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。</p>
-<p>Maven也可被用于构建和管理各种项目，例如<a href="https://zh.wikipedia.org/wiki/C%E2%99%AF" target="_blank" rel="noopener">C#</a>，<a href="https://zh.wikipedia.org/wiki/Ruby" target="_blank" rel="noopener">Ruby</a>，<a href="https://zh.wikipedia.org/wiki/Scala" target="_blank" rel="noopener">Scala</a>和其他语言编写的项目。Maven曾是<a href="https://zh.wikipedia.org/wiki/Jakarta%E9%A1%B9%E7%9B%AE" target="_blank" rel="noopener">Jakarta项目</a>的子项目，现为由Apache软件基金会主持的独立Apache项目。这是维基百科的解释。</p>
-<p>为了更直白的说明Maven的作用，直接举例进行说明，团队中某个人新导入了一个jar包，如果不用maven，那么他需要给团队中每个人拷贝一个jar包，并提示他们添加jar包到项目中；如果使用了maven，他只需要提示团队中的人更新一下pom.xml文件，maven会帮你把相关jar包都添加到项目中。</p>
-<h5 id="Maven的下载与安装"><a href="#Maven的下载与安装" class="headerlink" title="Maven的下载与安装"></a>Maven的下载与安装</h5><p>关于Maven的下载与安装直接谷歌搜索就可以解决，这里只需要注意maven安装完成后配置环境变量，并测试maven是否安装成功。判断maven是否安装成功直接进入到cmd命令窗口，输入mvn -v，观察是否显示maven的版本信息。(windows环境)</p>
-<h5 id="Maven中的坐标与仓库"><a href="#Maven中的坐标与仓库" class="headerlink" title="Maven中的坐标与仓库"></a>Maven中的坐标与仓库</h5><h5 id="Maven坐标"><a href="#Maven坐标" class="headerlink" title="Maven坐标"></a>Maven坐标</h5><ul>
-<li><p>groupId: 公司名字+项目名</p>
-</li>
-<li><p>artifactId: 项目名+模块名</p>
-</li>
-<li><p>version:版本号</p>
-<p>​    maven的世界中拥有数量非常巨大的构件，也就是平时用的一些jar,war等文件 。</p>
-<p>groupid和artifactId被统称为“坐标”是为了保证项目唯一性而提出的，如果你要把你项目弄到maven本地仓库去，你想要找到你的项目就必须根据这两个id去查找。groupId是项目组织唯一的标识符，实际对应JAVA的包的结构，是main目录里java的目录结构。groupId一般分为多个段，这里我只说两段，第一段为域，第二段为公司名称。域又分为org、com、cn等等许多，其中org为非营利组织，com为商业组织。举个apache公司的tomcat项目例子：这个项目的groupId是org.apache，它的域是org（因为tomcat是非营利项目），公司名称是apache，artigactId是tomcat。artifactId就是项目的唯一的标识符，实际对应项目的名称，就是项目根目录的名称。</p>
-<p>​    比如我创建一个项目，我一般会将groupId设置为com.ajwensome，cn表示域为中国，ajwensome是我个人姓名缩写，artifactId设置为testProj，表示你这个项目的名称是testProj，依照这个设置，你的包结构最好是com.ajwensome.testProj打头的，如果有个StudentDao，它的全路径就是com.ajwensome.testProj.dao.StudentDao 。</p>
-<h5 id="Maven仓库"><a href="#Maven仓库" class="headerlink" title="Maven仓库"></a>Maven仓库</h5><p>​    maven的仓库只有两大类：本地仓库和远程仓库，在远程仓库中又分成了3种：中央仓库、私服 、其它公共库 </p>
-<h6 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h6><p>​    顾名思义，就是Maven在本地存储构件的地方。</p>
-<p>注：maven的本地仓库，在安装maven后并不会创建，它是在第一次执行maven命令的时候才被创建</p>
-<p>maven本地仓库的默认位置：无论是Windows还是Linux，在用户的目录下都有一个.m2/repository/的仓库目录，这就是Maven仓库的默认位置。</p>
-<h6 id="中央仓库"><a href="#中央仓库" class="headerlink" title="中央仓库"></a>中央仓库</h6><p>​    远程仓库中最核心的是<strong>中央仓库</strong>开始，中央仓库是默认的远程仓库，maven在安装的时候，自带的就是中央仓库的配置。中央仓库包含了绝大多数流行的开源Java构件，以及源码、作者信息、SCM、信息、许可证信息等。一般来说，简单的Java项目依赖的构件都可以在这里下载到 。</p>
-<h6 id="私服"><a href="#私服" class="headerlink" title="私服"></a>私服</h6><p>​    私服是一种特殊的远程仓库，它是架设在局域网内的仓库服务，私服代理广域网上的远程仓库，供局域网内的Maven用户使用。当Maven需要下载构件的时候，它从私服请求，如果私服上不存在该构件，则从外部的远程仓库下载，缓存在私服上之后，再为Maven的下载请求提供服务。我们还可以把一些无法从外部仓库下载到的构件上传到私服上。 </p>
-<ul>
-<li>节省自己的外网带宽：减少重复请求造成的外网带宽消耗</li>
-<li>加速Maven构件：如果项目配置了很多外部远程仓库的时候，构建速度就会大大降低</li>
-<li>部署第三方构件：有些构件无法从外部仓库获得的时候，我们可以把这些构件部署到内部仓库(私服)中，供内部maven项目使用</li>
-<li>提高稳定性，增强控制：Internet不稳定的时候，maven构建也会变的不稳定，一些私服软件还提供了其他的功能</li>
-<li>降低中央仓库的负荷：maven中央仓库被请求的数量是巨大的，配置私服也可以大大降低中央仓库的压力</li>
-</ul>
-<p>当前主流的maven私服：</p>
-<ul>
-<li>Apache的Archiva</li>
-<li>JFrog的Artifactory</li>
-<li>Sonatype的Nexus</li>
-</ul>
-</li>
-</ul>
-<h5 id="Maven的生命周期"><a href="#Maven的生命周期" class="headerlink" title="Maven的生命周期"></a>Maven的生命周期</h5><p>​    完整的项目构建过程包括：清理、编译、测试、打包、集成测试、验证、部署。</p>
-<p>  clean       清理项目</p>
-<p>​                           1.pre-clean      执行清理前的工作</p>
-<p>​                           2.clean             清理上一次构建生成的所有文件</p>
-<p>​                           3.post-clean    执行清理后的文件</p>
-<p>  default 构建项目（最核心）</p>
-<p>​                           compile test package install</p>
-<p>  site  生成项目站点</p>
-<p>​                           1. pre-site       在生成项目站点前要完成的工作</p>
-<p>​                           2. site      生成项目的站点文档</p>
-<p>​                           3. post-site       在生成项目站点后要完成的工作</p>
-<p>  site-deploy  发布生成的站点到服务器上</p>
-<h5 id="Maven中pom-xml的常见元素"><a href="#Maven中pom-xml的常见元素" class="headerlink" title="Maven中pom.xml的常见元素"></a>Maven中pom.xml的常见元素</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;!--指定了当前pom的版本--&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">    &lt;groupId&gt;com.tiakon.maven.demo&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;HoictasStudio-MavenDemo01&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;!--</span><br><span class="line">        第一个0表示大版本号</span><br><span class="line">        第二个0表示分支版本号</span><br><span class="line">        第三个0表示小版本号</span><br><span class="line">        0.0.1</span><br><span class="line">        snapshot    快照</span><br><span class="line">        alpha       内部测试</span><br><span class="line">        beta        公测</span><br><span class="line">        Release     稳定</span><br><span class="line">        GA          正式发布</span><br><span class="line">    --&gt;</span><br><span class="line">    &lt;!--</span><br><span class="line">        打包方式:默认是jar,可选war、zip、pom</span><br><span class="line">        &lt;packaging&gt;&lt;/packaging&gt;</span><br><span class="line">    --&gt;</span><br><span class="line">    &lt;!--指定编码格式--&gt;</span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line">    &lt;!--</span><br><span class="line">        项目名</span><br><span class="line">        &lt;name&gt;&lt;/name&gt;</span><br><span class="line">        项目地址</span><br><span class="line">        &lt;url&gt;&lt;/url&gt;</span><br><span class="line">        项目描述</span><br><span class="line">        &lt;description&gt;&lt;/description&gt;</span><br><span class="line">        开发人员列表</span><br><span class="line">        &lt;developers&gt;&lt;/developers&gt;</span><br><span class="line">        许可证信息</span><br><span class="line">        &lt;licenses&gt;&lt;/licenses&gt;</span><br><span class="line">        组织信息</span><br><span class="line">        &lt;organization&gt;&lt;/organization&gt;</span><br><span class="line">    --&gt;</span><br><span class="line">&lt;!--依赖列表--&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;!--依赖项--&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;!--&lt;type&gt;&lt;/type&gt;--&gt;</span><br><span class="line">        &lt;!--依赖范围--&gt;</span><br><span class="line">        &lt;!--&lt;scope&gt;&lt;/scope&gt;--&gt;</span><br><span class="line">        &lt;!--设置依赖是否可选（默认）false--&gt;</span><br><span class="line">        &lt;!--&lt;optional&gt;&lt;/optional&gt;--&gt;</span><br><span class="line">        &lt;!--排斥依赖传递列表--&gt;</span><br><span class="line">        &lt;!--</span><br><span class="line">                &lt;exclusions&gt;</span><br><span class="line">                    &lt;exclusion&gt;</span><br><span class="line">                    &lt;/exclusion&gt;</span><br><span class="line">                &lt;/exclusions&gt;</span><br><span class="line">            --&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br><span class="line">&lt;!--依赖的管理，作用主要定义在父模块中，对子模块进行管理--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">        &lt;dependencyManagement&gt;</span><br><span class="line">            &lt;dependencies&gt;</span><br><span class="line">            &lt;/dependencies&gt;</span><br><span class="line">        &lt;/dependencyManagement&gt;</span><br><span class="line">    --&gt;</span><br><span class="line">&lt;!--对构件的行为提供相应的支持--&gt;</span><br><span class="line">&lt;build&gt;</span><br><span class="line">    &lt;!--插件列表--&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;maven-source-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.0.1&lt;/version&gt;</span><br><span class="line">            &lt;executions&gt;</span><br><span class="line">                &lt;execution&gt;</span><br><span class="line">                    &lt;phase&gt;package&lt;/phase&gt;</span><br><span class="line">                    &lt;goals&gt;</span><br><span class="line">                        &lt;goal&gt;</span><br><span class="line">                            jar-no-fork</span><br><span class="line">                        &lt;/goal&gt;</span><br><span class="line">                    &lt;/goals&gt;</span><br><span class="line">                &lt;/execution&gt;</span><br><span class="line">            &lt;/executions&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">    &lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br><span class="line">&lt;!--通常用于子模块对父模块pom的继承--&gt;</span><br><span class="line">&lt;!--&lt;parent&gt;&lt;/parent&gt;--&gt;</span><br><span class="line">&lt;!--用来聚合运行Maven项目，指定多个模块一起编译--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">        &lt;modules&gt;</span><br><span class="line">            &lt;module&gt;&lt;/module&gt;</span><br><span class="line">        &lt;/modules&gt;</span><br><span class="line">    --&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="Maven的依赖范围"><a href="#Maven的依赖范围" class="headerlink" title="Maven的依赖范围"></a>Maven的依赖范围</h5><p>maven提供了6种可选依赖范围 </p>
+        <h5 id="常见的java日志框架"><a href="#常见的java日志框架" class="headerlink" title="常见的java日志框架"></a>常见的java日志框架</h5><p>log4j 、logback、j.u.l(java.util.logging)</p>
 <ol>
-<li>compile:    默认范围，编译测试运行都有效。</li>
-<li><p>provided:    在编译和测试时有效。（比如说在做 web 时，你在本地运行的 servlet ，是需要调用已添加到项目中的 servlet-api.jar 这个 jar 包的。这个过程就包含了编译【就是把 Java 文件编译成 class 文件的过程中也要调用】和测试【测试就是在本地运行】，那么他说的运行是指，整个项目已开发完成，编译、测试通过后，将 class 文件或包含有 class 文件的 war 包发布到服务器上的 Tomcat 中运行，这时启动项目，就可以直接调 Tomcat 中的 servlet-api.jar ，不必再将自己的 jar 包添加到项目中去。也就是说当你选择 provided 时，项目发布时 Maven 不会将你添加的 jar 包，加入到项目中。）</p>
+<li><h6 id="常见的java日志门面"><a href="#常见的java日志门面" class="headerlink" title="常见的java日志门面"></a>常见的java日志门面</h6><p>SLF4J、commons-logging</p>
+<p>其中log4j、logback、SLF4J出自同一个作者(Ceki)，j.u.l是java原生库,但在java1.4中才被引用。</p>
+<p>commons-logging出自Apache，用于桥接j.u.l和log4j。</p>
+<p>Log4j：较早的日志系统，可以单独使用，也可配合日志框架JCL使用</p>
+<p>Logback：Log4j的替代产品，需要配合日志框架SLF4j使用</p>
+<p>JUL(Java.util.logging)：JDK提供的日志系统，较混乱，不常用  </p>
+<p>常用的组合方式： slf4j+logback、    JCL+log4j </p>
+<p><img src="https://github.com/qwbzjy/IMG/raw/34b7de6f2937b2c98083b68f15e986b3cf2437b0/%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6%E6%97%B6%E9%97%B4%E5%9B%BE.jpg" alt="日志组件的时间图"></p>
 </li>
-<li><p>runtime:    在测试和运行时有效。(典型例子：JDBC驱动的实现。)</p>
+<li><h6 id="日志框架与日志门面"><a href="#日志框架与日志门面" class="headerlink" title="日志框架与日志门面"></a>日志框架与日志门面</h6><p>​    日志门面的目的就是在任何日志实现框架之间随意切换，而不需要改动一行代码。 所以如果你的代码中使用了slf4j-api打印日志。你可以通过更换适配包实现，更好不同的日志框架。 </p>
 </li>
-<li>test:   只在测试是有效。</li>
-<li>system:  类似 provided，与本机系统相关联，可移植性差。</li>
-<li>import: 导入范围，他只是用在 dependencyManagement 中，表示从其他的 pom 中导入dependecy的配置。 </li>
+<li><h6 id="log4j简介"><a href="#log4j简介" class="headerlink" title="log4j简介"></a>log4j简介</h6><p>​    Log4j是Apache的一个开放源代码项目，通过使用Log4j，我们可以控制日志信息输送的目的地是控制台、文件等；我们也可以控制每一条日志的输出格式；通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程，从而帮助我们更好的去管理我们的代码。</p>
+<ul>
+<li><p>log4j三大组件</p>
+<p>​    日志信息的优先级、日志信息的输出目的地、日志信息的输出格式组成了log4j的三大组件。日志信息的优先级由高到低：OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL等，其中比较常用的是ERROR、WARN、INFO、DEBUG。如果讲日志输出级别定义为info，那么程序中日志输出级别为debug的日志都不会输出。日志输出目的地一般为控制台或文件；日志输出格式规定了日志内容以何种格式进行显示。</p>
+</li>
+<li><p>log4j的配置方式</p>
+<p>​    log4j支持两种配置方式，一是是在代码中进行配置；一种是使用配置文件进行配置，配置文件又有两种文件格式，xml格式和properties格式。下面介绍一下两种格式的配置文件。</p>
+<p>参考链接：<a href="https://blog.csdn.net/guoquanyou/article/details/5689652" target="_blank" rel="noopener">log4j输出控制格式</a></p>
+<ul>
+<li>properties配置文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">properties格式配置，先看一下我的项目中的日志是什么样子，properties格式就是配置文件名的后缀为properties。</span><br><span class="line">log4j.rootLogger=INFO,Console,File</span><br><span class="line">#log4j.rootLogger=INFO,File</span><br><span class="line">log4j.appender.Console=org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.Console.Target=System.out</span><br><span class="line">log4j.appender.Console.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.Console.layout.ConversionPattern=%d %5p [$&#123;appid&#125; %X&#123;reqno&#125;] [%t] [%C&#123;2&#125;:%L] %m%n</span><br><span class="line">#log4j.appender.Console.layout.ConversionPattern=%d %5p [%t] [%C&#123;2&#125;:%L] %m%n</span><br><span class="line"></span><br><span class="line">log4j.appender.File=org.apache.log4j.DailyRollingFileAppender</span><br><span class="line">log4j.appender.File.Threshold=debug</span><br><span class="line">log4j.appender.File.DatePattern=&apos;-&apos;yyyy-MM-dd&apos;.log&apos;</span><br><span class="line">log4j.appender.File.File=$&#123;catalina.base&#125;/logs/casc-test-dev-log/casc-test.log</span><br><span class="line">log4j.appender.File.Append=true</span><br><span class="line">log4j.appender.File.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.File.layout.ConversionPattern=%d %5p [$&#123;appid&#125; %X&#123;reqno&#125;] [%t] [%C&#123;2&#125;:%L] %m%n</span><br><span class="line">================</span><br><span class="line">log4j.rootLogger=INFO,Console,File   #指定日志级别为info，指定日志信息输出到哪个地方</span><br><span class="line"></span><br><span class="line">log4j.appender.Console=org.apache.log4j.ConsoleAppender #输出的目的地为控制台</span><br><span class="line"></span><br><span class="line">log4j.appender.Console.Target=System.out  #就是把日志输出到系统标准输出设备上，默认就是这个值</span><br><span class="line"></span><br><span class="line">log4j.appender.Console.layout=org.apache.log4j.PatternLayout  ##配置输出格式的布局（可以灵活地指定布局模式）</span><br><span class="line"></span><br><span class="line">log4j.appender.Console.layout.ConversionPattern=%d %5p [$&#123;appid&#125; %X&#123;reqno&#125;] [%t][%C&#123;2&#125;:%L] %m%n  </span><br><span class="line">#指定日志的输出格式，逐一进行介绍</span><br><span class="line">#%d 输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d&#123;yyy MMM dd HH:mm:ss , SSS&#125;，%d&#123;ABSOLUTE&#125;，%d&#123;DATE&#125;  </span><br><span class="line">#%5p  因为日志级别分别有error,warn,info,debug,fatal5种，有些是5个字母的，有些是4个字母的，如果直接写%p就会对不齐，%-5p的意思是日志级别输出左对齐，右边以空格填充，%5p的意思是日志级别输出右对齐，左边以空格填充.</span><br><span class="line">$&#123;appid&#125; 获取变量的值</span><br><span class="line">%X  按MDC（Mapped Diagnostic Context，线程映射表）输出日志。通常用于多个客户端连接同一台服务器，方便服务器区分是那个客户端访问留下来的日志。</span><br><span class="line">#%t 输出产生该日志事件的线程名  </span><br><span class="line">#%C 输出Logger所在类的名称，通常就是所在类的全名  </span><br><span class="line">#%L 输出语句所在的行数，只输出数字  </span><br><span class="line">#%m 输出代码中指定的讯息，如log(message)中的message  </span><br><span class="line">#%n 输出一个回车换行符，Windows平台为“/r/n”，Unix平台为“/n”  </span><br><span class="line"></span><br><span class="line">截取项目中的部分日志：</span><br><span class="line">2018-06-22 05:03:05,007  INFO [service 44fba5f3c35a450a8d03d596a3750c9d] [DubboServerHandler-10.33.1.15:20880-thread-1368] [util.HttpRequestSimple:69] postSendHttp url:[https://traderapi.ajwensomepay.com/traderAcctQuery.htm] , body: [&#123;&quot;oid_partner&quot;:&quot;2014080612711&quot;,&quot;sign&quot;:&quot;lvk9lp1BzF2vqe0T1QrOT1bOWqNYCSjqqpdA0bBU8wIEM5HlcIunmxVISd6MEOV1XN5LXq7/8nB7UFe8TWfO8DscG3QjnBvJN//3/GYS8+YnC9IN7EkK2fnRLORPJiU=&quot;,&quot;sign_type&quot;:&quot;des&quot;&#125;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>xml配置文件</li>
+</ul>
+<p>参考链接：<a href="https://www.cnblogs.com/godtrue/p/6444158.html" target="_blank" rel="noopener">log4j-xml配置</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE log4j:configuration SYSTEM &quot;log4j.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;log4j:configuration&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 将日志信息输出到控制台 --&gt;</span><br><span class="line">    &lt;appender name=&quot;ConsoleAppender&quot; class=&quot;org.apache.log4j.ConsoleAppender&quot;&gt;</span><br><span class="line">        &lt;!-- 设置日志输出的样式 --&gt;</span><br><span class="line">        &lt;layout class=&quot;org.apache.log4j.PatternLayout&quot;&gt;</span><br><span class="line">            &lt;!-- 设置日志输出的格式 --&gt;</span><br><span class="line">            &lt;param name=&quot;ConversionPattern&quot; value=&quot;[%d&#123;yyyy-MM-dd HH:mm:ss:SSS&#125;] [%-5p] [method:%l]%n%m%n%n&quot; /&gt;</span><br><span class="line">        &lt;/layout&gt;</span><br><span class="line">        &lt;!--过滤器设置输出的级别--&gt;</span><br><span class="line">        &lt;filter class=&quot;org.apache.log4j.varia.LevelRangeFilter&quot;&gt;</span><br><span class="line">            &lt;!-- 设置日志输出的最小级别 --&gt;</span><br><span class="line">            &lt;param name=&quot;levelMin&quot; value=&quot;WARN&quot; /&gt;</span><br><span class="line">            &lt;!-- 设置日志输出的最大级别 --&gt;</span><br><span class="line">            &lt;param name=&quot;levelMax&quot; value=&quot;ERROR&quot; /&gt;</span><br><span class="line">            &lt;!-- 设置日志输出的xxx，默认是false --&gt;</span><br><span class="line">            &lt;param name=&quot;AcceptOnMatch&quot; value=&quot;true&quot; /&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 将日志信息输出到文件，但是当文件的大小达到某个阈值的时候，日志文件会自动回滚 --&gt;</span><br><span class="line">    &lt;appender name=&quot;RollingFileAppender&quot; class=&quot;org.apache.log4j.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;!-- 设置日志信息输出文件全路径名 --&gt;</span><br><span class="line">        &lt;param name=&quot;File&quot; value=&quot;D:/log4j/RollingFileAppender.log&quot; /&gt;</span><br><span class="line">        &lt;!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 --&gt;</span><br><span class="line">        &lt;param name=&quot;Append&quot; value=&quot;true&quot; /&gt;</span><br><span class="line">        &lt;!-- 设置保存备份回滚日志的最大个数 --&gt;</span><br><span class="line">        &lt;param name=&quot;MaxBackupIndex&quot; value=&quot;10&quot; /&gt;</span><br><span class="line">        &lt;!-- 设置当日志文件达到此阈值的时候自动回滚，单位可以是KB，MB，GB，默认单位是KB --&gt;</span><br><span class="line">        &lt;param name=&quot;MaxFileSize&quot; value=&quot;10KB&quot; /&gt;</span><br><span class="line">        &lt;!-- 设置日志输出的样式 --&gt;</span><br><span class="line">        &lt;layout class=&quot;org.apache.log4j.PatternLayout&quot;&gt;</span><br><span class="line">            &lt;!-- 设置日志输出的格式 --&gt;</span><br><span class="line">            &lt;param name=&quot;ConversionPattern&quot; value=&quot;[%d&#123;yyyy-MM-dd HH:mm:ss:SSS&#125;] [%-5p] [method:%l]%n%m%n%n&quot; /&gt;</span><br><span class="line">        &lt;/layout&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 将日志信息输出到文件，可以配置多久产生一个新的日志信息文件 --&gt;</span><br><span class="line">    &lt;appender name=&quot;DailyRollingFileAppender&quot; class=&quot;org.apache.log4j.DailyRollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;!-- 设置日志信息输出文件全路径名 --&gt;</span><br><span class="line">        &lt;param name=&quot;File&quot; value=&quot;D:/log4j/DailyRollingFileAppender.log&quot; /&gt;</span><br><span class="line">        &lt;!-- 设置日志每分钟回滚一次，即产生一个新的日志文件 --&gt;</span><br><span class="line">        &lt;param name=&quot;DatePattern&quot; value=&quot;&apos;.&apos;yyyy-MM-dd-HH-mm&apos;.log&apos;&quot; /&gt;</span><br><span class="line">        &lt;!-- 设置日志输出的样式 --&gt;</span><br><span class="line">        &lt;layout class=&quot;org.apache.log4j.PatternLayout&quot;&gt;</span><br><span class="line">            &lt;!-- 设置日志输出的格式 --&gt;</span><br><span class="line">            &lt;param name=&quot;ConversionPattern&quot; value=&quot;[%d&#123;yyyy-MM-dd HH:mm:ss:SSS&#125;] [%-5p] [method:%l]%n%m%n%n&quot; /&gt;</span><br><span class="line">        &lt;/layout&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!--</span><br><span class="line">     注意：</span><br><span class="line">     1：当additivity=&quot;false&quot;时，root中的配置就失灵了，不遵循缺省的继承机制</span><br><span class="line">     2：logger中的name非常重要，它代表记录器的包的形式，有一定的包含关系，试验表明</span><br><span class="line">        2-1：当定义的logger的name同名时，只有最后的那一个才能正确的打印日志</span><br><span class="line">        2-2：当对应的logger含有包含关系时，比如：name=test.log4j.test8 和 name=test.log4j.test8.UseLog4j，则2-1的情况是一样的</span><br><span class="line">        2-3：logger的name表示所有的包含在此名的所有记录器都遵循同样的配置，name的值中的包含关系是指记录器的名称哟！注意啦！</span><br><span class="line">     3：logger中定义的level和appender中的filter定义的level的区间取交集</span><br><span class="line">     4：如果appender中的filter定义的 levelMin &gt; levelMax ，则打印不出日志信息</span><br><span class="line">     --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 指定logger的设置，additivity指示是否遵循缺省的继承机制--&gt;</span><br><span class="line">    &lt;logger name=&quot;test.log4j.test8.UseLog4j&quot; additivity=&quot;false&quot;&gt;</span><br><span class="line">        &lt;level value =&quot;WARN&quot;/&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;DailyRollingFileAppender&quot;/&gt;</span><br><span class="line">    &lt;/logger&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--指定logger的设置，additivity指示是否遵循缺省的继承机制 --&gt;</span><br><span class="line">    &lt;logger name=&quot;test.log4j.test8.UseLog4j_&quot; additivity=&quot;false&quot;&gt;</span><br><span class="line">        &lt;level value =&quot;ERROR&quot;/&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;RollingFileAppender&quot;/&gt;</span><br><span class="line">    &lt;/logger&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 根logger的设置--&gt;</span><br><span class="line">    &lt;root&gt;</span><br><span class="line">        &lt;level value =&quot;INFO&quot;/&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;ConsoleAppender&quot;/&gt;</span><br><span class="line">        &lt;!--&lt;appender-ref ref=&quot;DailyRollingFileAppender&quot;/&gt;--&gt;</span><br><span class="line">    &lt;/root&gt;</span><br><span class="line"></span><br><span class="line">&lt;/log4j:configuration&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>​    其实之前就整理过，今天想把以前的笔记拿出来整理到博客中，结果找了半天都没找到，说明平时的学习过程中对于笔记的整理存放都存在问题，不能随手一放，时间长了，你根本就不知道放到哪里了，等到下次找的时候很费事。还是写博客好，直接在浏览器中输入域名，就找到了，高效快捷，希望自己能一直坚持下去。多读书，多思考，多写博客。</p>
+</li>
+</ul>
+</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;project&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">    &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;B&lt;/artifactId&gt;</span><br><span class="line">    &lt;packaging&gt;pom&lt;/packaging&gt;</span><br><span class="line">    &lt;name&gt;B&lt;/name&gt;</span><br><span class="line">    &lt;version&gt;1.0&lt;/version&gt;</span><br><span class="line">    &lt;dependencyManagement&gt;</span><br><span class="line">        &lt;dependencies&gt;</span><br><span class="line">            &lt;dependency&gt;</span><br><span class="line">                &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;A&lt;/artifactId&gt;</span><br><span class="line">                &lt;version&gt;1.0&lt;/version&gt;</span><br><span class="line">                &lt;type&gt;pom&lt;/type&gt;</span><br><span class="line">                &lt;scope&gt;import&lt;/scope&gt;</span><br><span class="line">            &lt;/dependency&gt;</span><br><span class="line">            &lt;dependency&gt;</span><br><span class="line">                &lt;groupId&gt;test&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;d&lt;/artifactId&gt;</span><br><span class="line">                &lt;version&gt;1.0&lt;/version&gt;</span><br><span class="line">            &lt;/dependency&gt;</span><br><span class="line">        &lt;/dependencies&gt;</span><br><span class="line">    &lt;/dependencyManagement&gt;</span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;test&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;a&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.0&lt;/version&gt;</span><br><span class="line">            &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;test&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;c&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="Maven依赖冲突"><a href="#Maven依赖冲突" class="headerlink" title="Maven依赖冲突"></a>Maven依赖冲突</h5><ol>
-<li>短路优先:</li>
-</ol>
-<p>​         C-&gt;B-&gt;A-&gt;X1(jar)</p>
-<p>​         C-&gt;B-&gt;X2(jar)</p>
-<p>   【C依赖B,B依赖A,A和B都包含同一个不同版本的Jar,则取B的依赖版本。（c的pom.xml中不必注明jar坐标）】</p>
-<ol>
-<li>先声明先优先</li>
-</ol>
-<p>​         如果路径相同长度相同，则谁先声明，先解析谁。</p>
-<p>   【C依赖A和B,A和B都包含同一个不同版本的Jar,谁依赖在前取谁的依赖版本。】</p>
-<h5 id="Maven的聚合与继承"><a href="#Maven的聚合与继承" class="headerlink" title="Maven的聚合与继承"></a>Maven的聚合与继承</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#聚合</span><br><span class="line">&lt;packaging&gt;pom&lt;/packaging&gt;</span><br><span class="line">&lt;modules&gt;</span><br><span class="line">    &lt;module&gt;../HoictasStudio-MavenDemo01&lt;/module&gt;</span><br><span class="line">    &lt;module&gt;../HoictasStudio-MavenDemo02&lt;/module&gt;</span><br><span class="line">    &lt;module&gt;../HoictasStudio-MavenDemo03&lt;/module&gt;</span><br><span class="line">&lt;/modules&gt;</span><br><span class="line"></span><br><span class="line">#继承</span><br><span class="line">继承会根据父模块与子模块的包含与否，对pom.xml的写法则有两种。</span><br><span class="line">my-app模块：</span><br><span class="line">&lt;project&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">  &lt;groupId&gt;com.mycompany.app&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;my-app&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1&lt;/version&gt;</span><br><span class="line">&lt;/project&gt;</span><br><span class="line">my-module模块：</span><br><span class="line">&lt;project&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">  &lt;groupId&gt;com.mycompany.app&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;my-module&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1&lt;/version&gt;</span><br><span class="line">&lt;/project&gt;</span><br><span class="line"></span><br><span class="line">假设my-module模块去继承my-app模块</span><br><span class="line">第一种写法：</span><br><span class="line">&lt;project&gt;</span><br><span class="line">	  &lt;parent&gt;</span><br><span class="line">	    &lt;groupId&gt;com.mycompany.app&lt;/groupId&gt;</span><br><span class="line">	    &lt;artifactId&gt;my-app&lt;/artifactId&gt;</span><br><span class="line">	    &lt;version&gt;1&lt;/version&gt;</span><br><span class="line">	  &lt;/parent&gt;</span><br><span class="line">	  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">	  &lt;groupId&gt;com.mycompany.app&lt;/groupId&gt;</span><br><span class="line">	  &lt;artifactId&gt;my-module&lt;/artifactId&gt;</span><br><span class="line">	  &lt;version&gt;1&lt;/version&gt;</span><br><span class="line">&lt;/project&gt;</span><br><span class="line">第二种写法：</span><br><span class="line">&lt;project&gt;</span><br><span class="line">		  &lt;parent&gt;</span><br><span class="line">		    &lt;groupId&gt;com.mycompany.app&lt;/groupId&gt;</span><br><span class="line">		    &lt;artifactId&gt;my-app&lt;/artifactId&gt;</span><br><span class="line">		    &lt;version&gt;1&lt;/version&gt;</span><br><span class="line">		    &lt;relativePath&gt;../parent/pom.xml&lt;/relativePath&gt;</span><br><span class="line">		  &lt;/parent&gt;</span><br><span class="line">		  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">		  &lt;artifactId&gt;my-module&lt;/artifactId&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
-<p>这是前段时间我在做项目的过程中，记录的maven的工作笔记，暂时先整理这么多，后续再完善补充。</p>
 
       
     </div>
@@ -582,7 +547,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Maven系列/" rel="tag"><i class="fa fa-tag"></i> Maven系列</a>
+            <a href="/tags/java日志框架/" rel="tag"><i class="fa fa-tag"></i> java日志框架</a>
           
         </div>
       
@@ -595,8 +560,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/20/git常用命令-2/" rel="next" title="git常用命令-2">
-                <i class="fa fa-chevron-left"></i> git常用命令-2
+              <a href="/2018/06/21/linux系统目录结构-3/" rel="next" title="linux系统目录结构-3">
+                <i class="fa fa-chevron-left"></i> linux系统目录结构-3
               </a>
             
           </div>
@@ -604,10 +569,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/21/linux系统目录结构-3/" rel="prev" title="linux系统目录结构-3">
-                linux系统目录结构-3 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -795,7 +756,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Maven的下载与安装"><span class="nav-number">1.</span> <span class="nav-text">Maven的下载与安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Maven中的坐标与仓库"><span class="nav-number">2.</span> <span class="nav-text">Maven中的坐标与仓库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Maven坐标"><span class="nav-number">3.</span> <span class="nav-text">Maven坐标</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Maven仓库"><span class="nav-number">4.</span> <span class="nav-text">Maven仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#本地仓库"><span class="nav-number">4.1.</span> <span class="nav-text">本地仓库</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#中央仓库"><span class="nav-number">4.2.</span> <span class="nav-text">中央仓库</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#私服"><span class="nav-number">4.3.</span> <span class="nav-text">私服</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Maven的生命周期"><span class="nav-number">5.</span> <span class="nav-text">Maven的生命周期</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Maven中pom-xml的常见元素"><span class="nav-number">6.</span> <span class="nav-text">Maven中pom.xml的常见元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Maven的依赖范围"><span class="nav-number">7.</span> <span class="nav-text">Maven的依赖范围</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Maven依赖冲突"><span class="nav-number">8.</span> <span class="nav-text">Maven依赖冲突</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Maven的聚合与继承"><span class="nav-number">9.</span> <span class="nav-text">Maven的聚合与继承</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#常见的java日志框架"><span class="nav-number">1.</span> <span class="nav-text">常见的java日志框架</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#常见的java日志门面"><span class="nav-number">1.1.</span> <span class="nav-text">常见的java日志门面</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#日志框架与日志门面"><span class="nav-number">1.2.</span> <span class="nav-text">日志框架与日志门面</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#log4j简介"><span class="nav-number">1.3.</span> <span class="nav-text">log4j简介</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -986,9 +947,9 @@ var jiathis_config={
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://ajwensome.com/2018/06/21/Maven基础知识-1/';
-          this.page.identifier = '2018/06/21/Maven基础知识-1/';
-          this.page.title = 'Maven基础知识-1';
+          this.page.url = 'http://ajwensome.com/2018/06/22/java日志框架-1/';
+          this.page.identifier = '2018/06/22/java日志框架-1/';
+          this.page.title = 'java日志框架-1';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
