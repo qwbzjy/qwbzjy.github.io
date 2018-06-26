@@ -83,29 +83,20 @@
 
 
 
-<meta name="description" content="​    由于工作初期主要做的是清结算系统，主要写一些对接第三方支付渠道的接口，进而对支付系统中的资金流的来龙去脉产生了很多疑惑，很多平常我们看起来很简单的一个支付过程，其实包含了很多细节。下面主要以国内支付行业的两大巨头为例，提出我的疑问。  微信支付，QQ钱包和财付通的关系是什么？​    平常我们使用最多的社交媒体就是微信和QQ了，微信融入了微信支付，QQ融入了QQ钱包。财付通是腾讯旗下的一">
+<meta name="description" content="今天感觉运气很好，在知乎上发现了两篇我认为写的特别好的文章，文章内容是关于互联网支付行业的。因为我目前做的项目是关于资金清结算的，主要是写一些对接业务方(比如某些网上商城)和第三方支付机构的接口，说白了，就是业务方把参数传给你，我拿到后，做一些校验、与数据库做一些交互、数据加密、数据解密等。整个业务逻辑并不复杂。但是我这个人对什么都很好奇，竟然是做有关支付的东西，那么就得把这个东西的来龙去脉搞清楚">
 <meta name="keywords" content="互联网金融基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="互联网金融基础(二)">
-<meta property="og:url" content="http://ajwensome.com/2018/06/19/互联网金融基础-二/index.html">
+<meta property="og:title" content="互联网金融基础-四">
+<meta property="og:url" content="http://ajwensome.com/2018/06/26/互联网金融基础-四/index.html">
 <meta property="og:site_name" content="勇敢的心">
-<meta property="og:description" content="​    由于工作初期主要做的是清结算系统，主要写一些对接第三方支付渠道的接口，进而对支付系统中的资金流的来龙去脉产生了很多疑惑，很多平常我们看起来很简单的一个支付过程，其实包含了很多细节。下面主要以国内支付行业的两大巨头为例，提出我的疑问。  微信支付，QQ钱包和财付通的关系是什么？​    平常我们使用最多的社交媒体就是微信和QQ了，微信融入了微信支付，QQ融入了QQ钱包。财付通是腾讯旗下的一">
+<meta property="og:description" content="今天感觉运气很好，在知乎上发现了两篇我认为写的特别好的文章，文章内容是关于互联网支付行业的。因为我目前做的项目是关于资金清结算的，主要是写一些对接业务方(比如某些网上商城)和第三方支付机构的接口，说白了，就是业务方把参数传给你，我拿到后，做一些校验、与数据库做一些交互、数据加密、数据解密等。整个业务逻辑并不复杂。但是我这个人对什么都很好奇，竟然是做有关支付的东西，那么就得把这个东西的来龙去脉搞清楚">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%94%AF%E4%BB%98.jpg">
-<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%85%AC%E4%BC%97%E5%8F%B7%E6%94%AF%E4%BB%982.jpg">
-<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E6%94%AF%E4%BB%983.jpg">
-<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E6%89%AB%E7%A0%81%E6%94%AF%E4%BB%984.jpg">
-<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1app%E6%94%AF%E4%BB%985.jpg">
-<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A81.jpg">
-<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A82.jpg">
-<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A83.jpg">
-<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%87%A0%E7%A7%8D%E6%94%AF%E4%BB%98%E7%9A%84%E5%8C%BA%E5%88%AB.jpg">
-<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E6%94%AF%E4%BB%98%E5%AE%9Dh5%E6%94%AF%E4%BB%98.jpg">
-<meta property="og:updated_time" content="2018-06-19T01:56:43.831Z">
+<meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/master/account.jpg">
+<meta property="og:updated_time" content="2018-06-26T07:04:43.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="互联网金融基础(二)">
-<meta name="twitter:description" content="​    由于工作初期主要做的是清结算系统，主要写一些对接第三方支付渠道的接口，进而对支付系统中的资金流的来龙去脉产生了很多疑惑，很多平常我们看起来很简单的一个支付过程，其实包含了很多细节。下面主要以国内支付行业的两大巨头为例，提出我的疑问。  微信支付，QQ钱包和财付通的关系是什么？​    平常我们使用最多的社交媒体就是微信和QQ了，微信融入了微信支付，QQ融入了QQ钱包。财付通是腾讯旗下的一">
-<meta name="twitter:image" content="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%94%AF%E4%BB%98.jpg">
+<meta name="twitter:title" content="互联网金融基础-四">
+<meta name="twitter:description" content="今天感觉运气很好，在知乎上发现了两篇我认为写的特别好的文章，文章内容是关于互联网支付行业的。因为我目前做的项目是关于资金清结算的，主要是写一些对接业务方(比如某些网上商城)和第三方支付机构的接口，说白了，就是业务方把参数传给你，我拿到后，做一些校验、与数据库做一些交互、数据加密、数据解密等。整个业务逻辑并不复杂。但是我这个人对什么都很好奇，竟然是做有关支付的东西，那么就得把这个东西的来龙去脉搞清楚">
+<meta name="twitter:image" content="https://github.com/qwbzjy/IMG/raw/master/account.jpg">
 
 
 
@@ -135,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://ajwensome.com/2018/06/19/互联网金融基础-二/"/>
+  <link rel="canonical" href="http://ajwensome.com/2018/06/26/互联网金融基础-四/"/>
 
 
 
 
 
-  <title>互联网金融基础(二) | 勇敢的心</title>
+  <title>互联网金融基础-四 | 勇敢的心</title>
   
 
 
@@ -324,7 +315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ajwensome.com/2018/06/19/互联网金融基础-二/">
+    <link itemprop="mainEntityOfPage" href="http://ajwensome.com/2018/06/26/互联网金融基础-四/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ajwensome">
@@ -341,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">互联网金融基础(二)</h1>
+          <h1 class="post-title" itemprop="name headline">互联网金融基础-四</h1>
         
 
         <div class="post-meta">
@@ -353,8 +344,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T09:35:08+08:00">
-                2018-06-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T14:20:00+08:00">
+                2018-06-26
               </time>
             
 
@@ -394,9 +385,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/19/互联网金融基础-二/#comments" itemprop="discussionUrl">
+                <a href="/2018/06/26/互联网金融基础-四/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/06/19/互联网金融基础-二/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/06/26/互联网金融基础-四/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -404,7 +395,7 @@
 
           
           
-             <span id="/2018/06/19/互联网金融基础-二/" class="leancloud_visitors" data-flag-title="互联网金融基础(二)">
+             <span id="/2018/06/26/互联网金融基础-四/" class="leancloud_visitors" data-flag-title="互联网金融基础-四">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -429,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  812
+                  4,575
                 </span>
               
 
@@ -445,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  15
                 </span>
               
             </div>
@@ -466,26 +457,90 @@
       
 
       
-        <p>​    由于工作初期主要做的是清结算系统，主要写一些对接第三方支付渠道的接口，进而对支付系统中的资金流的来龙去脉产生了很多疑惑，很多平常我们看起来很简单的一个支付过程，其实包含了很多细节。下面主要以国内支付行业的两大巨头为例，提出我的疑问。</p>
-<hr>
-<h5 id="微信支付，QQ钱包和财付通的关系是什么？"><a href="#微信支付，QQ钱包和财付通的关系是什么？" class="headerlink" title="微信支付，QQ钱包和财付通的关系是什么？"></a>微信支付，QQ钱包和财付通的关系是什么？</h5><p>​    平常我们使用最多的社交媒体就是微信和QQ了，微信融入了微信支付，QQ融入了QQ钱包。财付通是腾讯旗下的一家独立公司，开放接口给微信支付和QQ钱包，微信，财付通，QQ钱包都是独立的三个团队，独立结算。</p>
-<p>​    从支付的本质讲，完成支付转移的是财付通，因为财付通拥有支付牌照，而微信支付和QQ钱包都没有支付牌照，微信端和QQ钱包端完成的是前端业务场景，支付转移系统等后台处理实际上是由财付通完成的。资金的清结算走的是财付通，微信支付和QQ钱包只是一个支付渠道，可以理解为收单机构，然后对接财付通结算。</p>
-<hr>
-<h5 id="日常生活中我们使用微信或支付宝支付，有很多应用场景"><a href="#日常生活中我们使用微信或支付宝支付，有很多应用场景" class="headerlink" title="日常生活中我们使用微信或支付宝支付，有很多应用场景:"></a>日常生活中我们使用微信或支付宝支付，有很多应用场景:</h5><p>​    场景一：超市购物的时候，我们使用微信或支付宝的付款码，超市收银员使用扫码枪扫码，其实就是一种刷卡支付方式；场景二：有时候我们使用微信扫一扫功能，扫描商家的二维码进行扫码支付；场景三：我们使用美团订外卖，支付订单的时候使用微信或支付宝支付，从美团app跳转到微信app进行支付等等，面对如此多的应用场景，我们应该怎么去区分呢？</p>
-<p>​    以微信支付进行说明，通常微信支付有四种方式，刷卡支付、公众号支付、扫码支付、app支付。</p>
-<p>官方定义：</p>
+        <p>今天感觉运气很好，在知乎上发现了两篇我认为写的特别好的文章，文章内容是关于互联网支付行业的。因为我目前做的项目是关于资金清结算的，主要是写一些对接业务方(比如某些网上商城)和第三方支付机构的接口，说白了，就是业务方把参数传给你，我拿到后，做一些校验、与数据库做一些交互、数据加密、数据解密等。整个业务逻辑并不复杂。但是我这个人对什么都很好奇，竟然是做有关支付的东西，那么就得把这个东西的来龙去脉搞清楚，其实说实话，这些都是产品经理做的事情。刚开始的熟悉业务的时候，我主要是通过对日常生活中的一些场景进行熟悉，比如平常给支付宝、微信充值，提现，转账，这些过程中资金到底是怎么流动的；还有我们在用美团和饿了吗定外卖的时候，下单的时候可以选择美团支付、银联支付、微信支付、支付宝支付，我会想：用户、商家、美团平台、支付宝，这几方到底有什么关系。然后，我不断的在网上找资料，看一些互联网产品经理的博客(看的比较多的是知乎大v梁川老师)，买一些互联网金融的一些书(比如图解金融)。看的越多，感觉自己不会的东西越多，但是我会慢慢把我理解写道博客中，不断的复习，思考，相信一定会把这些东西弄得明明白白。</p>
+<p>首先贴出今天看到的一篇文章的链接：<a href="https://zhuanlan.zhihu.com/p/23808925" target="_blank" rel="noopener">第三方支付架构之-账户体系</a></p>
+<p>看了这篇文章，感觉自己对互联网支付中的一些账户的概念更清晰了，从而让我对互联网支付的一些业务流程有了更清晰的认识。</p>
+<p>其实有关互联网账户体系的设计，归根到底其实是运用了会计学原理一书的知识，以后抽时间系统看一看这本书，到时候再整理到博客中。其实面对一门新的东西，我一点都不害怕，这与我的一次经历有很大的关系，过段时间专门写一篇文章，介绍一下我自己，哈哈，埋个伏笔。下面介绍一下这篇文章的主要内容：</p>
+<h4 id="账户"><a href="#账户" class="headerlink" title="账户"></a>账户</h4><p>​    从会计学上来看，账户是根据会计科目设置的，具有一定格式和结构，用于分类反馈会计要素增加变动情况及其结果的载体。设置账户是会计核算的重要方法之一。 从会计学上来看，账户是根据会计科目设置的，具有一定格式和结构，用于分类反馈会计要素增加变动情况及其结果的载体。设置账户是会计核算的重要方法之一。 而按照账户反映的经济内容不同可分为<strong>资产类账户，负债类账户，所有者权益类账户，成本费用类账户，损益类账户</strong>。 </p>
+<p>​    会计要素：资产、负债、所有者权益、利润、费用、收入等主要6个方面。账户是有结构和内容的，账户分为左方，右方两个方向，一个登记增加，另外一方登记减少。账户的内容包括了账户的名称，记录经济业务的日期，所依据记账凭证的编号，经济业务摘要，借贷金额和余额等。 </p>
+<p>​    那么如何设计一个账户呢？从账户的结构和内容分析，一个账户需要记录账户变动的过程等，即借贷方向均需要进行记录，这里一般是通过账户流水来实现，即出入流水，同时，账户是记录会计要素变动结果的，因此需要根据变动的最终结果进行记录，即账户的余额。 </p>
+<p>​    账户 = 账户流水 + 账户余额 。在具体实现中，系统对账户流水的操作和余额的操作必须是一个事务，即入流水必然导致账户余额的增加，出流水必然导致余额的减少。 那么有一个问题：借贷方向和账户流水的进出有什么关系？很多人很容易，把账户流入，即增加部分记为借，而把账户流产，即减少部分记为贷，但其实是不严谨的，或者是错误的（下面将重点介绍）。</p>
+<p>​    在账户的核算中，账户一般简化为“T”字账的形式，即包括账户名称，借方，贷方，发生额，借贷方余额和账户余额等。如下图： </p>
+<p><img src="https://github.com/qwbzjy/IMG/raw/master/account.jpg" alt="账户结构"></p>
+<p>账户的内部对账是：在一个指定的核算周期内，保证余额和流水的一致性。</p>
+<p>（如果具体实现是通过db的事务机制，则DB本身就可以保证两者的一致性，如果不是，比如即流水，异步落地余额的情况，则需要按每天根据流水对余额进行调整或者纠正）</p>
+<p>账户的外部对账是：保证账户操作的流水跟外部系统相关依赖流水的一致性。 </p>
+<h5 id="借贷复试记账法"><a href="#借贷复试记账法" class="headerlink" title="借贷复试记账法"></a>借贷复试记账法</h5><p>​    所谓复试记账法就是针对发生的每项经济业务都要以相等金额在相互联系的两个或者两个以上有关账户中进行同时登记的记账方法。而借贷记账法是复试记账法的一种，它是以“资产=负债+所有者权益”为依据，以“借“和”贷”为记账符号，以“有借必有贷，借贷必须相等”为记账规则的一种复试记账方法。</p>
+<p>借贷记账法的记账符号就是“借”和“贷”，用来反映经济业务增减变化的方向而已，本身没有特别的意义，在实际的操作中，我们把账户的左方规定记为借方，右方规范记为贷方，在任何一笔经济业务中，都必须同时登记相关账户的借方和贷方。</p>
+<p>我们知道，每个账户都有借方和贷方，用来记录其对应经济业务的增减变化情况，那么哪一方登记增减，哪一方登记减少，则是要根据对应账户的经济性质决定的，即账户相对会计主体来说，是属于什么类型的账户。</p>
 <ul>
-<li>刷卡支付：打开微信钱包的刷卡界面，商户扫码提交完成支付。</li>
-<li>公众号支付：用户在微信内进入商家H5页面，页面内调用JSSDK完成支付。</li>
-<li>扫码支付：用户打开微信扫一扫，扫描商户的二维码后完成支付。</li>
-<li>APP支付：商户APP中集成SDK，用户点击后跳转到微信内完成支付。</li>
+<li><p>资产类账户 </p>
+<p>​    <strong>资产类账户，资产的增加登记账户的借方，资产的减少登记在账户的贷方，期末有余额，一般出现在借方</strong>。在一个会计期间，所有借方金额的累加为“借方本期发生额”，所有贷方金额的累加为“贷方本期发生额”。而资产账户的余额=借方期初余额+借方本期发生额-贷方本期发生额。 </p>
+<p>​    如，本人在招商银行账户A存入1000元，那么该如何记账呢？首先，我们要分析本人在招行的这个账户的性质，由于这是本人存储在招行的一笔资产，所以该账户对应我这个会计主体来说，是一个资产类账户，因此记账的借贷方向需要按照资产类账户的要求来进行，即增加记为借，减少记为贷。根据分析，本人存入1000到账户A，记账如下：</p>
+<p>借：银行存款 1000元 （资产类账户，银行账户增加了1000元）</p>
+<p>贷： 库存现金 1000元。（资产类账户，手中现金减少了1000元）</p>
+</li>
+<li><p>负债类账户 </p>
+<p>​    负债类账户的记账规则跟资产类相反，负债增加记为贷，负债减少记为借，期末如有余额，一般在贷方，表明期末有债务实有额，负债类账户的余额计算：贷方期末余额=贷方期初余额+贷方本期发生额-借方本期发生额。</p>
+</li>
+<li><p>所有者权益类账户 </p>
+<p>​    所有者权益类账户的记账规则跟负债类账户一致：所有者权益增加记为贷，减少记为借。 </p>
+</li>
+<li><p>费用成本类账户 </p>
+<p>​    企业在日常经营活动中会发生各种各样的耗费，这些耗费在会计学上称为成本费用，它们是收入的抵减项目，在抵销收入之前，可以视为一种资产，因此成本费用类账户的记账规则跟资产类一样：增加记为借，减少或者转销记为贷，一般借方记录的增加额都要通过贷方转出，所有此类账户在期末转销后无余额，如有余额，出现在借方。 </p>
+</li>
+<li><p>收入类账户 </p>
+<p>​    企业取得的收入最终会使得所有者权益增加，因此收入类账户的记账方法跟所有者权益一致：增加记为贷，减少或者转销记为借，通常该账户期末无余额（因为期末收入都会转为所有者权益，如未分配利润等） 至此，一个账户的增加或者减少记为借还是记为贷，是跟该账户反映的经济内容有关系，而不是简单的增加就一定是借，减少就一定是贷，在实际的记账处理中，我们首先需要根据会计主体对记账的账户的经济性质进行分析，然后按照不同账户的记账规则进行处理即可。 </p>
+</li>
 </ul>
-<p>下面引用知乎上某答主的图片(侵删)</p>
-<p><img src="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%94%AF%E4%BB%98.jpg" alt="微信公众号支付"><img src="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%85%AC%E4%BC%97%E5%8F%B7%E6%94%AF%E4%BB%982.jpg" alt="公众号支付2"><img src="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E6%94%AF%E4%BB%983.jpg" alt="微信扫码支付3"><img src="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E6%89%AB%E7%A0%81%E6%94%AF%E4%BB%984.jpg" alt="扫码支付4"><img src="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1app%E6%94%AF%E4%BB%985.jpg" alt="微信app支付5"></p>
-<h5 id="之前一直纠结微信浏览器是什么，竟然还有微信浏览器，都没有听过，但是一直在用，下面简单说一下微信浏览器。主要是知乎和百度上搜到的一些答案-侵删"><a href="#之前一直纠结微信浏览器是什么，竟然还有微信浏览器，都没有听过，但是一直在用，下面简单说一下微信浏览器。主要是知乎和百度上搜到的一些答案-侵删" class="headerlink" title="之前一直纠结微信浏览器是什么，竟然还有微信浏览器，都没有听过，但是一直在用，下面简单说一下微信浏览器。主要是知乎和百度上搜到的一些答案(侵删)"></a>之前一直纠结微信浏览器是什么，竟然还有微信浏览器，都没有听过，但是一直在用，下面简单说一下微信浏览器。主要是知乎和百度上搜到的一些答案(侵删)</h5><p><img src="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A81.jpg" alt="微信浏览器1"><img src="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A82.jpg" alt="微信浏览器2"><img src="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A83.jpg" alt="微信浏览器3"></p>
-<h5 id="对于微信的几种支付方式，还有待补充，再贴两张截图，透过两张引出后续思考，有待继续更新。"><a href="#对于微信的几种支付方式，还有待补充，再贴两张截图，透过两张引出后续思考，有待继续更新。" class="headerlink" title="对于微信的几种支付方式，还有待补充，再贴两张截图，透过两张引出后续思考，有待继续更新。"></a>对于微信的几种支付方式，还有待补充，再贴两张截图，透过两张引出后续思考，有待继续更新。</h5><p><img src="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E5%87%A0%E7%A7%8D%E6%94%AF%E4%BB%98%E7%9A%84%E5%8C%BA%E5%88%AB.jpg" alt="几种支付的区别"></p>
-<p><img src="https://github.com/qwbzjy/IMG/raw/532de34e57694271a25b0af0b737f9258cf5d23b/%E6%94%AF%E4%BB%98%E5%AE%9Dh5%E6%94%AF%E4%BB%98.jpg" alt="支付宝h5支付"></p>
-<p>说实话，这么多支付场景，确实难以一下子理解，最好的方式还是自己去实践，每一种场景都去实际操作一下。</p>
+<h4 id="第三方支付账户体系介绍"><a href="#第三方支付账户体系介绍" class="headerlink" title="第三方支付账户体系介绍"></a>第三方支付账户体系介绍</h4><p>​    前面我们从会计学的角度分析了账户的概念，结构和借贷记账法等内容，而这些基础知识对我们第三方支付来说是否非常重要的，它是指导我们如何更好的设计第三方支付中非常重要的—账户体系。 </p>
+<p>第三方支付机构涉及的账户类型是否非常多的，笔者根据主要的场景做了分类，主要有如下几类账户：</p>
+<h5 id="用户在各个银行开通的账户"><a href="#用户在各个银行开通的账户" class="headerlink" title="用户在各个银行开通的账户"></a>用户在各个银行开通的账户</h5><p>​    这个概念非常好理解，我们每个人在相关银行开通的储蓄卡，存折，信用卡等等都是我们在银行开通的账户，在实际的支付中，用户银行账户是资金的输出方，通过银行系统，在用户授权的情况下把资金从用户的银行卡转移到第三方支付在银行开通的收款账户（见下面说明）</p>
+<h5 id="第三方支付公司在各个银行开通的账户"><a href="#第三方支付公司在各个银行开通的账户" class="headerlink" title="第三方支付公司在各个银行开通的账户"></a>第三方支付公司在各个银行开通的账户</h5><p>​    即第三方支付的银行账户，比如支付宝在招商银行设置的收款账户。那么第三方支付公司为啥需要在各个合作银行设置账户呢？其实道理非常简单，第三方支付公司本身毕竟不是银行，本身是无法直接接触和管理资金的，真正的资金流是通过银行系统进行的，用户通过网银或者快捷支付等支付后，用户的资金是少了，那么肯定有一个地方是多的，我们举一个例子：小明用支付宝在某商城A买了一件衣服100元，用自己的银行卡进行网上支付，假如小明的银行卡是招商银行的，并且支付宝和招商银行有合作关系，当发生支付的时候，其实支付宝只做了两个事情：</p>
+<ul>
+<li><p>在用户授权下，调用银行接口把钱从用户的银行卡转移到支付宝在招商银行设置的账户上（该账户是支付宝专门接受用户的付款资金的）—由于这步是只发生在银行系统之家的，是真实的资金流。</p>
+</li>
+<li><p>第1步成功后，支付宝会对商户A记入一笔入账：100元（商户A会在支付宝申请一个商户账户，类似支付宝在银行申请一个账户一样）</p>
+<p>从会计学的角度分析，支付宝在招商银行设置的账户对支付宝这个会计主体来说，是一笔资产（或者说是银行欠支付宝的钱），该银行账户是资产类账户，而另外一个方面，商户A在支付宝设置的商户账户对支付宝来说是一个负债类账户（因为这是欠商户的钱，后续需要结算给到商户），那么上面的支付流程，会计记账如下：</p>
+</li>
+</ul>
+<p>借： 支付宝招行银行账户 100元 （资产类账户，资产增加，记为借）</p>
+<p>贷：商户A支付宝账户 100元 （负债类账户，负债增加，记为贷）</p>
+<h5 id="第三方支付自有账户体系"><a href="#第三方支付自有账户体系" class="headerlink" title="第三方支付自有账户体系"></a>第三方支付自有账户体系</h5><p>​    这个比较复杂，类似银行账户有对公账户和对私账户，第三方支付公司也有针对商户的B账户和针对个人的C账户。请注意，第三方支付自有账户体系是独立第三方支付在银行申请的账户的，是自有的账户体系，完成资金在第三方支付体系的闭环和结算等，比如财付通用户余额，支付宝余额，微信支付余额等都是第三方支付账户to client的账户。</p>
+<p>​    个人账户，我们称为c账户比较简单，而商户账户由于涉及到结算和提现等操作，按照不同的资金类别设置不同账户的设计原则，商户账户一个商户号其实对应两个账户：b账户和c账户，b账户是商户结算账户，用于交易的收款等，商户本身无法直接操作，是第三方支付进行结算的账户，而商户c账户则是商户可以直接进行操作的账户，如可以进行提现，充值和支付等等。</p>
+<h5 id="各个银行在第三方支付公司设置的账户"><a href="#各个银行在第三方支付公司设置的账户" class="headerlink" title="各个银行在第三方支付公司设置的账户"></a>各个银行在第三方支付公司设置的账户</h5><p>​    这个账户是一个总账账户，一般用于记录资金进入第三方账户体系或者资金逃出第三方账户体系的，它一般不记录余额，而只是记录流水，方便跟各个银行进行对账。</p>
+<h4 id="各种操作的资金流和记账规则"><a href="#各种操作的资金流和记账规则" class="headerlink" title="各种操作的资金流和记账规则"></a>各种操作的资金流和记账规则</h4><ul>
+<li><p>用户通过银行卡快捷支付进行充值100元。</p>
+<p>资金流：资金从用户银行卡进入第三方支付在对应银行的银行账户，同时对对应的第三方c账户记入一笔充值入账。</p>
+<p>借： 第三方支付在银行的账户 100元 （资产类账户）</p>
+<p>贷：某用户在第三方支付的c账户 100元 （负债类账户）</p>
+<p>​    这个需要重点分析，其实这步操作后，资金进入了第三方支付的自有账户体系中，使得自有账户体系的资金盘子增加了100元，在实际的设计中，为了能够高效跟银行进行对账，每个银行会在第三方支付设置一个对应的账户，我们成为银行的第三方支付账户，比如招行在支付宝的账户，用户通过招行卡支付充值后，除了银行系统本身的记账外，第三方支付会在该账户同步记录一笔流水，使得所有通过招行进入自有账户体系的资金流都可以通过这个流水看到，我们理解为这个账户是一个总账账户，各个用户的c账户是一个分账账户。</p>
+</li>
+<li><p>用户通过银行卡快捷支付给商户A支付100元</p>
+<p>​    资金流：资金从用户的银行卡进入第三方支付在对应银行的银行账户，同时对对应的商户A的B账户记入一笔支付入账。</p>
+<p>借：第三方支付在银行的账户 100元 （资产类账户）</p>
+<p>贷：某商户A的B账户 100元 （负债类账户）</p>
+</li>
+<li><p>用户通过第三方支付余额账户提现100到自己的招行卡</p>
+<p>​    资金流：第三方支付首先把该用户余额的100元先冻结，然后调用银行接口，从自己在银行的账户中转账100元到用户的招行卡上，成功后，对该用户的余额冻结的100元进行解冻扣款。</p>
+<p>借：某用户在第三方支付的c账户 100元 （负债类账户）</p>
+<p>贷：第三方支付在银行的账户 100元 （资产类账户）</p>
+<p>可以看出，该步骤的记账给第一部分的充值时相反的。</p>
+</li>
+<li><p>自有账户体系的c2c转账</p>
+<p>​    由于没有涉及到用户银行卡的操作，该部分操作没有涉及到真正的资金流变动，只是账务在第三方支付公司自有账户体系的转移而已，即从一个用户的c账户转移到另外一个c账户，由于c账户对第三方支付公司来说，都是负债类账户，因此记账如下：</p>
+<p>借： 转出的c账户 100元 （负债类账户，转出表示负债减少，记为借）</p>
+<p>贷：收款的c账户 100元 (负债类账户，转入表示负债增加，记为贷)</p>
+</li>
+<li><p>自有账户体系的b2c支付</p>
+<p>跟自有账户体系的c2c一样，没有涉及到银行接口的调用，因此没有发生真正的资金流的流动，账户只是在第三方支付公司的自有账户体系转移而已，即从一个用户的c账户转移到另外一个商户的B账户。</p>
+<p>记账如下：</p>
+<p>借：支付的c账户 100元</p>
+<p>贷：收款的商户B账户 100元。</p>
+</li>
+</ul>
+<p>读完这篇文章，感觉内容很多，需要花时间来消化理解，每天看一看，多看几次，也就会了。</p>
+<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><p>​    </p>
 
       
     </div>
@@ -554,8 +609,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/19/互联网金融基础-一/" rel="next" title="互联网金融基础(一)">
-                <i class="fa fa-chevron-left"></i> 互联网金融基础(一)
+              <a href="/2018/06/26/互联网金融基础-三/" rel="next" title="互联网金融基础-三">
+                <i class="fa fa-chevron-left"></i> 互联网金融基础-三
               </a>
             
           </div>
@@ -563,10 +618,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/19/linux常用命令-1/" rel="prev" title="linux常用命令-1">
-                linux常用命令-1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -754,7 +805,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#微信支付，QQ钱包和财付通的关系是什么？"><span class="nav-number">1.</span> <span class="nav-text">微信支付，QQ钱包和财付通的关系是什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#日常生活中我们使用微信或支付宝支付，有很多应用场景"><span class="nav-number">2.</span> <span class="nav-text">日常生活中我们使用微信或支付宝支付，有很多应用场景:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#之前一直纠结微信浏览器是什么，竟然还有微信浏览器，都没有听过，但是一直在用，下面简单说一下微信浏览器。主要是知乎和百度上搜到的一些答案-侵删"><span class="nav-number">3.</span> <span class="nav-text">之前一直纠结微信浏览器是什么，竟然还有微信浏览器，都没有听过，但是一直在用，下面简单说一下微信浏览器。主要是知乎和百度上搜到的一些答案(侵删)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对于微信的几种支付方式，还有待补充，再贴两张截图，透过两张引出后续思考，有待继续更新。"><span class="nav-number">4.</span> <span class="nav-text">对于微信的几种支付方式，还有待补充，再贴两张截图，透过两张引出后续思考，有待继续更新。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#账户"><span class="nav-number">1.</span> <span class="nav-text">账户</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#借贷复试记账法"><span class="nav-number">1.1.</span> <span class="nav-text">借贷复试记账法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三方支付账户体系介绍"><span class="nav-number">2.</span> <span class="nav-text">第三方支付账户体系介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用户在各个银行开通的账户"><span class="nav-number">2.1.</span> <span class="nav-text">用户在各个银行开通的账户</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三方支付公司在各个银行开通的账户"><span class="nav-number">2.2.</span> <span class="nav-text">第三方支付公司在各个银行开通的账户</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三方支付自有账户体系"><span class="nav-number">2.3.</span> <span class="nav-text">第三方支付自有账户体系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#各个银行在第三方支付公司设置的账户"><span class="nav-number">2.4.</span> <span class="nav-text">各个银行在第三方支付公司设置的账户</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各种操作的资金流和记账规则"><span class="nav-number">3.</span> <span class="nav-text">各种操作的资金流和记账规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text"> </span></a></li></ol></div>
             
 
           </div>
@@ -945,9 +996,9 @@ var jiathis_config={
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://ajwensome.com/2018/06/19/互联网金融基础-二/';
-          this.page.identifier = '2018/06/19/互联网金融基础-二/';
-          this.page.title = '互联网金融基础(二)';
+          this.page.url = 'http://ajwensome.com/2018/06/26/互联网金融基础-四/';
+          this.page.identifier = '2018/06/26/互联网金融基础-四/';
+          this.page.title = '互联网金融基础-四';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
