@@ -92,7 +92,7 @@
 <meta property="og:description" content="Nginx概述Nginx(读音同engine x)是一个异步框架的web服务器，可以用作反向代理、负载平衡器和http缓存。该软件由俄罗斯人lgor Sysoev用c语言发明的，是一款免费的开源软件，于2004年首次公开发布。同名公司成立于2011年，以提供支持。该软件可在linux、os x、windows等操纵系统下运行。截至2018年1月，Nginx服务了全球30.46%的网站，其中包括阿里">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/master/Nginx-proxy.jpg">
-<meta property="og:updated_time" content="2018-06-26T14:42:17.508Z">
+<meta property="og:updated_time" content="2018-06-27T00:55:39.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx基础-1">
 <meta name="twitter:description" content="Nginx概述Nginx(读音同engine x)是一个异步框架的web服务器，可以用作反向代理、负载平衡器和http缓存。该软件由俄罗斯人lgor Sysoev用c语言发明的，是一款免费的开源软件，于2004年首次公开发布。同名公司成立于2011年，以提供支持。该软件可在linux、os x、windows等操纵系统下运行。截至2018年1月，Nginx服务了全球30.46%的网站，其中包括阿里">
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,434
+                  1,432
                 </span>
               
 
@@ -467,7 +467,7 @@
 <p>​    反向代理的基本过程：用户发送请求到负载均衡器，由负载均衡器再将请求分发到空闲的服务器上，服务器返回结果给负载均衡器，最后负载均衡器将结果返回给用户。</p>
 <p>​    通俗来讲，就是用户做服务器域名解析的时候，解析得到的ip其实是负载均衡器的ip，而不是服务器的ip，这样做的好处是，当新加入或移走服务器的时候，仅仅需要修改负载均衡器的列表，不会影响到现有的服务。</p>
 <p>​    试想，如果不采用代理，用户的IP、端口号直接暴露在Internet（尽管地址转换NAT），外部主机依然可以根据IP、端口号来开采主机安全漏洞，所以在企业网，一般都是采用代理服务器访问互联网。 其实代理服务器也是有安全漏洞的，但是相比千千万万的用户主机，代理服务器数量有限，修补安全漏洞更方便快捷。 </p>
-<p>​    反向代理隐藏了真实的服务端，当我们请求<a href="http://www.google.com的时候，背后有许许多多的服务器在我们服务，但是到底是哪一台服务器，访问者并不知道，也不需要知道，你只需要知道你的请求首先到达反向代理服务器，然后由反向代理服务器发送给真实服务器就行了。其实这也就解析了，Nginx为什么可以作负载均衡器了。" target="_blank" rel="noopener">www.google.com的时候，背后有许许多多的服务器在我们服务，但是到底是哪一台服务器，访问者并不知道，也不需要知道，你只需要知道你的请求首先到达反向代理服务器，然后由反向代理服务器发送给真实服务器就行了。其实这也就解析了，Nginx为什么可以作负载均衡器了。</a></p>
+<p>​    反向代理隐藏了真实的服务端，当我们请求google的时候，背后有许许多多的服务器在我们服务，但是到底是哪一台服务器，访问者并不知道，也不需要知道，你只需要知道你的请求首先到达反向代理服务器，然后由反向代理服务器发送给真实服务器就行了。其实这也就解析了，Nginx为什么可以作负载均衡器了。</p>
 <p>​    与反向代理相对的就是正向代理了，最简单的例子就是我们程序员人手一个的vps服务器，我自己用的是搬瓦工，自己搭建的vps，很方便，平时主要是用来查资料，仅作学习用途，因为用谷歌搜索真的很高效，很准确，在此强烈推荐。正向代理隐藏了真实的客户端，服务的不知道真实的客户端是谁，客户端请求的服务都被代理服务器代替来请求，然后代理服务器会把请求的结果返回给客户端。</p>
 <p>下面看一下正向代理和反向代理的示意图：</p>
 <p><img src="https://github.com/qwbzjy/IMG/raw/master/Nginx-proxy.jpg" alt="两种代理"></p>
@@ -557,6 +557,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/27/DNS基础-1/" rel="prev" title="DNS基础-1">
+                DNS基础-1 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -673,7 +677,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -695,7 +699,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -779,7 +783,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">30.1k</span>
+    <span title="Site words total count">34.2k</span>
   
 </div>
 
@@ -798,7 +802,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共30.1k字</span>
+  <span class="post-count">博客全站共34.2k字</span>
 </div>
 
         
