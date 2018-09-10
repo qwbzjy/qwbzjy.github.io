@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git常用命令-5]]></title>
+    <url>%2F2018%2F09%2F10%2Fgit%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-5%2F</url>
+    <content type="text"><![CDATA[​ 今天使用IDEAgit提交代码，右键看到了一个stash changes图标，很好奇，于是进行了一番学习。stash翻译为隐藏，应用场景主要是：发现有一个类是多余的，想删掉它又担心以后需要查看它的代码，想保存它但又不想增加一个脏的提交 ，此时就可以用git stash命令。 git stash命令会把所有未提交的修改（包括暂存的和非暂存的）都保存起来，用于后续恢复当前工作目录。 1git stash 下面展示我自己写的demo： ​ 最好是隔一段时间就照着上面的代码敲一敲，可以加深理解，运用起来更方便。还有一点就是，在公司里，最常用的还是图形化的git操作方式，我建议在平常的工作当中，要多用命令行敲，一来可以熟悉每一个命令的指令，二是可以熟悉Linux命令，三是命令窗口比图形化窗口速度更快，可操作的git命令更多，图形化界面不可能把每一个命令都进行图形化，最多只是把常用的3-5个命令给你显示出来而已，比如pull、push、merge、add、commit、reset等等。所以熟练掌握git的命令窗口操作才是王道。]]></content>
+      <categories>
+        <category>技术积累</category>
+      </categories>
+      <tags>
+        <tag>git系列</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git常用命令-4]]></title>
     <url>%2F2018%2F09%2F07%2Fgit%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-4%2F</url>
     <content type="text"><![CDATA[​ 这段时间终于忙完了，又是弄牙齿，又是忙新项目，难得今天有空闲学习时间，整理了一下spring-aop的知识点，做了几个demo熟悉了一下aop的相关知识。在学习的过程中，再一次体会到，不做学习笔记等于白学，今天碰到问题了，不记录下来，过几天又要重新学，时间成本太高，于是果断记录到博客上。 ​ 今天在IDEA中新建好了spring-aop的项目，想着上传到github上，结果在IDEA中无法push的问题，总是提示could not read from remote repository，谷歌了一下，是IDEA中git的设置问题，在Settings-&gt;Version Control-&gt;Git中，将SSH executable设置为Native即可 。这样一设置，问题果然解决了，但是背后的原因还是没搞明白，姑且先记录到博客中，日后再来解决。 IDEA创建git仓库的过程： 1、场景：我自己在idea中新建了一个spring-aop的项目，项目做完后，我想将它上传到github上，然后上谷歌和百度找教程，然后自己整理成如下几张图，首先按照图1创建一个项目的本地仓库，创建完成后，会看到图2中.git文件；然后登陆github网站，新建一个Spring-Aop的仓库，紧接着在spring-prc目录下进入git命令窗口，输入图3中的命令，其中qwbzjy是我的github账户名，Spring-Aop是仓库名；本地库与远程库建立关联后，我试着pull,因为远程库中多了一个readme.txt文件，然后就报图4的错误，接着我输入git pull origin master –allow-unrelated-histories,然后接可以了，最后将我的代码push到远程库中,git push origin master。 ​ 后来我想直接通过IDEA进行push结果失败，然后又进行一番搜索，最后进行这段文字上面截图的设置后，就成功push了。 ​ 学习的过程是一个循序渐进的过程，只有这样一点一点的积累，才能够厚积薄发。]]></content>
