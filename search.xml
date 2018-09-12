@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[感悟-2]]></title>
+    <url>%2F2018%2F09%2F12%2F%E6%84%9F%E6%82%9F-2%2F</url>
+    <content type="text"><![CDATA[​ 作为一个程序员，运用搜索引擎解决问题的能力直接决定了其工作效率的高低，今天总结一下如何更好的使用搜索引擎提高工作和学习的效率。 ​ 在平常的工作中，要多使用 google 搜索，辅助搜索引擎就用百度，两者配合起来使用，先用谷歌，再用百度；其次要选择合适的搜索关键词，不要输入句子进行搜索；当程序运行报错的时候，要直接使用报错信息进行搜索；复杂的问题往往无法一蹴而就地解决，一个问题的出现通常会带出很多其他问题，而搜索的过程，也是逐个问题解决的过程，往往需要不断的修正搜索关键词，从而找到自己想要的答案。 ​ 最重要的一点就是在使用谷歌搜索的时候，要逐渐习惯使用英文进行搜索，很多东西刚开始不会，用多了也就会了。 精确搜索​ 搜索的关键字用” “(双引号)包含，表示查询词不能被拆分，在搜索结果中必须完整出现。 12&quot;java.lang.NullPointerException&quot; 这样搜索出来的结果是带有 java.lang.NullPointerException 的网页，而不是分别带有 java，lang，和 NullPointerException 异常的网页。 排除搜索​ 搜索结果中不包含某个词，就在该词的前面加一个 - （减号）。表示所有搜索结果不包含减号后面的词，含有它的网页将被过滤掉。 12ListView - ReactNative 这样就可以去除掉带有 ReactNative 的 ListView 的网页，增加了精确度。过滤掉了某些你不需要的结果。 站内搜索​ 顾名思义就是搜索范围限制在一个网站内。 12java.lang.UnsatisfiedLinkError site:stackoverflow.com 这样搜索出来的结果都是 stackoverflow.com 网站里的网页。 文件类型搜索​ 在搜索的时候，是可以指定文件格式的，指定格式用：filetype ，表示搜索特定的文件格式。 12spring实战 filetype:PDF 这样搜索出来的结果就是pdf文件。 其实还有很多搜索技巧，今天先整理到这里，后续用到了再更新。别忘了要多用英文进行搜索！！ 好的搜索技巧能够造就好的程序员 程序员如何使用搜索引擎]]></content>
+      <categories>
+        <category>感悟</category>
+      </categories>
+      <tags>
+        <tag>生活随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[centos7下ss的多用户使用教程]]></title>
+    <url>%2F2018%2F09%2F12%2Fcentos7%E4%B8%8Bss%E7%9A%84%E5%A4%9A%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[​ 最近刷推，看到 netflix 上面有好多好看的美剧，于是自己办了张双币信用卡，绑定了 paypal ，注册了netflix 账号，但是最后竟然看不了，最后上网一番搜索，加入了一个 netflix 的电报群，才知道我的搬瓦工的 ip 地址被 netflix 公司封锁了。于是我就想着把 vps 迁移机房试试，结果换了 4 个机房，都没有刷到能看 netflix 的 ip，然后就没有再继续换 ip了。紧接着，就是怎么折腾 ss 的多用户账号，就是一个 vps 账号可以设置多个端口，供多台机器使用，手机、电脑、平板、电视机等。 ​ 因为之前的 vps 都是安装的 centos6，还要升级python，有点麻烦，于是这一次直接重装了vps，升级成了centos7，python版本比较高，因为ss是用python语言写的，所以要升级成对应的python版本。下面贴出centos7安装ss多用户的教程，真的很方便。 123456789101112131415161718192021222324252627282930313233341、通过xshell连接到vps后，安装ss yum install python-setuptools &amp;&amp; easy_install pip pip install shadowsocks 如果你以前配置过shadowsocks.json，那么切换机房后，直接修改配置文件中的ip，然后重启就可以用了 2、新建ss的配置文件 vi /etc/shadowsocks.json 多用户的配置: &#123; &quot;server&quot;:&quot;xxx.xx.xx.xxx&quot;, &quot;local_address&quot;: &quot;127.0.0.1&quot;, &quot;local_port&quot;:1080, &quot;port_password&quot;: &#123; &quot;493&quot;: &quot;123&quot;, &quot;480&quot;: &quot;456&quot; &#125;, &quot;timeout&quot;:300, &quot;method&quot;:&quot;chacha20&quot;, &quot;fast_open&quot;: false &#125; server 是你的 vps 的 IP 地址，method是加密方式，我选的rc4-md5，网上看了一些资料，说这种加密方式，数据传输比较快。 3、配置开启启动ss vi /etc/rc.local 写入： ssserver -c /etc/shadowsocks.json -d start 4、启动ss服务 ssserver -c /etc/shadowsocks.json -d start 5、如果你想多添加几个用户，修改了ss配置文件，只需要重启ss服务即可 ssserver -c /etc/shadowsocks.json -d restart 6、产看ss服务的日志： cat /var/log/shadowsocks.log 以上只是我安装ss多用户时的步骤，主要参考的文章有： centos7搭建ss]]></content>
+      <tags>
+        <tag>业余提升</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[感悟-1]]></title>
+    <url>%2F2018%2F09%2F11%2F%E6%84%9F%E6%82%9F-1%2F</url>
+    <content type="text"><![CDATA[​ 上周把手头的项目都做完了，自己的时间还比较充裕，于是抓紧时间提升自己的技术。最近主要在学习spring、springboot的相关东西，感觉直接上github上面，下载几个springboot的项目，然后把项目跑起来，再自己改一改里面的东西，基本的流程就都熟悉了，但是心里总是很空，因为这些表象上的东西，随便一个人只要稍微懂一点spring的东西，就能把结果实现出来。在我看来，仅仅实现远远不够，框架的东西用多了，心里真的会很慌，项目做的越多，越是觉得自己什么都不会，感觉跟没学差不多。此时的我心里很慌。 ​ 打算系统的研究一下spring底层的实现原理，也就是框架的原理，如果是我设计spring框架，我会怎么去寻找解决方案，怎么去实现。咋一看真的很复杂，想想spring那么多东西，要想都精通，最好的方法是彻底搞懂spring原理，突然想起刘同说过的一句话：如果一个东西，你当时不会，然后去学会了，别人只会嘲笑你一阵子；如果一个东西，你当时不会，过后又不去学习，那么可能会被别人嘲笑一辈子。所以，现在把spring学会了，以后就可以兵来将挡，水来土掩，面对问题，就能泰然处之。 ​ 当然学习的过程总是充满了挫折，但是在这个过程中，你能得到成长，得到一种满足感与成就感，这是激励一个人坚持去做一件事情最重要的东西。另外我想说的是，学习一个新东西，尤其是编程方面的新知识点，最好的办法就是先去把程序跑出来，这样自己就首先获得了一种成就感，然后自己再针对细节对自己提问，去看博客，看demo，看视频，解决完了，一定要把这些知识点写下来，时常翻阅，总会有不一样的感悟。 ​ 身体永远是革命的本钱。昨天因为低血糖，长时间蹲着，然后突然起身，直接晕倒了，把静静吓哭了。一方面因为自己的懒惰，不想做饭，另一方面还是因为没认识到不吃饭的，光吃稀饭的严重后果。最重要的是，让心爱的静，担心受怕，心神不宁，真的对不起，我以后一定好好锻炼身体，好好照顾自己，不让你担心。]]></content>
+      <categories>
+        <category>感悟</category>
+      </categories>
+      <tags>
+        <tag>生活随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git常用命令-5]]></title>
     <url>%2F2018%2F09%2F10%2Fgit%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-5%2F</url>
     <content type="text"><![CDATA[​ 今天使用IDEAgit提交代码，右键看到了一个stash changes图标，很好奇，于是进行了一番学习。stash翻译为隐藏，应用场景主要是：发现有一个类是多余的，想删掉它又担心以后需要查看它的代码，想保存它但又不想增加一个脏的提交 ，此时就可以用git stash命令。 git stash命令会把所有未提交的修改（包括暂存的和非暂存的）都保存起来，用于后续恢复当前工作目录。 1git stash 下面展示我自己写的demo： ​ 最好是隔一段时间就照着上面的代码敲一敲，可以加深理解，运用起来更方便。还有一点就是，在公司里，最常用的还是图形化的git操作方式，我建议在平常的工作当中，要多用命令行敲，一来可以熟悉每一个命令的指令，二是可以熟悉Linux命令，三是命令窗口比图形化窗口速度更快，可操作的git命令更多，图形化界面不可能把每一个命令都进行图形化，最多只是把常用的3-5个命令给你显示出来而已，比如pull、push、merge、add、commit、reset等等。所以熟练掌握git的命令窗口操作才是王道。]]></content>
