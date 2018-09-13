@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[linux-shell编程-1]]></title>
+    <url>%2F2018%2F09%2F13%2Flinux-shell%E7%BC%96%E7%A8%8B-1%2F</url>
+    <content type="text"><![CDATA[shell和shell脚本的概念​ shell是一种应用程序，它提供了一个界面，用户通过这个界面可以访问操作系统内核的服务。比如，ken Thompson 的 sh 是第一种Unix Shell, Windows Explorer 是一个典型的图形界面Shell。 ​ shell脚本(shell script) 是一种为shell编写的脚本程序。我们通常说的shell都是指shell脚本，所以所谓的shell编程其实就是shell脚本的编程，而不是去开发shell自身。 sh与bash​ 即Bourne shell，POSIX（Portable Operating System Interface）标准的shell解释器，它的二进制文件路径通常是/bin/sh，由Bell Labs开发 。 ​ Bash是Bourne shell的替代品，属GNU Project，二进制文件路径通常是/bin/bash。业界通常混用bash、sh、和shell，比如你会经常在招聘运维工程师的文案中见到：熟悉Linux Bash编程，精通Shell编程。 在CentOS里，/bin/sh是一个指向/bin/bash的符号链接。 Shell脚本​ 先看一个例子 1234567#!/bin/shcd ~mkdir shell_tutcd shell_tutfor ((i=0; i&lt;10; i++)); do touch test_$i.txtdone ​ 今天闲来学习一下shell编程，有关shell编程的基本知识直接看下面这个链接，在虚拟机上，对照着敲一敲就会了，等到用到时候再查看就行，所以这里就不详细写shell编程的基本知识了。 shell编程菜鸟教程 shell习题集]]></content>
+      <categories>
+        <category>技术积累</category>
+      </categories>
+      <tags>
+        <tag>linux系列</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[感悟-2]]></title>
     <url>%2F2018%2F09%2F12%2F%E6%84%9F%E6%82%9F-2%2F</url>
     <content type="text"><![CDATA[​ 作为一个程序员，运用搜索引擎解决问题的能力直接决定了其工作效率的高低，今天总结一下如何更好的使用搜索引擎提高工作和学习的效率。 ​ 在平常的工作中，要多使用 google 搜索，辅助搜索引擎就用百度，两者配合起来使用，先用谷歌，再用百度；其次要选择合适的搜索关键词，不要输入句子进行搜索；当程序运行报错的时候，要直接使用报错信息进行搜索；复杂的问题往往无法一蹴而就地解决，一个问题的出现通常会带出很多其他问题，而搜索的过程，也是逐个问题解决的过程，往往需要不断的修正搜索关键词，从而找到自己想要的答案。 ​ 最重要的一点就是在使用谷歌搜索的时候，要逐渐习惯使用英文进行搜索，很多东西刚开始不会，用多了也就会了。 精确搜索​ 搜索的关键字用” “(双引号)包含，表示查询词不能被拆分，在搜索结果中必须完整出现。 12&quot;java.lang.NullPointerException&quot; 这样搜索出来的结果是带有 java.lang.NullPointerException 的网页，而不是分别带有 java，lang，和 NullPointerException 异常的网页。 排除搜索​ 搜索结果中不包含某个词，就在该词的前面加一个 - （减号）。表示所有搜索结果不包含减号后面的词，含有它的网页将被过滤掉。 12ListView - ReactNative 这样就可以去除掉带有 ReactNative 的 ListView 的网页，增加了精确度。过滤掉了某些你不需要的结果。 站内搜索​ 顾名思义就是搜索范围限制在一个网站内。 12java.lang.UnsatisfiedLinkError site:stackoverflow.com 这样搜索出来的结果都是 stackoverflow.com 网站里的网页。 文件类型搜索​ 在搜索的时候，是可以指定文件格式的，指定格式用：filetype ，表示搜索特定的文件格式。 12spring实战 filetype:PDF 这样搜索出来的结果就是pdf文件。 其实还有很多搜索技巧，今天先整理到这里，后续用到了再更新。别忘了要多用英文进行搜索！！ 好的搜索技巧能够造就好的程序员 程序员如何使用搜索引擎]]></content>
