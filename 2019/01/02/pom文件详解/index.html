@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="反思," />
+  <meta name="keywords" content="Maven系列," />
 
 
 
@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="每日需要养成的好习惯　　１． 每天早上7点起床，保证至少7个小时的睡眠，还有中午的半个小时的午睡。　　２．每天晚上睡觉前都要把第二天要做的事情写下来或保存在手机记事本中，按照目标导向原则去执行，凡是预则立，不预则废。　　３.　每天都要锻炼身体，不下雨的时候就去体育馆跑步，至少半个小时，全身出汗。　　４．每天都要喝水至少5瓶，农夫山泉的小瓶子，保持水分充足，长时间坐着，容易缺水。　　５. 做一个Ex">
-<meta name="keywords" content="反思">
+<meta name="description" content="pom.xml​      pom作为项目对象模型。通过xml表示maven项目，使用pom.xml来实现。主要描述了项目：包括配置文件；开发者需要遵循的规则，缺陷管理系统，组织和licenses，项目的url，项目的依赖性，以及其他所有的项目相关因素。   依赖冲突问题​    依赖冲突：若项目中多个 Jar 同时引用了相同的 Jar 时，会产生依赖冲突，但 Maven 采用了两种避免冲突的策略">
+<meta name="keywords" content="Maven系列">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日总结-0319">
-<meta property="og:url" content="http://ajwensome.com/2018/03/19/0319今日反思/index.html">
+<meta property="og:title" content="pom文件详解">
+<meta property="og:url" content="http://ajwensome.com/2019/01/02/pom文件详解/index.html">
 <meta property="og:site_name" content="勇敢的心">
-<meta property="og:description" content="每日需要养成的好习惯　　１． 每天早上7点起床，保证至少7个小时的睡眠，还有中午的半个小时的午睡。　　２．每天晚上睡觉前都要把第二天要做的事情写下来或保存在手机记事本中，按照目标导向原则去执行，凡是预则立，不预则废。　　３.　每天都要锻炼身体，不下雨的时候就去体育馆跑步，至少半个小时，全身出汗。　　４．每天都要喝水至少5瓶，农夫山泉的小瓶子，保持水分充足，长时间坐着，容易缺水。　　５. 做一个Ex">
+<meta property="og:description" content="pom.xml​      pom作为项目对象模型。通过xml表示maven项目，使用pom.xml来实现。主要描述了项目：包括配置文件；开发者需要遵循的规则，缺陷管理系统，组织和licenses，项目的url，项目的依赖性，以及其他所有的项目相关因素。   依赖冲突问题​    依赖冲突：若项目中多个 Jar 同时引用了相同的 Jar 时，会产生依赖冲突，但 Maven 采用了两种避免冲突的策略">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-19T15:02:21.498Z">
+<meta property="og:updated_time" content="2019-01-02T06:41:05.768Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="每日总结-0319">
-<meta name="twitter:description" content="每日需要养成的好习惯　　１． 每天早上7点起床，保证至少7个小时的睡眠，还有中午的半个小时的午睡。　　２．每天晚上睡觉前都要把第二天要做的事情写下来或保存在手机记事本中，按照目标导向原则去执行，凡是预则立，不预则废。　　３.　每天都要锻炼身体，不下雨的时候就去体育馆跑步，至少半个小时，全身出汗。　　４．每天都要喝水至少5瓶，农夫山泉的小瓶子，保持水分充足，长时间坐着，容易缺水。　　５. 做一个Ex">
+<meta name="twitter:title" content="pom文件详解">
+<meta name="twitter:description" content="pom.xml​      pom作为项目对象模型。通过xml表示maven项目，使用pom.xml来实现。主要描述了项目：包括配置文件；开发者需要遵循的规则，缺陷管理系统，组织和licenses，项目的url，项目的依赖性，以及其他所有的项目相关因素。   依赖冲突问题​    依赖冲突：若项目中多个 Jar 同时引用了相同的 Jar 时，会产生依赖冲突，但 Maven 采用了两种避免冲突的策略">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://ajwensome.com/2018/03/19/0319今日反思/"/>
+  <link rel="canonical" href="http://ajwensome.com/2019/01/02/pom文件详解/"/>
 
 
 
 
 
-  <title>每日总结-0319 | 勇敢的心</title>
+  <title>pom文件详解 | 勇敢的心</title>
   
 
 
@@ -313,7 +313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ajwensome.com/2018/03/19/0319今日反思/">
+    <link itemprop="mainEntityOfPage" href="http://ajwensome.com/2019/01/02/pom文件详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ajwensome">
@@ -330,7 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">每日总结-0319</h1>
+          <h1 class="post-title" itemprop="name headline">pom文件详解</h1>
         
 
         <div class="post-meta">
@@ -342,8 +342,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T22:28:34+08:00">
-                2018-03-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T13:36:08+08:00">
+                2019-01-02
               </time>
             
 
@@ -353,6 +353,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术积累/" itemprop="url" rel="index">
+                    <span itemprop="name">技术积累</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -361,9 +383,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/19/0319今日反思/#comments" itemprop="discussionUrl">
+                <a href="/2019/01/02/pom文件详解/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/19/0319今日反思/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2019/01/02/pom文件详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -371,7 +393,7 @@
 
           
           
-             <span id="/2018/03/19/0319今日反思/" class="leancloud_visitors" data-flag-title="每日总结-0319">
+             <span id="/2019/01/02/pom文件详解/" class="leancloud_visitors" data-flag-title="pom文件详解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -396,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  621
+                  1,072
                 </span>
               
 
@@ -412,7 +434,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -433,10 +455,48 @@
       
 
       
-        <h1 id="每日需要养成的好习惯"><a href="#每日需要养成的好习惯" class="headerlink" title="每日需要养成的好习惯"></a>每日需要养成的好习惯</h1><p>　　１． 每天早上7点起床，保证至少7个小时的睡眠，还有中午的半个小时的午睡。<br><br>　　２．每天晚上睡觉前都要把第二天要做的事情写下来或保存在手机记事本中，按照目标导向原则去执行，凡是预则立，不预则废。<br><br>　　３.　每天都要锻炼身体，不下雨的时候就去体育馆跑步，至少半个小时，全身出汗。<br><br>　　４．每天都要喝水至少5瓶，农夫山泉的小瓶子，保持水分充足，长时间坐着，容易缺水。<br><br>　　５. 做一个Excel表格，每天按照对应的项目进行打卡登记。<br><br>　　６.　每天睡觉前都要写一篇博客，记录时间，改变习惯，提升语言表达能力。<br><br>　　７.　每天看kindle半小时，一个月至少看4本书，每天写读书心得。<br><br>　　８.　每天看刘润的5分钟商学院，那是你花了199大洋买的啊，去年12月份买的，到现在才看了几节，你心里没点数吗<br><br>　　９.　每天都要关心静静的学习和生活<br><br>　　１０． 现在做好手头的事情，主要是工作要尽快上手，给自己一个明确的期限，有时间尽可能多的花时间学习区块链知识，爬虫知识。<br><br>　　１１.　定期清理浏览器，微信公众号，知乎，微博上收藏的东西，不要做一个收藏控。</p>
-<hr>
-<h1 id="今日工作总结："><a href="#今日工作总结：" class="headerlink" title="今日工作总结："></a>今日工作总结：<br></h1><p>　　１.来了公司差不多半个月了，做的清结算的部分，到目前为止，连清结算的业务流程都还没弄明白，整体上态度还是有问题的，要多跟领导交流，多问，虽然别人有可能不乐意，但目前来说问别人还是比较快的学习方法，另外自己下班后还要花时间研究。<br><br>　　２.今天在知乎看到一个互联网金融的产品经理写的一篇文章，看后觉得非常有感触，每天都要看一遍，时刻提醒自己,贴上链接:<a href="https://www.zhihu.com/question/54247561" target="_blank" rel="noopener">介绍互联网第三方支付业务相关流程或技术的书有哪些？</a><br><br>　　３.平时还是要多看一些有关职场人际交往的资料，提升自身的职业性和专业性，说白了就是要学会与人打交道，不管是你喜欢的人还是不喜欢的人都要学会怎么与别人相处。<br></p>
-<p>　</p>
+        <h4 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h4><p>​      pom作为项目对象模型。通过xml表示maven项目，使用pom.xml来实现。主要描述了项目：包括配置文件；开发者需要遵循的规则，缺陷管理系统，组织和licenses，项目的url，项目的依赖性，以及其他所有的项目相关因素。 </p>
+<ol>
+<li><h5 id="依赖冲突问题"><a href="#依赖冲突问题" class="headerlink" title="依赖冲突问题"></a>依赖冲突问题</h5><p>​    依赖冲突：若项目中多个 Jar 同时引用了相同的 Jar 时，会产生依赖冲突，但 Maven 采用了两种避免冲突的策略，因此在 Maven 中是不存在依赖冲突的。 </p>
+</li>
+</ol>
+<ul>
+<li><p><strong>短路优先</strong></p>
+<p>本项目——&gt;A.jar——&gt;B.jar——&gt;X.jar<br>本项目——&gt;C.jar——&gt;X.jar<br>若本项目引用了 A.jar，A.jar 又引用了 B.jar，B.jar 又引用了 X.jar，并且 C.jar 也引用了X.jar。<br>在此时，Maven 只会引用引用路径最短的Jar。</p>
+</li>
+<li><p><strong>声明优先</strong></p>
+<p>若引用路径长度相同时，在pom.xml中谁先被声明，就使用谁。</p>
+</li>
+</ul>
+<ol>
+<li><h5 id="scope中的-provided-与-compile"><a href="#scope中的-provided-与-compile" class="headerlink" title="scope中的 provided 与 compile"></a>scope中的 provided 与 compile</h5><p>​     compile 是pom.xml 默认的依赖范围，编译范围的依赖包在项目的类路径下是可用的，provided 在测试和编译阶段有效，在运行时，不会打包到类路径下，而是直接使用 JDK 或 容器的依赖包。</p>
+</li>
+<li><h5 id="snapshot-快照仓库和-release-发布仓库"><a href="#snapshot-快照仓库和-release-发布仓库" class="headerlink" title="snapshot 快照仓库和 release 发布仓库"></a>snapshot 快照仓库和 release 发布仓库</h5><p>​    maven 中的仓库分为两种，snapshot 快照仓库和 release 发布仓库。snapshot 快照仓库用于保存开发过程中的不稳定版本，release 正式仓库则是用来保存稳定的发行版本。定义一个组件/模块为快照版本，只需要在 pom 文件中在该模块的版本号后加上-SNAPSHOT即可(注意这里必须是大写)，在distributionManagement段中配置的是snapshot快照库和release发布库的地址。</p>
+</li>
+<li><h5 id="maven-的6中属性，内置属性、POM-属性、自定义属性、Settings-属性、环境变量属性"><a href="#maven-的6中属性，内置属性、POM-属性、自定义属性、Settings-属性、环境变量属性" class="headerlink" title="maven 的6中属性，内置属性、POM 属性、自定义属性、Settings 属性、环境变量属性"></a>maven 的6中属性，内置属性、POM 属性、自定义属性、Settings 属性、环境变量属性</h5></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">内置属性</span><br><span class="line">$&#123;basedir&#125; 表示项目根目录</span><br><span class="line">$&#123;version&#125; 表示项目版本</span><br><span class="line"></span><br><span class="line">pom属性</span><br><span class="line">$&#123;project.build.sourceDirectory&#125; 表示项目的主源码目录，默认为 src/main/java</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$&#123;project.build.testDirectory&#125; 表示项目的测试源码目录，默认为 src/test/java</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$&#123;project.build.directory&#125; 表示项目项目构建输出目录，默认为 /target</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$&#123;project.outputDirectory&#125; 表示项目主代码编译输出目录，默认为 /target/classes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$&#123;project.build.filename&#125; 表示项目打包输出文件的名称，默认为 $&#123;project.artifactId&#125;-$&#123;project.version&#125;</span><br><span class="line"></span><br><span class="line">自定义属性</span><br><span class="line">用户可以在 pom.xml 的&lt;properties/&gt; 元素下定义自己的 Maven 属性</span><br><span class="line"></span><br><span class="line">setting属性</span><br><span class="line">maven settings.xml 中定义的内容，可以通过 settings 前缀进行引用。</span><br><span class="line">$&#123;settings.localRepository&#125; 表示 maven 本地仓库的路径</span><br><span class="line">$&#123;settings.offline&#125; 表示构建系统是否在离线模式下工作</span><br></pre></td></tr></table></figure>
+<ol>
+<li><h5 id="Resources标签"><a href="#Resources标签" class="headerlink" title="Resources标签"></a>Resources标签</h5></li>
+</ol>
+<blockquote>
+<p>Maven 属性默认只有在 pom.xml 中才会被解析，对于放在 <code>src/main/resources/</code> 目录下的文件，maven 是需要通过 <code>maven-resources-plugin</code> 插件帮忙处理的，它默认的行为是将项目资源文件复制到代码编译输出目录中，不过只要通过一些简单的 POM 配置，该插件就能解析资源文件中的 Maven 属性，即开启资源过滤。<br> resources（通常）不是代码，他们不被编译，但是被绑定在你的项目或者用于其它什么原因，例如代码生成。</p>
+</blockquote>
+<ol>
+<li><h5 id="PluginManagement标签"><a href="#PluginManagement标签" class="headerlink" title="PluginManagement标签"></a>PluginManagement标签</h5></li>
+</ol>
+<blockquote>
+<p>在 <code>&lt;build&gt;</code> 中，<code>&lt;pluginManagement&gt;</code> 与 <code>&lt;plugins&gt;</code> 并列，两者之间的关系类似于 <code>&lt;dependencyManagement&gt;</code> 与 <code>&lt;dependencies&gt;</code> 之间的关系。<code>&lt;pluginManagement&gt;</code> 中也配置 <code>&lt;plugin&gt;</code>，其配置参数与 <code>&lt;plugins&gt;</code> 中的 <code>&lt;plugin&gt;</code> 完全一致。只是，<code>&lt;pluginManagement&gt;</code> 往往出现在父项目中，其中配置的 <code>&lt;plugin&gt;</code> 往往通用于子项目。子项目中只要在 <code>&lt;plugins&gt;</code> 中以 <code>&lt;plugin&gt;</code> 声明该插件，该插件的具体配置参数则继承自父项目中 <code>&lt;pluginManagement&gt;</code> 对该插件的配置，从而避免在子项目中进行重复配置 </p>
+</blockquote>
+<ol>
+<li><h5 id="Settings-xml"><a href="#Settings-xml" class="headerlink" title="Settings.xml"></a>Settings.xml</h5><p>​    maven安装目录下的 settings.xml 是全局配置文件，.m2 文件下的 settings.xml 是局部配置文件，一般 .m2 文件下的 settings.xml 会覆盖 maven 安装目录下的 settings.xml文件。</p>
+</li>
+</ol>
+<p><strong>参考链接</strong></p>
+<p><a href="https://blog.csdn.net/u012152619/article/details/51485297" target="_blank" rel="noopener">pom配置文件详解</a></p>
+<p><a href="https://www.jianshu.com/p/3389452a26a8" target="_blank" rel="noopener">pom.xml详解</a></p>
+<p><a href="https://www.jianshu.com/p/8417a94c4d94" target="_blank" rel="noopener">pom总结精华</a></p>
+<p><a href="https://blog.csdn.net/kimylrong/article/details/50353161" target="_blank" rel="noopener">Maven依赖中的scope详解</a></p>
 
       
     </div>
@@ -492,7 +552,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/反思/" rel="tag"><i class="fa fa-tag"></i> 反思</a>
+            <a href="/tags/Maven系列/" rel="tag"><i class="fa fa-tag"></i> Maven系列</a>
           
         </div>
       
@@ -505,8 +565,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/18/搬瓦工多用户设置碰到的问题/" rel="next" title="搬瓦工多用户设置碰到的问题">
-                <i class="fa fa-chevron-left"></i> 搬瓦工多用户设置碰到的问题
+              <a href="/2018/12/31/JSP-基础知识点/" rel="next" title="JSP 基础知识点">
+                <i class="fa fa-chevron-left"></i> JSP 基础知识点
               </a>
             
           </div>
@@ -515,8 +575,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/20/0320今日反思/" rel="prev" title="0320今日反思">
-                0320今日反思 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/03/Mysql-索引-1/" rel="prev" title="Mysql-索引-1">
+                Mysql-索引-1 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -634,7 +694,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -645,7 +705,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -656,7 +716,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -699,7 +759,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#每日需要养成的好习惯"><span class="nav-number">1.</span> <span class="nav-text">每日需要养成的好习惯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今日工作总结："><span class="nav-number">2.</span> <span class="nav-text">今日工作总结：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#pom-xml"><span class="nav-number">1.</span> <span class="nav-text">pom.xml</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#依赖冲突问题"><span class="nav-number">1.1.</span> <span class="nav-text">依赖冲突问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#scope中的-provided-与-compile"><span class="nav-number">1.2.</span> <span class="nav-text">scope中的 provided 与 compile</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#snapshot-快照仓库和-release-发布仓库"><span class="nav-number">1.3.</span> <span class="nav-text">snapshot 快照仓库和 release 发布仓库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#maven-的6中属性，内置属性、POM-属性、自定义属性、Settings-属性、环境变量属性"><span class="nav-number">1.4.</span> <span class="nav-text">maven 的6中属性，内置属性、POM 属性、自定义属性、Settings 属性、环境变量属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Resources标签"><span class="nav-number">1.5.</span> <span class="nav-text">Resources标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PluginManagement标签"><span class="nav-number">1.6.</span> <span class="nav-text">PluginManagement标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Settings-xml"><span class="nav-number">1.7.</span> <span class="nav-text">Settings.xml</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -720,7 +780,7 @@ var jiathis_config={
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -734,7 +794,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">54.6k</span>
+    <span title="Site words total count">56.9k</span>
   
 </div>
 
@@ -753,7 +813,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共54.6k字</span>
+  <span class="post-count">博客全站共56.9k字</span>
 </div>
 
         
@@ -890,9 +950,9 @@ var jiathis_config={
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://ajwensome.com/2018/03/19/0319今日反思/';
-          this.page.identifier = '2018/03/19/0319今日反思/';
-          this.page.title = '每日总结-0319';
+          this.page.url = 'http://ajwensome.com/2019/01/02/pom文件详解/';
+          this.page.identifier = '2019/01/02/pom文件详解/';
+          this.page.title = 'pom文件详解';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
