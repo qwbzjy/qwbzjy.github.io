@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="业余提升," />
+  <meta name="keywords" content="扩展," />
 
 
 
@@ -84,7 +84,7 @@
 
 
 <meta name="description" content="前段时间，花了我$20(换算成人民币是120大洋)在搬瓦工上买了一个vps，在配置多用户的时候，按照官网上的教程设置完成后，只有433的端口能够上网，其余的端口都上不了，折腾了一天，终于搞好了。其实之前就碰到了这个问题，只是当时没有记录下问题的解决方法，现在碰到了，又忘记了当时是怎么解决的，真的是想抽自己一个大耳光，恨自己为什么不记下来，如果当时自己记录了问题的解决方案，现在也不用这么浪费时间">
-<meta name="keywords" content="业余提升">
+<meta name="keywords" content="扩展">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搬瓦工多用户设置碰到的问题">
 <meta property="og:url" content="http://ajwensome.com/2018/03/18/搬瓦工多用户设置碰到的问题/index.html">
@@ -92,7 +92,7 @@
 <meta property="og:description" content="前段时间，花了我$20(换算成人民币是120大洋)在搬瓦工上买了一个vps，在配置多用户的时候，按照官网上的教程设置完成后，只有433的端口能够上网，其余的端口都上不了，折腾了一天，终于搞好了。其实之前就碰到了这个问题，只是当时没有记录下问题的解决方法，现在碰到了，又忘记了当时是怎么解决的，真的是想抽自己一个大耳光，恨自己为什么不记下来，如果当时自己记录了问题的解决方案，现在也不用这么浪费时间">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ajwensome.com/images/ss.jpg">
-<meta property="og:updated_time" content="2018-03-19T00:09:03.728Z">
+<meta property="og:updated_time" content="2019-04-15T09:44:22.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搬瓦工多用户设置碰到的问题">
 <meta name="twitter:description" content="前段时间，花了我$20(换算成人民币是120大洋)在搬瓦工上买了一个vps，在配置多用户的时候，按照官网上的教程设置完成后，只有433的端口能够上网，其余的端口都上不了，折腾了一天，终于搞好了。其实之前就碰到了这个问题，只是当时没有记录下问题的解决方法，现在碰到了，又忘记了当时是怎么解决的，真的是想抽自己一个大耳光，恨自己为什么不记下来，如果当时自己记录了问题的解决方案，现在也不用这么浪费时间">
@@ -355,6 +355,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/业余/" itemprop="url" rel="index">
+                    <span itemprop="name">业余</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -436,10 +458,8 @@
 
       
         <p>　　前段时间，花了我$20(换算成人民币是120大洋)在搬瓦工上买了一个vps，在配置多用户的时候，按照官网上的教程设置完成后，只有433的端口能够上网，其余的端口都上不了，折腾了一天，终于搞好了。其实之前就碰到了这个问题，只是当时没有记录下问题的解决方法，现在碰到了，又忘记了当时是怎么解决的，真的是想抽自己一个大耳光，恨自己为什么不记下来，如果当时自己记录了问题的解决方案，现在也不用这么浪费时间，而且搞得自己心情特别生气，生自己的气。所以在以后的工作和生活中，凡是碰到问题，而且自己花时间解决了，一定要记录下自己的解决过程和解决方法，毕竟好记性不如乱笔头。废话不多说，上解决方案。</p>
-<p>　　1. 首先是在搬瓦工官网上买一个vps服务器，说白了就是买一个独立的私人服务器，有自己的固定ip地址，至于vps能做什么，以后有时间了再总结一下。然后搭建ss(shadowsocks)账号，可以一个人用，也可以多人使用。搭建ss单个账号，直接看这个链接：<a href="https://www.cnblogs.com/Bandwagonhost/p/8250759.html" target="_blank" rel="noopener">搬瓦工搭建ss单用户教程</a><br><br>　　2. 如果你想搭建多个人共用一个vps，那么直接看这个链接:  <a href="http://www.cnblogs.com/Bandwagonhost/p/8242073.html" target="_blank" rel="noopener">搬瓦工搭建ss多用户教程</a><br><br>　　3. 说一下我碰到的问题，刚开始的时候自己用的单用户账号，后来自己想弄个多用户的试试，碰到了，修改shadowsocks.json文件后，多个用户无法使用的情况，最后经过一番折腾，主要原因是没有重新启动服务器，启动服务器的操作直接看下图。<br><br>　　4. 在putty界面登陆远程服务器后输入下图中的命令：<br><br><img src="/images/ss.jpg" alt="ss多用户配置解决方法">
-　　
-　　　　
-　　</p>
+<p>　　1. 首先是在搬瓦工官网上买一个vps服务器，说白了就是买一个独立的私人服务器，有自己的固定ip地址，至于vps能做什么，以后有时间了再总结一下。然后搭建ss(shadowsocks)账号，可以一个人用，也可以多人使用。搭建ss单个账号，直接看这个链接：<a href="https://www.cnblogs.com/Bandwagonhost/p/8250759.html" target="_blank" rel="noopener">搬瓦工搭建ss单用户教程</a><br><br>　　2. 如果你想搭建多个人共用一个vps，那么直接看这个链接:  <a href="http://www.cnblogs.com/Bandwagonhost/p/8242073.html" target="_blank" rel="noopener">搬瓦工搭建ss多用户教程</a><br><br>　　3. 说一下我碰到的问题，刚开始的时候自己用的单用户账号，后来自己想弄个多用户的试试，碰到了，修改shadowsocks.json文件后，多个用户无法使用的情况，最后经过一番折腾，主要原因是没有重新启动服务器，启动服务器的操作直接看下图。<br><br>　　4. 在putty界面登陆远程服务器后输入下图中的命令：<br><br><img src="/images/ss.jpg" alt="ss多用户配置解决方法"></p>
+<p>　　</p>
 
       
     </div>
@@ -495,7 +515,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/业余提升/" rel="tag"><i class="fa fa-tag"></i> 业余提升</a>
+            <a href="/tags/扩展/" rel="tag"><i class="fa fa-tag"></i> 扩展</a>
           
         </div>
       
@@ -624,7 +644,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -635,7 +655,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -708,7 +728,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">56.9k</span>
+    <span title="Site words total count">69.3k</span>
   
 </div>
 
@@ -727,7 +747,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共56.9k字</span>
+  <span class="post-count">博客全站共69.3k字</span>
 </div>
 
         
