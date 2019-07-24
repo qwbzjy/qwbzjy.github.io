@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="MyBatis," />
 
 
 
@@ -83,17 +83,18 @@
 
 
 
-<meta name="description" content="忘记背后，努力面前，向着标杆直跑。">
+<meta name="description" content="MyBatis 入参总结MyBatis 入参类型总结(1) 基本类型 (2) 对象类型 (3) List (4) 数组 (5) Map 无论传哪种参数给 MyBatis，它都会将参数封装在一个 Map 中： 若传入基本类型：变量名作为 key，变量值最为 value，此时生成的 Map 只有一个元素； 若传入对象类型，对象的属性名作为 key，属性值作为 value； 若传入 List，“List">
+<meta name="keywords" content="MyBatis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MyBatis-入参和出参总结">
 <meta property="og:url" content="http://ajwensome.com/2019/01/14/MyBatis-入参和出参总结/index.html">
 <meta property="og:site_name" content="勇敢的心">
-<meta property="og:description" content="忘记背后，努力面前，向着标杆直跑。">
+<meta property="og:description" content="MyBatis 入参总结MyBatis 入参类型总结(1) 基本类型 (2) 对象类型 (3) List (4) 数组 (5) Map 无论传哪种参数给 MyBatis，它都会将参数封装在一个 Map 中： 若传入基本类型：变量名作为 key，变量值最为 value，此时生成的 Map 只有一个元素； 若传入对象类型，对象的属性名作为 key，属性值作为 value； 若传入 List，“List">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-14T10:53:51.721Z">
+<meta property="og:updated_time" content="2019-05-21T02:07:00.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis-入参和出参总结">
-<meta name="twitter:description" content="忘记背后，努力面前，向着标杆直跑。">
+<meta name="twitter:description" content="MyBatis 入参总结MyBatis 入参类型总结(1) 基本类型 (2) 对象类型 (3) List (4) 数组 (5) Map 无论传哪种参数给 MyBatis，它都会将参数封装在一个 Map 中： 若传入基本类型：变量名作为 key，变量值最为 value，此时生成的 Map 只有一个元素； 若传入对象类型，对象的属性名作为 key，属性值作为 value； 若传入 List，“List">
 
 
 
@@ -352,6 +353,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ORM框架/" itemprop="url" rel="index">
+                    <span itemprop="name">ORM框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -395,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  1,488
                 </span>
               
 
@@ -411,7 +434,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  7
                 </span>
               
             </div>
@@ -432,7 +455,56 @@
       
 
       
-        
+        <h4 id="MyBatis-入参总结"><a href="#MyBatis-入参总结" class="headerlink" title="MyBatis 入参总结"></a>MyBatis 入参总结</h4><h5 id="MyBatis-入参类型总结"><a href="#MyBatis-入参类型总结" class="headerlink" title="MyBatis 入参类型总结"></a>MyBatis 入参类型总结</h5><p>(1) 基本类型</p>
+<p>(2) 对象类型</p>
+<p>(3) List</p>
+<p>(4) 数组</p>
+<p>(5) Map</p>
+<p>无论传哪种参数给 MyBatis，它都会将参数封装在一个 Map 中：</p>
+<p>若传入基本类型：变量名作为 key，变量值最为 value，此时生成的 Map 只有一个元素；</p>
+<p>若传入对象类型，对象的属性名作为 key，属性值作为 value；</p>
+<p>若传入 List，“List” 作为 key，List 的值作为 value (这类参数可以迭代，利用标签实现循环)；</p>
+<p>若传入数组，”array” 作为 key，数组的值作为 value (同List类似)；</p>
+<p>若传入Map，键值不变</p>
+<h5 id="传入-String-类型参数问题"><a href="#传入-String-类型参数问题" class="headerlink" title="传入 String 类型参数问题"></a>传入 String 类型参数问题</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#接口方法</span><br><span class="line">List&lt;User&gt; getAll( String userName);</span><br><span class="line"></span><br><span class="line">#xml文件</span><br><span class="line"> &lt;select id=&quot;getAll&quot; resultMap=&quot;BaseResultMap&quot; parameterType=&quot;java.lang.String&quot; &gt;</span><br><span class="line">       SELECT </span><br><span class="line">       &lt;include refid=&quot;Base_Column_List&quot; /&gt;</span><br><span class="line">	   FROM users where 1=1</span><br><span class="line">        &lt;if test=&quot;userName !=null and userName!=&apos;&apos;&quot;&gt;</span><br><span class="line">            AND userName like concat(&apos;%&apos;,#&#123;userName&#125;,&apos;%&apos;)</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    </span><br><span class="line">按照这种方式进行传参会报错：</span><br><span class="line">Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named &apos;userName&apos; in &apos;class java.lang.String&apos;</span><br><span class="line"></span><br><span class="line">解决方法：</span><br><span class="line">1.接口方法写成  List&lt;User&gt; getAll(@Param(&quot;userName&quot;) String userName);</span><br><span class="line"></span><br><span class="line">2.xml文件写成  </span><br><span class="line">&lt;select id=&quot;getAll&quot; resultMap=&quot;BaseResultMap&quot; parameterType=&quot;java.lang.String&quot; &gt;</span><br><span class="line">       SELECT </span><br><span class="line">       &lt;include refid=&quot;Base_Column_List&quot; /&gt;</span><br><span class="line">	   FROM users where 1=1</span><br><span class="line">        &lt;if test=&quot;_parameter !=null and _parameter!=&apos;&apos;&quot;&gt;</span><br><span class="line">            AND userName like concat(&apos;%&apos;,#&#123;userName&#125;,&apos;%&apos;)</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line"></span><br><span class="line">注意：_parameter不能区分多个参数，而@param能。所以@param能传多个这样的参数</span><br></pre></td></tr></table></figure>
+<h5 id="selectList-只能传递一个参数，但参数既包含String类型，又包含List类型"><a href="#selectList-只能传递一个参数，但参数既包含String类型，又包含List类型" class="headerlink" title="selectList()只能传递一个参数，但参数既包含String类型，又包含List类型"></a>selectList()只能传递一个参数，但参数既包含String类型，又包含List类型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#参数封装</span><br><span class="line">List&lt;String&gt; list = new ArrayList&lt;String&gt;();</span><br><span class="line">Map&lt;String, Object&gt; map2 = new HashMap&lt;String, Object&gt;();</span><br><span class="line">list.add(&quot;1&quot;);</span><br><span class="line">list.add(&quot;2&quot;);</span><br><span class="line">map2.put(&quot;list&quot;, list); </span><br><span class="line">map2.put(&quot;siteTag&quot;, &quot;0&quot;);</span><br><span class="line"></span><br><span class="line">#接口方法</span><br><span class="line">public List&lt;SysWeb&gt; getSysInfo(Map&lt;String, Object&gt; map2) &#123;</span><br><span class="line">　　return getSqlSession().selectList(&quot;sysweb.getSysInfo&quot;, map2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#xml文件</span><br><span class="line">&lt;select id=&quot;getSysInfo&quot; parameterType=&quot;java.util.Map&quot; resultType=&quot;SysWeb&quot;&gt;</span><br><span class="line">　　select t.sysSiteId, t.siteName, t1.mzNum as siteTagNum, t1.mzName as siteTag, t.url, t.iconPath</span><br><span class="line">   from TD_WEB_SYSSITE t</span><br><span class="line">   left join TD_MZ_MZDY t1 on t1.mzNum = t.siteTag and t1.mzType = 10</span><br><span class="line">   WHERE t.siteTag = #&#123;siteTag &#125; </span><br><span class="line">   and t.sysSiteId not in </span><br><span class="line">   &lt;foreach collection=&quot;list&quot; item=&quot;item&quot; index=&quot;index&quot; open=&quot;(&quot; close=&quot;)&quot; separator=&quot;,&quot;&gt;</span><br><span class="line">       #&#123;item&#125;</span><br><span class="line">   &lt;/foreach&gt;</span><br><span class="line"> &lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="MyBatis-出参总结"><a href="#MyBatis-出参总结" class="headerlink" title="MyBatis 出参总结"></a>MyBatis 出参总结</h4><h5 id="MyBatis的返回参数类型"><a href="#MyBatis的返回参数类型" class="headerlink" title="MyBatis的返回参数类型"></a>MyBatis的返回参数类型</h5><ul>
+<li><p>resultMap ：结果集</p>
+</li>
+<li><p>resultType：Integer String Long class</p>
+</li>
+</ul>
+<p>​       MyBatis 进行查询映射时，查询出来的每一个属性都是放在一个对应的 map 里面的，其中键是属性名，值是对应的属性值。</p>
+<p>​        当提供的返回类型属性是 resultType 时，MyBatis 会将 map 里面的键值对取出赋给 resultType 所指定的对象对应的属性。</p>
+<p>​       所以其实 MyBatis 的每一个查询映射的返回类型都是 ResultMap，只是当提供的返回类型属性是resultType 的时候，MyBatis 会自动的把对应的值赋给 resultType 所指定对象的属性。</p>
+<h5 id="ResultMap-中列的问题"><a href="#ResultMap-中列的问题" class="headerlink" title="ResultMap 中列的问题"></a>ResultMap 中列的问题</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;com.liulanghan.Blog&quot; id=&quot;BlogResult&quot;&gt;    </span><br><span class="line">    &lt;id column=&quot;id&quot; property=&quot;id&quot;/&gt;    </span><br><span class="line">    &lt;result column=&quot;title&quot; property=&quot;title&quot;/&gt;    </span><br><span class="line">    &lt;result column=&quot;content&quot; property=&quot;content&quot;/&gt;    </span><br><span class="line">    &lt;result column=&quot;owner&quot; property=&quot;owner&quot;/&gt;    </span><br><span class="line">&lt;/resultMap&gt;   </span><br><span class="line">   </span><br><span class="line">&lt;select id=&quot;selectBlog&quot; parameterType=&quot;int&quot; resultMap=&quot;BlogResult&quot;&gt;    </span><br><span class="line">      select * from t_blog where id = #&#123;id&#125;    </span><br><span class="line">&lt;/select&gt;  </span><br><span class="line"></span><br><span class="line">问题1：结果集的列比resultMap多会报错么？</span><br><span class="line">不会,只映射resultMap中有的列。</span><br><span class="line"></span><br><span class="line">问题2：结果集的列比resultMap少会报错么？</span><br><span class="line">不会,只映射结果集中有的列。</span><br></pre></td></tr></table></figure>
+<h5 id="ResultType-注意事项"><a href="#ResultType-注意事项" class="headerlink" title="ResultType 注意事项"></a>ResultType 注意事项</h5><p>​       使用resultType进行输出映射，只有查询出来的列名和pojo中的属性名一致，该列才可以映射成功。如果查询出来的列名和pojo中的属性名全部不一致，没有创建pojo对象。<br>​      只要查询出来的列名和pojo中的属性有一个一致，就会创建pojo对象</p>
+<h4 id="MyBatis-中-与-的区别"><a href="#MyBatis-中-与-的区别" class="headerlink" title="MyBatis 中 $ 与 # 的区别"></a>MyBatis 中 $ 与 # 的区别</h4><ul>
+<li># 将传入的数据都当成一个字符串，会对自动传入的数据加一个双引号。如：order by #user_id#，如果传入的值是111,那么解析成sql时的值为order by “111”, 如果传入的值是id，则解析成的sql为order by “id”</li>
+<li>\$ 将传入的数据直接显示生成在sql中。如：order by ​\$user_id\​$，如果传入的值是111,那么解析成sql时的值为order by user_id, 如果传入的值是id，则解析成的sql为order by id</li>
+<li>#方式能够很大程度防止sql注入，.$方式无法防止Sql注入</li>
+<li>$方式一般用于传入数据库对象，例如传入表名</li>
+<li>一般能用#的就别用$</li>
+<li>在使用mybatis中还遇到&lt;![CDATA[]]&gt;的用法，在该符号内的语句，将不会被当成字符串来处理，而是直接当成sql语句，比如要执行一个存储过程</li>
+</ul>
+<h4 id="SQL-注入示例"><a href="#SQL-注入示例" class="headerlink" title="SQL 注入示例"></a>SQL 注入示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">SELECT USER from database WHERE username =&apos;admin&apos;AND password =&apos;xenu&apos;</span><br><span class="line"></span><br><span class="line">#攻击者可以在登录表单中输入以下用户数据</span><br><span class="line">username:a or 1=1--</span><br><span class="line">password:blank</span><br><span class="line"></span><br><span class="line">#这会导致查询语句变成</span><br><span class="line">SELECT USER from database WHERE username=&apos;a&apos; or 1=1-- AND password=&apos;&apos; </span><br><span class="line">-- 后面是注释</span><br><span class="line"></span><br><span class="line">#最后查询语句的结果</span><br><span class="line">SELECT USER from database WHERE username=&apos;a&apos; or 1=1</span><br><span class="line"></span><br><span class="line">#相当于查询了全部的用户信息</span><br></pre></td></tr></table></figure>
+<h4 id="MyBatis-中-javaType-与-jdbcType-的对应关系"><a href="#MyBatis-中-javaType-与-jdbcType-的对应关系" class="headerlink" title="MyBatis 中 javaType 与 jdbcType 的对应关系"></a>MyBatis 中 javaType 与 jdbcType 的对应关系</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>JDBC Type           Java Type<br>CHAR                String<br>VARCHAR             String<br>LONGVARCHAR         String<br>NUMERIC             java.math.BigDecimal<br>DECIMAL             java.math.BigDecimal<br>BIT                 boolean<br>BOOLEAN             boolean<br>TINYINT             byte<br>SMALLINT            short<br>INTEGER             int<br>BIGINT              long<br>REAL                float<br>FLOAT               double<br>DOUBLE              double<br>BINARY              byte[]<br>VARBINARY           byte[]<br>LONGVARBINARY       byte[]<br>DATE                java.sql.Date<br>TIME                java.sql.Time<br>TIMESTAMP           java.sql.Timestamp<br>CLOB                Clob<br>BLOB                Blob<br>ARRAY               Array<br>DISTINCT            mapping of underlying type<br>STRUCT              Struct<br>REF                 Ref<br>DATALINK            java.net.URL[color=red][/color]  </p>
+<h4 id="MyBatis-中基本类型和包装类型的选择"><a href="#MyBatis-中基本类型和包装类型的选择" class="headerlink" title="MyBatis 中基本类型和包装类型的选择"></a>MyBatis 中基本类型和包装类型的选择</h4><p>​    在oo编程中，<strong>声明变量，能用包装类就用包装类</strong>，比如用Integer，而不用int。int默认为0，Integer默认null。</p>
+<p>持久层对象或者Controller、Service、Dao中用Integer。Mapper文件中用Integer，循环体，方法中用int。</p>
+<p><strong>参考链接</strong></p>
+<p><a href="https://blog.csdn.net/weixin_38303684/article/details/78886375" target="_blank" rel="noopener">使用mybatis时paramType传入参数总结</a></p>
+<p><a href="http://www.cnblogs.com/mingyue1818/p/3714162.html" target="_blank" rel="noopener">MyBatis传入多个参数的问题</a></p>
+<p><a href="https://blog.csdn.net/zcl_love_wx/article/details/78601481" target="_blank" rel="noopener">MyBatis中传入String 类型参数的问题</a></p>
+<p><a href="https://blog.csdn.net/yu870646595/article/details/52312760" target="_blank" rel="noopener">MyBatis入参总结</a></p>
+<p><a href="https://blog.csdn.net/u010235716/article/details/51698787" target="_blank" rel="noopener">MyBatis的返回参数类型</a></p>
+<p><a href="https://www.cnblogs.com/xiaoxi/p/6378960.html" target="_blank" rel="noopener">MyBatis-resultType与resultMap</a></p>
+<p><a href="https://blog.csdn.net/coslay/article/details/51251570" target="_blank" rel="noopener">MyBatis #与$的区别</a></p>
+<p><a href="https://www.cnblogs.com/ichunqiu/p/9604564.html" target="_blank" rel="noopener">什么是 SQL 注入</a></p>
+<p><a href="https://blog.csdn.net/javaee_sunny/article/details/52756903" target="_blank" rel="noopener">MyBatis 中 jdbcType与javaType区别</a></p>
+<p><a href="https://www.cnblogs.com/fengli9998/p/7859250.html" target="_blank" rel="noopener">Integer与int的选择</a></p>
+<p><a href="https://blog.csdn.net/keshacookie/article/details/50519835" target="_blank" rel="noopener">MyBatis之动态sql 拼接</a></p>
+
       
     </div>
     
@@ -484,6 +556,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyBatis/" rel="tag"><i class="fa fa-tag"></i> MyBatis</a>
+          
+        </div>
       
 
       
@@ -594,8 +672,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -614,7 +701,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -625,7 +712,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -636,7 +723,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -670,6 +757,22 @@ var jiathis_config={
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis-入参总结"><span class="nav-number">1.</span> <span class="nav-text">MyBatis 入参总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MyBatis-入参类型总结"><span class="nav-number">1.1.</span> <span class="nav-text">MyBatis 入参类型总结</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#传入-String-类型参数问题"><span class="nav-number">1.2.</span> <span class="nav-text">传入 String 类型参数问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#selectList-只能传递一个参数，但参数既包含String类型，又包含List类型"><span class="nav-number">1.3.</span> <span class="nav-text">selectList()只能传递一个参数，但参数既包含String类型，又包含List类型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis-出参总结"><span class="nav-number">2.</span> <span class="nav-text">MyBatis 出参总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MyBatis的返回参数类型"><span class="nav-number">2.1.</span> <span class="nav-text">MyBatis的返回参数类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ResultMap-中列的问题"><span class="nav-number">2.2.</span> <span class="nav-text">ResultMap 中列的问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ResultType-注意事项"><span class="nav-number">2.3.</span> <span class="nav-text">ResultType 注意事项</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis-中-与-的区别"><span class="nav-number">3.</span> <span class="nav-text">MyBatis 中 $ 与 # 的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL-注入示例"><span class="nav-number">4.</span> <span class="nav-text">SQL 注入示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis-中-javaType-与-jdbcType-的对应关系"><span class="nav-number">5.</span> <span class="nav-text">MyBatis 中 javaType 与 jdbcType 的对应关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis-中基本类型和包装类型的选择"><span class="nav-number">6.</span> <span class="nav-text">MyBatis 中基本类型和包装类型的选择</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -698,7 +801,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">69.3k</span>
+    <span title="Site words total count">81.2k</span>
   
 </div>
 
@@ -717,7 +820,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共69.3k字</span>
+  <span class="post-count">博客全站共81.2k字</span>
 </div>
 
         

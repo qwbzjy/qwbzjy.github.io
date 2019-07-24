@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="spring," />
 
 
 
@@ -83,17 +83,18 @@
 
 
 
-<meta name="description" content="忘记背后，努力面前，向着标杆直跑。">
+<meta name="description" content="JDK 动态代理和 Cglib 代理JDK 动态代理JDK 动态代理简单应用 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#1 定义一个接口public interface UserService&amp;#123;    void query();&amp;#125;#2 实现这个接口pub">
+<meta name="keywords" content="spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="两种动态代理">
 <meta property="og:url" content="http://ajwensome.com/2019/04/15/两种动态代理/index.html">
 <meta property="og:site_name" content="勇敢的心">
-<meta property="og:description" content="忘记背后，努力面前，向着标杆直跑。">
+<meta property="og:description" content="JDK 动态代理和 Cglib 代理JDK 动态代理JDK 动态代理简单应用 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#1 定义一个接口public interface UserService&amp;#123;    void query();&amp;#125;#2 实现这个接口pub">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T03:49:42.564Z">
+<meta property="og:updated_time" content="2019-04-25T09:12:42.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="两种动态代理">
-<meta name="twitter:description" content="忘记背后，努力面前，向着标杆直跑。">
+<meta name="twitter:description" content="JDK 动态代理和 Cglib 代理JDK 动态代理JDK 动态代理简单应用 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#1 定义一个接口public interface UserService&amp;#123;    void query();&amp;#125;#2 实现这个接口pub">
 
 
 
@@ -352,6 +353,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spring框架/" itemprop="url" rel="index">
+                    <span itemprop="name">spring框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -395,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  328
                 </span>
               
 
@@ -411,7 +434,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -432,7 +455,23 @@
       
 
       
-        
+        <h4 id="JDK-动态代理和-Cglib-代理"><a href="#JDK-动态代理和-Cglib-代理" class="headerlink" title="JDK 动态代理和 Cglib 代理"></a>JDK 动态代理和 Cglib 代理</h4><h5 id="JDK-动态代理"><a href="#JDK-动态代理" class="headerlink" title="JDK 动态代理"></a>JDK 动态代理</h5><p>JDK 动态代理简单应用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#1 定义一个接口</span><br><span class="line">public interface UserService</span><br><span class="line">&#123;</span><br><span class="line">    void query();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#2 实现这个接口</span><br><span class="line">public class UserServiceImpl implements UserService</span><br><span class="line"> &#123;</span><br><span class="line"></span><br><span class="line">    public void query()&#123;</span><br><span class="line"></span><br><span class="line">       System.out.println(&quot;查询用户信息&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#3 定义一个类实现 InvocationHandler</span><br><span class="line">public class MyInvocationHandler implements InvocationHandler</span><br><span class="line"> &#123;</span><br><span class="line">	Object target;</span><br><span class="line">	public MyInvocationHandler(Object target) &#123;       </span><br><span class="line">	this.target = target;   &#125;</span><br><span class="line">    </span><br><span class="line">	public Object invoke(Object proxy,Method method, Object[]args)throws Throwable&#123;</span><br><span class="line">       </span><br><span class="line">	System.out.println(&quot;进入了invoke&quot;);</span><br><span class="line"></span><br><span class="line">        method.invoke(target);</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;执行了invoke&quot;);</span><br><span class="line"></span><br><span class="line">        return null;    </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#4 Main方法</span><br><span class="line">public class Main&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        MyInvocationHandler myInvocationHandler = new MyInvocationHandler(new UserviceImpl());</span><br><span class="line">        </span><br><span class="line">        Object o = ProxyInstance(Main.class.getClassLoader(),new Class[]&#123;UserService.class&#125;,myInvocationHandler);</span><br><span class="line">        </span><br><span class="line">        ((UserService)o).query();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>生成代理类对象的步骤：</p>
+<ul>
+<li>拼接代理类的代码</li>
+<li>输出 .java 文件</li>
+<li>编译 .java 文件生成 .class 文件</li>
+<li>装载 .class 文件</li>
+<li>创建并返回代理类对象</li>
+</ul>
+<p><strong>问题1：为什么需要接口</strong></p>
+<p>​    因为生成的代理类需要实现这个接口。</p>
+<p><strong>问题2：为什么 JDK 动态代理只能代理接口</strong></p>
+<p>​    因为生成的代理类已经继承了 Proxy 类，Java 是单继承的，所以无法再继承另一个类了。</p>
+<p><strong>参考链接</strong></p>
+<p><a href="https://mp.weixin.qq.com/s/2qDqKRX-8fMPGrMZNA8n5A" target="_blank" rel="noopener">陈树义聊 JDK动态代理</a></p>
+
       
     </div>
     
@@ -485,6 +524,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/spring/" rel="tag"><i class="fa fa-tag"></i> spring</a>
+          
+        </div>
+      
 
       
       
@@ -503,6 +548,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/16/spring定时器/" rel="prev" title="spring定时器">
+                spring定时器 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -590,8 +639,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -610,7 +668,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -621,7 +679,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -632,7 +690,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -666,6 +724,22 @@ var jiathis_config={
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK-动态代理和-Cglib-代理"><span class="nav-number">1.</span> <span class="nav-text">JDK 动态代理和 Cglib 代理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JDK-动态代理"><span class="nav-number">1.1.</span> <span class="nav-text">JDK 动态代理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -694,7 +768,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">69.3k</span>
+    <span title="Site words total count">81.2k</span>
   
 </div>
 
@@ -713,7 +787,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共69.3k字</span>
+  <span class="post-count">博客全站共81.2k字</span>
 </div>
 
         
