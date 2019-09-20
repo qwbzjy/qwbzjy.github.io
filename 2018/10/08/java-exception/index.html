@@ -83,19 +83,19 @@
 
 
 
-<meta name="description" content="参考文献： Java 如何抛出异常、自定义异常 java 异常概述1234567throwable:Error和Exception* Error:VirtulMachineError(StackOverFlowError和OutOfMemoryError)和AWTError* Exception(IOException[EOFException和FileNotFoundException]和Run">
+<meta name="description" content="java 异常概述1234567throwable:Error和Exception* Error:VirtulMachineError(StackOverFlowError和OutOfMemoryError)和AWTError* Exception(IOException[EOFException和FileNotFoundException]和RuntimeExcetption[空值对象引用、除数">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java-exception">
 <meta property="og:url" content="http://ajwensome.com/2018/10/08/java-exception/index.html">
 <meta property="og:site_name" content="勇敢的心">
-<meta property="og:description" content="参考文献： Java 如何抛出异常、自定义异常 java 异常概述1234567throwable:Error和Exception* Error:VirtulMachineError(StackOverFlowError和OutOfMemoryError)和AWTError* Exception(IOException[EOFException和FileNotFoundException]和Run">
+<meta property="og:description" content="java 异常概述1234567throwable:Error和Exception* Error:VirtulMachineError(StackOverFlowError和OutOfMemoryError)和AWTError* Exception(IOException[EOFException和FileNotFoundException]和RuntimeExcetption[空值对象引用、除数">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/qwbzjy/IMG/raw/3f5e0933b6e4c1ae85c67d14ed1141b43db0e406/java-exception.png">
-<meta property="og:updated_time" content="2019-04-15T09:39:17.967Z">
+<meta property="og:updated_time" content="2019-09-20T06:21:16.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java-exception">
-<meta name="twitter:description" content="参考文献： Java 如何抛出异常、自定义异常 java 异常概述1234567throwable:Error和Exception* Error:VirtulMachineError(StackOverFlowError和OutOfMemoryError)和AWTError* Exception(IOException[EOFException和FileNotFoundException]和Run">
+<meta name="twitter:description" content="java 异常概述1234567throwable:Error和Exception* Error:VirtulMachineError(StackOverFlowError和OutOfMemoryError)和AWTError* Exception(IOException[EOFException和FileNotFoundException]和RuntimeExcetption[空值对象引用、除数">
 <meta name="twitter:image" content="https://github.com/qwbzjy/IMG/raw/3f5e0933b6e4c1ae85c67d14ed1141b43db0e406/java-exception.png">
 
 
@@ -457,9 +457,7 @@
       
 
       
-        <p>参考文献：</p>
-<p><a href="https://blog.csdn.net/qq_18505715/article/details/73196421" target="_blank" rel="noopener">Java 如何抛出异常、自定义异常</a></p>
-<h4 id="java-异常概述"><a href="#java-异常概述" class="headerlink" title="java 异常概述"></a>java 异常概述</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">throwable:Error和Exception</span><br><span class="line">* Error:VirtulMachineError(StackOverFlowError和OutOfMemoryError)和AWTError</span><br><span class="line">* Exception(IOException[EOFException和FileNotFoundException]和RuntimeExcetption[空值对象引用、除数为零或数组越界]</span><br><span class="line">*</span><br><span class="line">* Java的异常(包括Exception和Error)分为可查的异常（checked exceptions）和不可查的异常（unchecked exceptions）</span><br><span class="line">* 可查异常（编译器要求必须处置的异常）</span><br><span class="line">* 除了RuntimeException及其子类以外，其他的Exception类及其子类都属于可查异常。这种异常的特点是Java编译器会检查它，也就是说，当程序中可能出现这类异常，要么用try-catch语句捕获它，要么用throws子句声明抛出它，否则编译不会通过</span><br></pre></td></tr></table></figure>
+        <h4 id="java-异常概述"><a href="#java-异常概述" class="headerlink" title="java 异常概述"></a>java 异常概述</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">throwable:Error和Exception</span><br><span class="line">* Error:VirtulMachineError(StackOverFlowError和OutOfMemoryError)和AWTError</span><br><span class="line">* Exception(IOException[EOFException和FileNotFoundException]和RuntimeExcetption[空值对象引用、除数为零或数组越界]</span><br><span class="line">*</span><br><span class="line">* Java的异常(包括Exception和Error)分为可查的异常（checked exceptions）和不可查的异常（unchecked exceptions）</span><br><span class="line">* 可查异常（编译器要求必须处置的异常）</span><br><span class="line">* 除了RuntimeException及其子类以外，其他的Exception类及其子类都属于可查异常。这种异常的特点是Java编译器会检查它，也就是说，当程序中可能出现这类异常，要么用try-catch语句捕获它，要么用throws子句声明抛出它，否则编译不会通过</span><br></pre></td></tr></table></figure>
 <h4 id="throw-和-thorws-关键字的区别"><a href="#throw-和-thorws-关键字的区别" class="headerlink" title="throw 和 thorws 关键字的区别"></a>throw 和 thorws 关键字的区别</h4><p>1、写法上 : throw 在方法体内使用，throws 函数名后或者参数列表后方法体前  </p>
 <p>2、意义 ： throw 强调动作，而throws 表示一种倾向、可能但不一定实际发生   </p>
 <p>3、throws 后面跟的是异常类，可以一个，可以多个，多个用逗号隔开。throw 后跟的是异常对象，或者异常对象的引用。  </p>
@@ -468,6 +466,8 @@
 <h4 id="java-异常-try…catch…finally的用法"><a href="#java-异常-try…catch…finally的用法" class="headerlink" title="java 异常 try…catch…finally的用法"></a>java 异常 try…catch…finally的用法</h4><p>try中让可能发生异常的代码，catch用于捕捉异常；<br>         try后可以有多个catch块，如发生异常，只会捕捉一个，一般多个catch中的异常类型存在父子类关系，应该将子类异常放在前面，保证每个异常的意义，异常匹配是从上往下寻找的。<br>       finally块通常是可选的。无论异常是否发生，异常是否匹配被处理，finally都会执行。一个try至少要有一个catch块，否则， 至少要有1个finally块。但是finally不是用来处理异常的，finally不会捕获异常。<br>   finally主要做一些清理工作，如流的关闭，数据库连接的关闭等。 只有一种方法让finally块不执行：System.exit()。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.println((new test()).test());</span><br><span class="line">    &#125;</span><br><span class="line">    static int test()&#123;</span><br><span class="line">        int x=1;</span><br><span class="line">        try&#123;</span><br><span class="line">            return x;</span><br><span class="line">//            x+=2; //3</span><br><span class="line">//            return x+=2; //3</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">//            ++x;  //1</span><br><span class="line">//            x = 2; //1</span><br><span class="line">//            return 2; //2</span><br><span class="line">//            return ++x;  //2</span><br><span class="line">//            x+=2; //1</span><br><span class="line">//            return x+=2;</span><br><span class="line">            return x++; //1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">**从test、smallT和这个例子的运行结果中可以发现，try中的return语句调用的函数先于finally中调用的函数执行，也就是说return语句先执行，finally语句后执行。Return并不是让函数马上返回，而是return语句执行后，将把返回结果放置进函数栈中，此时函数并不是马上返回，它要执行finally语句后才真正开始返回。以finally中的return为准*/</span><br></pre></td></tr></table></figure>
 <h4 id="java-自定义异常的定义"><a href="#java-自定义异常的定义" class="headerlink" title="java 自定义异常的定义"></a>java 自定义异常的定义</h4><p>​    直接参看这个链接：<a href="https://blog.csdn.net/xyajia/article/details/52472251" target="_blank" rel="noopener">自定义异常</a></p>
+<p><strong>参考文献</strong></p>
+<p><a href="https://blog.csdn.net/qq_18505715/article/details/73196421" target="_blank" rel="noopener">Java 如何抛出异常、自定义异常</a></p>
 
       
     </div>
@@ -665,7 +665,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -765,7 +765,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">81.2k</span>
+    <span title="Site words total count">82.0k</span>
   
 </div>
 
@@ -784,7 +784,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共81.2k字</span>
+  <span class="post-count">博客全站共82.0k字</span>
 </div>
 
         

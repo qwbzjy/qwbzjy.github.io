@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="JDK 动态代理和 Cglib 代理JDK 动态代理JDK 动态代理简单应用 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#1 定义一个接口public interface UserService&amp;#123;    void query();&amp;#125;#2 实现这个接口pub">
+<meta name="description" content="JDK 动态代理和 Cglib 代理 JDK 动态代理12345678910111213141516171819202122232425262728293031323334353637383940414243444546#1 定义一个接口public interface UserService&amp;#123;    void query();&amp;#125;#2 实现这个接口public class Us">
 <meta name="keywords" content="spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="两种动态代理">
 <meta property="og:url" content="http://ajwensome.com/2019/04/15/两种动态代理/index.html">
 <meta property="og:site_name" content="勇敢的心">
-<meta property="og:description" content="JDK 动态代理和 Cglib 代理JDK 动态代理JDK 动态代理简单应用 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#1 定义一个接口public interface UserService&amp;#123;    void query();&amp;#125;#2 实现这个接口pub">
+<meta property="og:description" content="JDK 动态代理和 Cglib 代理 JDK 动态代理12345678910111213141516171819202122232425262728293031323334353637383940414243444546#1 定义一个接口public interface UserService&amp;#123;    void query();&amp;#125;#2 实现这个接口public class Us">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-25T09:12:42.908Z">
+<meta property="og:updated_time" content="2019-09-20T05:59:33.081Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="两种动态代理">
-<meta name="twitter:description" content="JDK 动态代理和 Cglib 代理JDK 动态代理JDK 动态代理简单应用 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#1 定义一个接口public interface UserService&amp;#123;    void query();&amp;#125;#2 实现这个接口pub">
+<meta name="twitter:description" content="JDK 动态代理和 Cglib 代理 JDK 动态代理12345678910111213141516171819202122232425262728293031323334353637383940414243444546#1 定义一个接口public interface UserService&amp;#123;    void query();&amp;#125;#2 实现这个接口public class Us">
 
 
 
@@ -418,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  328
+                  832
                 </span>
               
 
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -455,8 +455,8 @@
       
 
       
-        <h4 id="JDK-动态代理和-Cglib-代理"><a href="#JDK-动态代理和-Cglib-代理" class="headerlink" title="JDK 动态代理和 Cglib 代理"></a>JDK 动态代理和 Cglib 代理</h4><h5 id="JDK-动态代理"><a href="#JDK-动态代理" class="headerlink" title="JDK 动态代理"></a>JDK 动态代理</h5><p>JDK 动态代理简单应用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#1 定义一个接口</span><br><span class="line">public interface UserService</span><br><span class="line">&#123;</span><br><span class="line">    void query();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#2 实现这个接口</span><br><span class="line">public class UserServiceImpl implements UserService</span><br><span class="line"> &#123;</span><br><span class="line"></span><br><span class="line">    public void query()&#123;</span><br><span class="line"></span><br><span class="line">       System.out.println(&quot;查询用户信息&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#3 定义一个类实现 InvocationHandler</span><br><span class="line">public class MyInvocationHandler implements InvocationHandler</span><br><span class="line"> &#123;</span><br><span class="line">	Object target;</span><br><span class="line">	public MyInvocationHandler(Object target) &#123;       </span><br><span class="line">	this.target = target;   &#125;</span><br><span class="line">    </span><br><span class="line">	public Object invoke(Object proxy,Method method, Object[]args)throws Throwable&#123;</span><br><span class="line">       </span><br><span class="line">	System.out.println(&quot;进入了invoke&quot;);</span><br><span class="line"></span><br><span class="line">        method.invoke(target);</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;执行了invoke&quot;);</span><br><span class="line"></span><br><span class="line">        return null;    </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#4 Main方法</span><br><span class="line">public class Main&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        MyInvocationHandler myInvocationHandler = new MyInvocationHandler(new UserviceImpl());</span><br><span class="line">        </span><br><span class="line">        Object o = ProxyInstance(Main.class.getClassLoader(),new Class[]&#123;UserService.class&#125;,myInvocationHandler);</span><br><span class="line">        </span><br><span class="line">        ((UserService)o).query();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><strong>JDK 动态代理和 Cglib 代理</strong></p>
+<h5 id="JDK-动态代理"><a href="#JDK-动态代理" class="headerlink" title="JDK 动态代理"></a>JDK 动态代理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#1 定义一个接口</span><br><span class="line">public interface UserService</span><br><span class="line">&#123;</span><br><span class="line">    void query();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#2 实现这个接口</span><br><span class="line">public class UserServiceImpl implements UserService</span><br><span class="line"> &#123;</span><br><span class="line"></span><br><span class="line">    public void query()&#123;</span><br><span class="line"></span><br><span class="line">       System.out.println(&quot;查询用户信息&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#3 定义一个类实现 InvocationHandler</span><br><span class="line">public class MyInvocationHandler implements InvocationHandler</span><br><span class="line"> &#123;</span><br><span class="line">	Object target;</span><br><span class="line">	public MyInvocationHandler(Object target) &#123;       </span><br><span class="line">	this.target = target;   &#125;</span><br><span class="line">    </span><br><span class="line">	public Object invoke(Object proxy,Method method, Object[]args)throws Throwable&#123;</span><br><span class="line">       </span><br><span class="line">	System.out.println(&quot;进入了invoke&quot;);</span><br><span class="line"></span><br><span class="line">        method.invoke(target);</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;执行了invoke&quot;);</span><br><span class="line"></span><br><span class="line">        return null;    </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#4 Main方法</span><br><span class="line">public class Main&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        MyInvocationHandler myInvocationHandler = new MyInvocationHandler(new UserviceImpl());</span><br><span class="line">        </span><br><span class="line">        Object o = ProxyInstance(Main.class.getClassLoader(),new Class[]&#123;UserService.class&#125;,myInvocationHandler);</span><br><span class="line">        </span><br><span class="line">        ((UserService)o).query();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>生成代理类对象的步骤：</p>
 <ul>
 <li>拼接代理类的代码</li>
@@ -469,8 +469,18 @@
 <p>​    因为生成的代理类需要实现这个接口。</p>
 <p><strong>问题2：为什么 JDK 动态代理只能代理接口</strong></p>
 <p>​    因为生成的代理类已经继承了 Proxy 类，Java 是单继承的，所以无法再继承另一个类了。</p>
+<h5 id="Cglib-动态代理"><a href="#Cglib-动态代理" class="headerlink" title="Cglib 动态代理"></a>Cglib 动态代理</h5><p>CGLIB: Code Generation Library 它是一个强大的 Code 生成类库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">package gblib;</span><br><span class="line"></span><br><span class="line">import net.sf.cglib.proxy.Enhancer;</span><br><span class="line">import net.sf.cglib.proxy.MethodInterceptor;</span><br><span class="line">import net.sf.cglib.proxy.MethodProxy;</span><br><span class="line"></span><br><span class="line">import java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line">public class CglibProxytest implements MethodInterceptor &#123;</span><br><span class="line"></span><br><span class="line">    public Object getProxy(Class cls) &#123;</span><br><span class="line">        Enhancer enhancer = new Enhancer();</span><br><span class="line">        //设置代理类</span><br><span class="line">        enhancer.setSuperclass(cls);</span><br><span class="line">        enhancer.setCallback(this);</span><br><span class="line">        return enhancer.create();</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	// o 表示要增强的对象，实现这个接口类的一个对象；method 表示要被拦截的方法；args 表示要被拦截方法的参数；methodProxy表示要触发父类的方法对象</span><br><span class="line">    public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable &#123;</span><br><span class="line">        System.out.println(&quot;调用代理对象前&quot;);</span><br><span class="line">        Object result = methodProxy.invokeSuper(o,args);</span><br><span class="line">        System.out.println(&quot;调用代理对象后&quot;);</span><br><span class="line"></span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#目标类</span><br><span class="line">package gblib;</span><br><span class="line"></span><br><span class="line">public class Dog &#123;</span><br><span class="line">    public void isAnimal() &#123;</span><br><span class="line">        System.out.println(&quot;我是动物&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#测试</span><br><span class="line">package gblib;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        CglibProxytest cglibProxytest = new CglibProxytest();</span><br><span class="line">        Dog proxy = (Dog) cglibProxytest.getProxy(Dog.class);</span><br><span class="line">        proxy.isAnimal();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>整个过程相比jdk动态代理简单了一些。不同的是JDK动态代理强制要求实现类必须最少实现一个接口，但是CGLIB则可以要求实现类不用实现任何接口。CGLIB动态生成的代理类会继承我们的业务类，并在代理类中对代理方法进行强化处理(前置处理、后置处理等)。</p>
+<p>CGLIB是高效的代码生成包，底层依靠ASM（开源的java字节码编辑类库）操作字节码实现的，性能比JDK强。</p>
+<p>代理类对象是由<strong>Enhancer</strong>类创建的。Enhancer是CGLIB的字节码增强器，可以很方便的对类进行拓展</p>
+<p><strong>创建代理对象的几个步骤:</strong></p>
+<p>1、生成代理类的二进制字节码文件</p>
+<p>2、加载二进制字节码，生成Class对象( 例如使用Class.forName()方法 )</p>
+<p>3、通过反射机制获得实例构造，并创建代理类对象</p>
 <p><strong>参考链接</strong></p>
 <p><a href="https://mp.weixin.qq.com/s/2qDqKRX-8fMPGrMZNA8n5A" target="_blank" rel="noopener">陈树义聊 JDK动态代理</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/35144462" target="_blank" rel="noopener">cglib动态代理</a></p>
 
       
     </div>
@@ -668,7 +678,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -733,7 +743,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK-动态代理和-Cglib-代理"><span class="nav-number">1.</span> <span class="nav-text">JDK 动态代理和 Cglib 代理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JDK-动态代理"><span class="nav-number">1.1.</span> <span class="nav-text">JDK 动态代理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#JDK-动态代理"><span class="nav-number">1.</span> <span class="nav-text">JDK 动态代理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Cglib-动态代理"><span class="nav-number">2.</span> <span class="nav-text">Cglib 动态代理</span></a></li></ol></div>
             
 
           </div>
@@ -768,7 +778,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">81.2k</span>
+    <span title="Site words total count">82.0k</span>
   
 </div>
 
@@ -787,7 +797,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共81.2k字</span>
+  <span class="post-count">博客全站共82.0k字</span>
 </div>
 
         

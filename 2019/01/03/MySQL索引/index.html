@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="勇敢的心">
 <meta property="og:description" content="mysql  索引原理 ​    MySQL官方对索引的定义为：索引（Index）是帮助MySQL高效获取数据的数据结构。提取句子主干，就可以得到索引的本质：索引是数据结构。  ​    数据库查询是数据库的最主要功能之一。我们都希望查询数据的速度能尽可能的快，因此数据库系统的设计者会从查询算法的角度进行优化。最基本的查询算法当然是顺序查找（linear search），这种复杂度为O(n)的算法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T08:52:14.826Z">
+<meta property="og:updated_time" content="2019-09-20T06:23:21.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL索引">
 <meta name="twitter:description" content="mysql  索引原理 ​    MySQL官方对索引的定义为：索引（Index）是帮助MySQL高效获取数据的数据结构。提取句子主干，就可以得到索引的本质：索引是数据结构。  ​    数据库查询是数据库的最主要功能之一。我们都希望查询数据的速度能尽可能的快，因此数据库系统的设计者会从查询算法的角度进行优化。最基本的查询算法当然是顺序查找（linear search），这种复杂度为O(n)的算法">
@@ -571,20 +571,21 @@
 <p>有一点需要注意，在精确匹配（<code>=</code> 和 <code>IN</code>）中索引的顺序可以是任意的，MySQL 的查询优化器会帮用户优化成索引可以识别的形式。比如对于 (a,b,c) 顺序的索引来说，<code>a = 1 and b = 2 and c = 3</code> 和 <code>a = 1 and c = 3 and b = 2</code>、<code>c = 3 and a = 1 and b = 2</code> 等 SQL 语句效果都是一样的。 </p>
 </blockquote>
 <ol>
-<li><h5 id="尽量的扩展索引，不要新建索引。比如表中已经有-a-的索引，现在要加-a-b-的索引，那么只需要修改原来的索引即可"><a href="#尽量的扩展索引，不要新建索引。比如表中已经有-a-的索引，现在要加-a-b-的索引，那么只需要修改原来的索引即可" class="headerlink" title="尽量的扩展索引，不要新建索引。比如表中已经有 a 的索引，现在要加 (a,b) 的索引，那么只需要修改原来的索引即可"></a>尽量的扩展索引，不要新建索引。比如表中已经有 a 的索引，现在要加 (a,b) 的索引，那么只需要修改原来的索引即可</h5><p><strong>参考链接</strong></p>
-<p><a href="https://segmentfault.com/a/1190000003072424" target="_blank" rel="noopener">MYSQL索引</a></p>
-<p><a href="https://segmentfault.com/a/1190000014906118" target="_blank" rel="noopener">MYSQL索引精华</a></p>
-<p><a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html" target="_blank" rel="noopener">MYSQL索引背后的数据结构</a></p>
-<p><a href="https://segmentfault.com/a/1190000003741888" target="_blank" rel="noopener">MYSQL索引之哈希</a></p>
-<p><a href="https://segmentfault.com/a/1190000004022595" target="_blank" rel="noopener">MYSQL通俗易懂</a></p>
-<p><a href="https://segmentfault.com/q/1010000013818057" target="_blank" rel="noopener">MYSQL聚集索引与非聚集索引</a></p>
-<p><a href="https://segmentfault.com/q/1010000013408190" target="_blank" rel="noopener">联合索引</a></p>
-<p><a href="https://segmentfault.com/a/1190000010443438" target="_blank" rel="noopener">Mysql多列索引</a></p>
-<p><a href="https://segmentfault.com/q/1010000005085626" target="_blank" rel="noopener">MYSQL添加索引</a></p>
-<p><a href="https://segmentfault.com/q/1010000000179631" target="_blank" rel="noopener">MYSQL索引面试题</a></p>
-<p><a href="https://segmentfault.com/q/1010000002682043" target="_blank" rel="noopener">MYSQL优化查询面试题</a></p>
+<li><h5 id="尽量的扩展索引，不要新建索引"><a href="#尽量的扩展索引，不要新建索引" class="headerlink" title="尽量的扩展索引，不要新建索引"></a>尽量的扩展索引，不要新建索引</h5><p>比如表中已经有 a 的索引，现在要加 (a,b) 的索引，那么只需要修改原来的索引即可 </p>
 </li>
 </ol>
+<p>   <strong>参考链接</strong></p>
+<p>   <a href="https://segmentfault.com/a/1190000003072424" target="_blank" rel="noopener">MYSQL索引</a></p>
+<p>   <a href="https://segmentfault.com/a/1190000014906118" target="_blank" rel="noopener">MYSQL索引精华</a></p>
+<p>   <a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html" target="_blank" rel="noopener">MYSQL索引背后的数据结构</a></p>
+<p>   <a href="https://segmentfault.com/a/1190000003741888" target="_blank" rel="noopener">MYSQL索引之哈希</a></p>
+<p>   <a href="https://segmentfault.com/a/1190000004022595" target="_blank" rel="noopener">MYSQL通俗易懂</a></p>
+<p>   <a href="https://segmentfault.com/q/1010000013818057" target="_blank" rel="noopener">MYSQL聚集索引与非聚集索引</a></p>
+<p>   <a href="https://segmentfault.com/q/1010000013408190" target="_blank" rel="noopener">联合索引</a></p>
+<p>   <a href="https://segmentfault.com/a/1190000010443438" target="_blank" rel="noopener">Mysql多列索引</a></p>
+<p>   <a href="https://segmentfault.com/q/1010000005085626" target="_blank" rel="noopener">MYSQL添加索引</a></p>
+<p>   <a href="https://segmentfault.com/q/1010000000179631" target="_blank" rel="noopener">MYSQL索引面试题</a></p>
+<p>   <a href="https://segmentfault.com/q/1010000002682043" target="_blank" rel="noopener">MYSQL优化查询面试题</a></p>
 
       
     </div>
@@ -782,7 +783,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -847,7 +848,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#索引原理"><span class="nav-number">1.</span> <span class="nav-text">索引原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引特点"><span class="nav-number">2.</span> <span class="nav-text">索引特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引的存储分类"><span class="nav-number">3.</span> <span class="nav-text">索引的存储分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#聚集索引与非聚集索引"><span class="nav-number">3.1.</span> <span class="nav-text">聚集索引与非聚集索引</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引使用原则"><span class="nav-number">4.</span> <span class="nav-text">索引使用原则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#不建议使用索引的情况"><span class="nav-number">4.1.</span> <span class="nav-text">不建议使用索引的情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最左前缀原理"><span class="nav-number">4.2.</span> <span class="nav-text">最左前缀原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#尽量的扩展索引，不要新建索引。比如表中已经有-a-的索引，现在要加-a-b-的索引，那么只需要修改原来的索引即可"><span class="nav-number">4.3.</span> <span class="nav-text">尽量的扩展索引，不要新建索引。比如表中已经有 a 的索引，现在要加 (a,b) 的索引，那么只需要修改原来的索引即可</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#索引原理"><span class="nav-number">1.</span> <span class="nav-text">索引原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引特点"><span class="nav-number">2.</span> <span class="nav-text">索引特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引的存储分类"><span class="nav-number">3.</span> <span class="nav-text">索引的存储分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#聚集索引与非聚集索引"><span class="nav-number">3.1.</span> <span class="nav-text">聚集索引与非聚集索引</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引使用原则"><span class="nav-number">4.</span> <span class="nav-text">索引使用原则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#不建议使用索引的情况"><span class="nav-number">4.1.</span> <span class="nav-text">不建议使用索引的情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最左前缀原理"><span class="nav-number">4.2.</span> <span class="nav-text">最左前缀原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#尽量的扩展索引，不要新建索引"><span class="nav-number">4.3.</span> <span class="nav-text">尽量的扩展索引，不要新建索引</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -882,7 +883,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">81.2k</span>
+    <span title="Site words total count">82.0k</span>
   
 </div>
 
@@ -901,7 +902,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共81.2k字</span>
+  <span class="post-count">博客全站共82.0k字</span>
 </div>
 
         

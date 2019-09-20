@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="勇敢的心">
 <meta property="og:description" content="一条 SQL 语句更新是怎么执行的redo log (重做日志)​    通过孔乙己的记账黑板和记账本的关系去理解 redo log 和 binlog 的关系，其实就是 MySQL 中经常说的 WAL 技术 (Writie-Ahead-Loggin)，其关键点就是先写日志，再写磁盘，也就是先写黑板，再写账本。 ​    当有一条记录需要更新的时候，InnoDB 引擎就会先把记录写到 redo lo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T08:53:58.795Z">
+<meta property="og:updated_time" content="2019-09-20T06:16:01.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL更新语句执行过程">
 <meta name="twitter:description" content="一条 SQL 语句更新是怎么执行的redo log (重做日志)​    通过孔乙己的记账黑板和记账本的关系去理解 redo log 和 binlog 的关系，其实就是 MySQL 中经常说的 WAL 技术 (Writie-Ahead-Loggin)，其关键点就是先写日志，再写磁盘，也就是先写黑板，再写账本。 ​    当有一条记录需要更新的时候，InnoDB 引擎就会先把记录写到 redo lo">
@@ -418,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  718
+                  690
                 </span>
               
 
@@ -468,9 +468,8 @@
 <p>​    当在3之前崩溃，重启恢复后发现虽然没有commit，但满足prepare和binlog完整，所以重启后会自动commit。备份：有binlog，数据一致。</p>
 <p><strong>写redo日志也是写io（我理解也是外部存储）。同样耗费性能。怎么能做到优化呢</strong></p>
 <p>​    Redolog是顺序写，并且可以组提交，还有别的一些优化，收益最大是是这两个因素</p>
-<p>还是没想明白，为什么需要两阶段</p>
-<p>物理日志与逻辑日志   <a href="https://blog.51cto.com/freebile/1364978" target="_blank" rel="noopener">https://blog.51cto.com/freebile/1364978</a>   </p>
-<p>redo log是写磁盘？  binlog是写磁盘吗</p>
+<p><strong>参考文献</strong></p>
+<p><a href="https://blog.51cto.com/freebile/1364978" target="_blank" rel="noopener">物理日志与逻辑日志</a>  </p>
 
       
     </div>
@@ -668,7 +667,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -768,7 +767,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">81.2k</span>
+    <span title="Site words total count">82.0k</span>
   
 </div>
 
@@ -787,7 +786,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共81.2k字</span>
+  <span class="post-count">博客全站共82.0k字</span>
 </div>
 
         

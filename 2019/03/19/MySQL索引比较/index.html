@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="Mysql 索引 索引的出现其实就是为了提高数据查询的效率，就像书的目录一样。 索引的常见模型​    哈希表：一种以键-值(key-value)存储数据的结构，我们只要输入待查找的key，就可以找到其对应的值即value。哈希的思路很简单，把值放在数组里，用一个哈希函数把key换算成一个确定的位置，然后把value放在数组的这个位置。哈希函数不可避免的会出现哈希冲突的问题，处理冲突的方法是拉链法">
+<meta name="description" content="索引的出现其实就是为了提高数据查询的效率，就像书的目录一样。 索引的常见模型哈希表​    一种以键-值(key-value)存储数据的结构，我们只要输入待查找的key，就可以找到其对应的值即value。哈希的思路很简单，把值放在数组里，用一个哈希函数把key换算成一个确定的位置，然后把value放在数组的这个位置。哈希函数不可避免的会出现哈希冲突的问题，处理冲突的方法是拉链法，拉出一个链表进行储">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL索引比较">
 <meta property="og:url" content="http://ajwensome.com/2019/03/19/MySQL索引比较/index.html">
 <meta property="og:site_name" content="勇敢的心">
-<meta property="og:description" content="Mysql 索引 索引的出现其实就是为了提高数据查询的效率，就像书的目录一样。 索引的常见模型​    哈希表：一种以键-值(key-value)存储数据的结构，我们只要输入待查找的key，就可以找到其对应的值即value。哈希的思路很简单，把值放在数组里，用一个哈希函数把key换算成一个确定的位置，然后把value放在数组的这个位置。哈希函数不可避免的会出现哈希冲突的问题，处理冲突的方法是拉链法">
+<meta property="og:description" content="索引的出现其实就是为了提高数据查询的效率，就像书的目录一样。 索引的常见模型哈希表​    一种以键-值(key-value)存储数据的结构，我们只要输入待查找的key，就可以找到其对应的值即value。哈希的思路很简单，把值放在数组里，用一个哈希函数把key换算成一个确定的位置，然后把value放在数组的这个位置。哈希函数不可避免的会出现哈希冲突的问题，处理冲突的方法是拉链法，拉出一个链表进行储">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T09:28:17.444Z">
+<meta property="og:updated_time" content="2019-09-20T06:12:45.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL索引比较">
-<meta name="twitter:description" content="Mysql 索引 索引的出现其实就是为了提高数据查询的效率，就像书的目录一样。 索引的常见模型​    哈希表：一种以键-值(key-value)存储数据的结构，我们只要输入待查找的key，就可以找到其对应的值即value。哈希的思路很简单，把值放在数组里，用一个哈希函数把key换算成一个确定的位置，然后把value放在数组的这个位置。哈希函数不可避免的会出现哈希冲突的问题，处理冲突的方法是拉链法">
+<meta name="twitter:description" content="索引的出现其实就是为了提高数据查询的效率，就像书的目录一样。 索引的常见模型哈希表​    一种以键-值(key-value)存储数据的结构，我们只要输入待查找的key，就可以找到其对应的值即value。哈希的思路很简单，把值放在数组里，用一个哈希函数把key换算成一个确定的位置，然后把value放在数组的这个位置。哈希函数不可避免的会出现哈希冲突的问题，处理冲突的方法是拉链法，拉出一个链表进行储">
 
 
 
@@ -418,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,995
+                  2,005
                 </span>
               
 
@@ -455,26 +455,28 @@
       
 
       
-        <p>Mysql 索引</p>
-<p>索引的出现其实就是为了提高数据查询的效率，就像书的目录一样。</p>
-<h4 id="索引的常见模型"><a href="#索引的常见模型" class="headerlink" title="索引的常见模型"></a>索引的常见模型</h4><p>​    <strong>哈希表</strong>：一种以键-值(key-value)存储数据的结构，我们只要输入待查找的key，就可以找到其对应的值即value。哈希的思路很简单，把值放在数组里，用一个哈希函数把key换算成一个确定的位置，然后把value放在数组的这个位置。哈希函数不可避免的会出现哈希冲突的问题，处理冲突的方法是拉链法，拉出一个链表进行储存。</p>
+        <p>索引的出现其实就是为了提高数据查询的效率，就像书的目录一样。</p>
+<h4 id="索引的常见模型"><a href="#索引的常见模型" class="headerlink" title="索引的常见模型"></a>索引的常见模型</h4><h5 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h5><p>​    一种以键-值(key-value)存储数据的结构，我们只要输入待查找的key，就可以找到其对应的值即value。哈希的思路很简单，把值放在数组里，用一个哈希函数把key换算成一个确定的位置，然后把value放在数组的这个位置。哈希函数不可避免的会出现哈希冲突的问题，处理冲突的方法是拉链法，拉出一个链表进行储存。</p>
 <p>​    哈希表这种结构适用于只有等值查询的场景，比如Memcached及其他一些NoSQL引擎。</p>
-<p>​    有序数组索引只适用于静态存储引擎。</p>
-<p>二叉搜索树：N 叉树，减少磁盘 IO 操作。</p>
-<p><strong>主键索引</strong>：主键索引的叶子节点存的是整行数据，在 InnoDB 里，主键索引也被称为<strong>聚簇索引</strong>。</p>
-<p><strong>非主键索引(普通索引)</strong>：非主键索引的叶子节点内容是主键的值，在 InnoDB 里，非主键索引也被称为<strong>二级索引</strong>。</p>
-<p>基于非主键索引的查询需要多扫描一颗索引树，因此，应尽量使用主键查询。</p>
-<p>主键长度越小，普通索引叶子节点就越小，普通索引占用的空间也就越小。</p>
-<p><strong>覆盖索引</strong>：如果执行 select ID from T where k between 3 and 5，此时只需要查询 ID的值，而ID的值已经在k索引树上了，因此可以直接提供查询结果。覆盖索引是一种常用的性能优化手段。</p>
-<p><strong>最左前缀原则</strong>：B+ 树这种索引结构，可以利用索引的最左前缀来定位记录，这个前缀可以是联合索引的最左N个字段，也可以是字符串索引的最左M个字符。</p>
-<p>在建立联合索引的时候，如何安排索引内的字段排序。</p>
-<p>第一原则：如果通过调整顺序，可以少维护一个索引，那么这个顺序往往就是需要优先考虑采用的。</p>
-<p>索引下推</p>
-<p><strong>联合索引</strong>：(name,age)，B+ 树根据name构建，叶子节点按照age排序，找到对应记录的主键id，然后回表查询该行记录。</p>
-<p><a href="https://blog.csdn.net/klchht/article/details/78146443?locationNum=9&amp;fps=1" target="_blank" rel="noopener">联合索引</a></p>
-<p>普通索引与唯一索引区别</p>
-<p>对于普通索引来说，查找到满足条件的第一个记录后，需要查找下一个记录，直到碰到第一个不满足条件的记录。</p>
-<p>对于唯一索引来说，由于索引定义了唯一性，查找到第一个满足条件的记录后，就会停止继续检索。</p>
+<h5 id="有序数组"><a href="#有序数组" class="headerlink" title="有序数组"></a>有序数组</h5><p>​        有序数组索引只适用于静态存储引擎。</p>
+<h5 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h5><p>​        N 叉树，减少磁盘 IO 操作。</p>
+<h4 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h4><h5 id="主键索引"><a href="#主键索引" class="headerlink" title="主键索引"></a>主键索引</h5><p>​    主键索引的叶子节点存的是整行数据，在 InnoDB 里，主键索引也被称为聚簇索引。</p>
+<h5 id="非主键索引-普通索引"><a href="#非主键索引-普通索引" class="headerlink" title="非主键索引(普通索引)"></a>非主键索引(普通索引)</h5><ul>
+<li><p>非主键索引的叶子节点内容是主键的值，在 InnoDB 里，非主键索引也被称为<strong>二级索引</strong>。</p>
+</li>
+<li><p>基于非主键索引的查询需要多扫描一颗索引树，因此，应尽量使用主键查询。</p>
+</li>
+<li><p>主键长度越小，普通索引叶子节点就越小，普通索引占用的空间也就越小。</p>
+</li>
+</ul>
+<h5 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h5><p>​    如果执行 select ID from T where k between 3 and 5，此时只需要查询 ID的值，而ID的值已经在k索引树上了，因此可以直接提供查询结果。覆盖索引是一种常用的性能优化手段。</p>
+<h5 id="最左前缀原则"><a href="#最左前缀原则" class="headerlink" title="最左前缀原则"></a>最左前缀原则</h5><p>​    B+ 树这种索引结构，可以利用索引的最左前缀来定位记录，这个前缀可以是联合索引的最左N个字段，也可以是字符串索引的最左M个字符。</p>
+<p><strong>在建立联合索引的时候，如何安排索引内的字段排序</strong></p>
+<p>​    第一原则：如果通过调整顺序，可以少维护一个索引，那么这个顺序往往就是需要优先考虑采用的。</p>
+<p>​    索引下推</p>
+<h5 id="联合索引"><a href="#联合索引" class="headerlink" title="联合索引"></a>联合索引</h5><p>​    (name,age)，B+ 树根据name构建，叶子节点按照age排序，找到对应记录的主键id，然后回表查询该行记录。</p>
+<h5 id="普通索引与唯一索引区别"><a href="#普通索引与唯一索引区别" class="headerlink" title="普通索引与唯一索引区别"></a>普通索引与唯一索引区别</h5><p>​    对于普通索引来说，查找到满足条件的第一个记录后，需要查找下一个记录，直到碰到第一个不满足条件的记录。</p>
+<p>​    对于唯一索引来说，由于索引定义了唯一性，查找到第一个满足条件的记录后，就会停止继续检索。</p>
 <p>​    这两种索引在性能上的差距微乎其微。在 InnoDB 中，数据都是按照数据页为单位来读写的，也就是说，当需要读一条记录的时候，并不是将这个记录本身从磁盘读出来，而是以页为单位，将其整体读入内存。</p>
 <p>​    在 InnoDB 中，每个数据页的大小默认是 16 KB。因为引擎是按页读写的，所以说当找到满足条件的记录时，它所在的数据页就都在内存里了，对于普通索引，要多做一次操作，就是继续查找和判断下一条记录是否满足条件，也就是只需要一次指针寻找和一次计算。如果要查找的记录刚好时数据页的最后一条记录，那么要取下一条记录，就必须读取下一个数据页，而出现这种情况的概率很低，从平均性能差异来讲，这种操作成本可以忽略不计。</p>
 <p>普通索引和唯一索引对更新语句性能的影响，需要介绍一下 change buffer。</p>
@@ -482,25 +484,24 @@
 <p>​    将 change buffer中的操作应用到原数据页得到最新结果的过程称为 merge。除了访问这个数据页会触发 merge 外，系统有后台县城会定期 merge。在数据库正常关闭的过程中，也会执行merge操作。</p>
 <p>​    如果能将更新操作先记录在 change buffer 中，减少读磁盘，语句的执行速度会得到明显的提升。而且，数据读入内存是需要占用 change pool 的，所以这种方式还能够避免占用内存，提高内存利用率。</p>
 <p>​    唯一索引的更新不能使用 change buffer。change buffer 用的是 buffer pool 里的内存，可以通过参数设置调节其大小。</p>
-<p>​    change buffer 使用场景</p>
-<p>​    change buffer 的主要目的就是将记录的变更动作缓存下来，在一个数据页做 merge 之前，change buffer 记录的变更越多，收益越大。对于写多读少的业务来说，页面在写完后马上被访问到的概率比较小，此时 change buffer 的使用效果最好，这种业务模型常见的就是账单类、日志类的系统。</p>
+<h5 id="change-buffer-使用场景"><a href="#change-buffer-使用场景" class="headerlink" title="change buffer 使用场景"></a>change buffer 使用场景</h5><p>​    change buffer 的主要目的就是将记录的变更动作缓存下来，在一个数据页做 merge 之前，change buffer 记录的变更越多，收益越大。对于写多读少的业务来说，页面在写完后马上被访问到的概率比较小，此时 change buffer 的使用效果最好，这种业务模型常见的就是账单类、日志类的系统。</p>
 <p>​    普通索引和唯一索引在查询能力上没什么差别，主要考虑的是对更新性能的影响，建议尽量选择普通索引，在实际使用中，普通索引和 change buffer 的配合使用，对于数据量大的表的更新优化很明显。</p>
-<p>​    change buffer 与 redo log</p>
-<p>redo log 主要节省的是随机写磁盘的 IO 消耗(转成顺序写)，而 change buffer主要节省的是随机写磁盘的 IO 消耗。</p>
-<p>前缀索引</p>
-<p>定义字符串的一部分作为索引，默认地，如果你创建索引的语句不指定前缀长度，那么索引就会包含整个字符串。</p>
-<p>前缀索引需要多一次回表判断，因为在区分度(索引列中不同数据的占比)不是100% 的情况下，不能保证前缀的唯一性。前缀索引的字符串长度根据区分度来选择，一般不小于总记录数的 95%。</p>
-<p>在前缀索引区分度不好的情况下，有如下处理方法：</p>
-<p>1、使用倒序存储，如身份证号的存储，可以倒序存储</p>
-<p>select field_list from t where id_card = reverse(‘input_id_card_string’)</p>
-<p>2、使用hash 字段，在表上再创建一个整数字段，来保证身份证的校验码，同时在这个字段上创建索引。</p>
-<p>select field_list from t where id_card_crc=crc32(‘input_id_card_string’) and id_card=’input_id_card_string’</p>
+<h5 id="change-buffer-与-redo-log"><a href="#change-buffer-与-redo-log" class="headerlink" title="change buffer 与 redo log"></a>change buffer 与 redo log</h5><p>​    redo log 主要节省的是随机写磁盘的 IO 消耗(转成顺序写)，而 change buffer主要节省的是随机写磁盘的 IO 消耗。</p>
+<h5 id="前缀索引"><a href="#前缀索引" class="headerlink" title="前缀索引"></a>前缀索引</h5><p>​    定义字符串的一部分作为索引，默认地，如果你创建索引的语句不指定前缀长度，那么索引就会包含整个字符串。</p>
+<p>​    前缀索引需要多一次回表判断，因为在区分度(索引列中不同数据的占比)不是100% 的情况下，不能保证前缀的唯一性。前缀索引的字符串长度根据区分度来选择，一般不小于总记录数的 95%。</p>
+<p><strong>在前缀索引区分度不好的情况下，有如下处理方法</strong>：</p>
+<p>​    1、使用倒序存储，如身份证号的存储，可以倒序存储</p>
+<p>​    select field_list from t where id_card = reverse(‘input_id_card_string’)</p>
+<p>​    2、使用hash 字段，在表上再创建一个整数字段，来保证身份证的校验码，同时在这个字段上创建索引。</p>
+<p>​    select field_list from t where id_card_crc=crc32(‘input_id_card_string’) and id_card=’input_id_card_string’</p>
 <p>hash 函数有冲突的地方，需要where部分进行精确判断。</p>
 <p>索引的优化其实就是时间与空间的问题，有时会以时间换空间，有时又会以空间换时间。</p>
-<p>count(主键id)： InnoDB 引擎会遍历整张表，把每一行的 id 值都取出来，返回给 server 层。server 层拿到 id后，判断是不可能为空的，就按行累加。</p>
+<h5 id="count"><a href="#count" class="headerlink" title="count"></a>count</h5><p>count(主键id)： InnoDB 引擎会遍历整张表，把每一行的 id 值都取出来，返回给 server 层。server 层拿到 id后，判断是不可能为空的，就按行累加。</p>
 <p>count(1)：InnoDB 引擎遍历整张表，但不取值。server 层对于返回的每一行，放一个数字 “1” 进去，判断是不可能为空的，按行累加。</p>
 <p>count(字段): 一行行地从记录里面读出这个字段，判断不能为 null</p>
 <p>count(*): 并不会把全部字段取出来，而是专门做了优化，不取值。count(`)肯定不是null，按行累加。</p>
+<p><strong>参考文献</strong></p>
+<p><a href="https://blog.csdn.net/klchht/article/details/78146443?locationNum=9&amp;fps=1" target="_blank" rel="noopener">联合索引</a></p>
 <p>​    </p>
 
       
@@ -699,7 +700,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -764,7 +765,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#索引的常见模型"><span class="nav-number">1.</span> <span class="nav-text">索引的常见模型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#索引的常见模型"><span class="nav-number">1.</span> <span class="nav-text">索引的常见模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#哈希表"><span class="nav-number">1.1.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有序数组"><span class="nav-number">1.2.</span> <span class="nav-text">有序数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二叉搜索树"><span class="nav-number">1.3.</span> <span class="nav-text">二叉搜索树</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引分类"><span class="nav-number">2.</span> <span class="nav-text">索引分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主键索引"><span class="nav-number">2.1.</span> <span class="nav-text">主键索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#非主键索引-普通索引"><span class="nav-number">2.2.</span> <span class="nav-text">非主键索引(普通索引)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#覆盖索引"><span class="nav-number">2.3.</span> <span class="nav-text">覆盖索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最左前缀原则"><span class="nav-number">2.4.</span> <span class="nav-text">最左前缀原则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#联合索引"><span class="nav-number">2.5.</span> <span class="nav-text">联合索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#普通索引与唯一索引区别"><span class="nav-number">2.6.</span> <span class="nav-text">普通索引与唯一索引区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#change-buffer-使用场景"><span class="nav-number">2.7.</span> <span class="nav-text">change buffer 使用场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#change-buffer-与-redo-log"><span class="nav-number">2.8.</span> <span class="nav-text">change buffer 与 redo log</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#前缀索引"><span class="nav-number">2.9.</span> <span class="nav-text">前缀索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#count"><span class="nav-number">2.10.</span> <span class="nav-text">count</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -799,7 +800,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">81.2k</span>
+    <span title="Site words total count">82.0k</span>
   
 </div>
 
@@ -818,7 +819,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共81.2k字</span>
+  <span class="post-count">博客全站共82.0k字</span>
 </div>
 
         
