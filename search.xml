@@ -27,4 +27,14 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>搜索引擎核心流程</title>
+    <url>/2021/10/20/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%A0%B8%E5%BF%83%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<p>background</p>
+<p>搜索引擎核心流程分析</p>
+]]></content>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
 </search>
